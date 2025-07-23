@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2025-07-23T11:33:24.030616",
+    "data": {
+      "analysis_id": "526ffbae-ba58-490f-bd7f-75c01352d80c",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "static/uploads/526ffbae-ba58-490f-bd7f-75c01352d80c_banana_plant_image_wt.jpeg",
+          "banana_detected": false,
+          "flower_detected": true,
+          "stage": "Flowering Stage",
+          "advice": "AI service temporarily unavailable. Please try again later.",
+          "translated_advice": "AI service temporarily unavailable. Please try again later.",
+          "filename": "banana_plant_image_wt.jpeg"
+        }
+      ],
+      "questions": []
+    }
+  }
+]

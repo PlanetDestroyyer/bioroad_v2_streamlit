@@ -1,0 +1,14 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+app.log
+
+# Virtual environments
+.venv
+
+yolo11x_leaf.pt
+yolov8n.pt

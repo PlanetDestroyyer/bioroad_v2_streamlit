@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2025-07-23T11:37:09.718231",
+    "data": {
+      "analysis_id": "44fd39cd-3e7f-4f06-9e6c-cb9a0199732c",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "static/uploads/44fd39cd-3e7f-4f06-9e6c-cb9a0199732c_banana_image_3.jpg",
+          "banana_detected": false,
+          "flower_detected": false,
+          "stage": "Vegetative Stage",
+          "advice": "Based on the information you provided, your banana plant is in the vegetative stage. During the seedling stage, make sure your plant gets enough potassium and nitrogen. Your plant should be producing leaves rapidly and the pseudostem should be thickening. Make sure the root system has enough room to expand.",
+          "translated_advice": "Based on the information you provided, your banana plant is in the vegetative stage. During the seedling stage, make sure your plant gets enough potassium and nitrogen. Your plant should be producing leaves rapidly and the pseudostem should be thickening. Make sure the root system has enough room to expand.",
+          "filename": "banana_image_3.jpg"
+        }
+      ],
+      "questions": []
+    }
+  }
+]

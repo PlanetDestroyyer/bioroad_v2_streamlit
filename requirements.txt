@@ -1,0 +1,13 @@
+streamlit
+ultralytics
+opencv-python
+pillow
+numpy
+gTTS
+pydub
+googletrans==4.0.0-rc1
+langchain
+langchain-community
+langchain-google-genai
+python-dotenv
+faiss-cpu
