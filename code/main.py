@@ -12,6 +12,7 @@ from utils import (
 from detection import detect_banana, detect_flower, estimate_stage
 from config import LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
 import datetime
+from leaf_counter import analyze_leaf_colors
 
 
 try:
@@ -98,6 +99,7 @@ try:
                                     banana_present = detect_banana(file_bytes, model)
                                     flower_present = detect_flower(file_bytes)
                                     stage = estimate_stage(banana_present, flower_present)
+                                    
 
                                     # Generate query for RAG
                                     query = f"""

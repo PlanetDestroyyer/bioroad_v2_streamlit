@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2025-07-24T12:09:33.409901",
+    "data": {
+      "analysis_id": "206d56d7-f00d-44f9-8a1b-a1cc1d0e78f7",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/206d56d7-f00d-44f9-8a1b-a1cc1d0e78f7_banana_tree_with_fruits.jpg",
+          "banana_detected": true,
+          "flower_detected": false,
+          "stage": "Early Fruit Stage",
+          "advice": "At the early fruit stage, your banana plant needs high potassium and phosphorus. The fruits will be full size but still green. You will know it is time to harvest when the fruit ridges disappear, the fingers fill out, and the color changes from dark to light green. Wind protection is essential.",
+          "translated_advice": "सुरुवातीच्या फळाच्या टप्प्यावर, आपल्या केळीच्या वनस्पतीला उच्च पोटॅशियम आणि फॉस्फरस आवश्यक आहे.फळे पूर्ण आकारात असतील परंतु तरीही हिरव्या असतील.आपल्याला हे समजेल की जेव्हा फळांचा ओघ अदृश्य होतो, बोटांनी भरुन काढले जाते आणि रंग गडद ते हलका हिरव्या रंगात बदलतो तेव्हा कापणी करण्याची वेळ आली आहे.वारा संरक्षण आवश्यक आहे.",
+          "filename": "banana_tree_with_fruits.jpg"
+        }
+      ],
+      "questions": []
+    }
+  }
+]
