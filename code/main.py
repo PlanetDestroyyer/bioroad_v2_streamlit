@@ -11,7 +11,7 @@ from utils import (
 )
 from detection import detect_banana, detect_flower, estimate_stage
 from config import LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
-import datetime
+from datetime import datetime
 from leaf_counter import analyze_leaf_colors
 
 
@@ -100,6 +100,15 @@ try:
                                     flower_present = detect_flower(file_bytes)
                                     stage = estimate_stage(banana_present, flower_present)
                                     
+                                    # Analyze leaf colors
+                                    try:
+                                        num_leaves, leaf_colors = analyze_leaf_colors(filepath)
+                                        leaf_summary = f"Detected {num_leaves} leaves with colors: {', '.join(leaf_colors)}"
+                                    except Exception as e:
+                                        logger.error(f"Error in leaf color analysis for {filename}: {e}")
+                                        num_leaves = 0
+                                        leaf_colors = []
+                                        leaf_summary = "Leaf analysis failed"
 
                                     # Generate query for RAG
                                     query = f"""
@@ -107,12 +116,12 @@ try:
                                     Fruits detected: {'Yes' if banana_present else 'No'}
                                     Flowers detected: {'Yes' if flower_present else 'No'}
                                     Estimated Stage: {stage}
-                                    Given this stage, what care advice should be provided?
+                                    Leaf Analysis: {leaf_summary}
+                                    Given this stage and leaf analysis, what care advice should be provided?
                                     """
 
                                     
                                     try:
-                                       
                                         response = qa_chain.invoke({"query": query})
                                         advice = response.get('result', "No advice available.") if isinstance(response, dict) else str(response)
                                         advice = comprehensive_text_cleaner(advice)
@@ -128,6 +137,8 @@ try:
                                         "banana_detected": banana_present,
                                         "flower_detected": flower_present,
                                         "stage": stage,
+                                        "num_leaves": num_leaves,
+                                        "leaf_colors": leaf_colors,
                                         "advice": advice,
                                         "translated_advice": translated_advice,
                                         "filename": filename
@@ -176,7 +187,7 @@ try:
                         # Display image safely
                         try:
                             if os.path.exists(result['image_path']):
-                                st.image(result['image_path'], caption=f"Image {i+1}", use_container_width=True)
+                                st.image(result['image_path'], caption=f"Image {i+1}", use_container_width=True,width=50)
                             else:
                                 st.warning(f"Image {i+1} file not found")
                         except Exception as e:
@@ -186,6 +197,7 @@ try:
                         st.write(f"**Banana Detected:** {'Yes' if result.get('banana_detected', False) else 'No'}")
                         st.write(f"**Flower Detected:** {'Yes' if result.get('flower_detected', False) else 'No'}")
                         st.write(f"**Estimated Stage:** {result.get('stage', 'Unknown')}")
+                        st.write(f"**Leaf Analysis:** Detected {result.get('num_leaves', 0)} leaves with colors: {', '.join(result.get('leaf_colors', []))}")
                         
                         st.subheader("Care Advice:")
                         advice_text = result.get('translated_advice', 'No advice available')

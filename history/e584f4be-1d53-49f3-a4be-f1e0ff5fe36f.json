@@ -1,0 +1,174 @@
+[
+  {
+    "timestamp": "2025-07-24T13:16:44.801798",
+    "data": {
+      "analysis_id": "117952f5-5399-4617-afad-70e44a133f1c",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/117952f5-5399-4617-afad-70e44a133f1c_banana_tree_image.jpg",
+          "banana_detected": false,
+          "flower_detected": false,
+          "stage": "Vegetative Stage",
+          "num_leaves": 15,
+          "leaf_colors": [
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green"
+          ],
+          "advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on promoting strong pseudostem and root development. Ensure it gets high levels of potassium and nitrogen. Also, make sure the plant has a minimum soil depth of 60cm, well-draining but moisture-retentive soil, and 3-5 organic matter in the soil. Protect it from strong winds and extreme temperature fluctuations (below 15 C or above 35 C).",
+          "translated_advice": "आपली केळीची वनस्पती 15 निरोगी हिरव्या पानांसह वनस्पतिवत् होणार् या अवस्थेत असल्याने मजबूत स्यूडोस्टेम आणि रूट डेव्हलपमेंटला प्रोत्साहन देण्यावर लक्ष केंद्रित करा.याची खात्री करुन घ्या की त्यास पोटॅशियम आणि नायट्रोजनचे उच्च प्रमाण मिळेल.तसेच, हे सुनिश्चित करा की वनस्पतीमध्ये कमीतकमी 60 सेमी मातीची खोली, सुसंस्कृत परंतु ओलावा-प्रतिरोधक माती आणि मातीमध्ये 3-5 सेंद्रिय पदार्थ आहे.जोरदार वारा आणि तापमानात चढ -उतार (15 से किंवा 35 सी पेक्षा कमी) पासून त्याचे रक्षण करा.",
+          "filename": "banana_tree_image.jpg"
+        }
+      ],
+      "questions": []
+    }
+  },
+  {
+    "timestamp": "2025-07-24T13:17:50.939741",
+    "data": {
+      "analysis_id": "a5a98694-be5e-421c-83d3-e749218f78de",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/a5a98694-be5e-421c-83d3-e749218f78de_banana_tree_image.jpg",
+          "banana_detected": false,
+          "flower_detected": false,
+          "stage": "Vegetative Stage",
+          "num_leaves": 15,
+          "leaf_colors": [
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green"
+          ],
+          "advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on promoting strong pseudostem and root development. Ensure it gets high levels of potassium and nitrogen. Also, make sure the plant has a minimum soil depth of 60cm, well-draining but moisture-retentive soil, and 3-5 organic matter in the soil. Protect it from strong winds and extreme temperature fluctuations (below 15 C or above 35 C).",
+          "translated_advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on promoting strong pseudostem and root development. Ensure it gets high levels of potassium and nitrogen. Also, make sure the plant has a minimum soil depth of 60cm, well-draining but moisture-retentive soil, and 3-5 organic matter in the soil. Protect it from strong winds and extreme temperature fluctuations (below 15 C or above 35 C).",
+          "filename": "banana_tree_image.jpg"
+        }
+      ],
+      "questions": []
+    }
+  },
+  {
+    "timestamp": "2025-07-24T13:19:51.781730",
+    "data": {
+      "analysis_id": "a5a98694-be5e-421c-83d3-e749218f78de",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/a5a98694-be5e-421c-83d3-e749218f78de_banana_tree_image.jpg",
+          "banana_detected": false,
+          "flower_detected": false,
+          "stage": "Vegetative Stage",
+          "num_leaves": 15,
+          "leaf_colors": [
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green"
+          ],
+          "advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on promoting strong pseudostem and root development. Ensure it gets high levels of potassium and nitrogen. Also, make sure the plant has a minimum soil depth of 60cm, well-draining but moisture-retentive soil, and 3-5 organic matter in the soil. Protect it from strong winds and extreme temperature fluctuations (below 15 C or above 35 C).",
+          "translated_advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on promoting strong pseudostem and root development. Ensure it gets high levels of potassium and nitrogen. Also, make sure the plant has a minimum soil depth of 60cm, well-draining but moisture-retentive soil, and 3-5 organic matter in the soil. Protect it from strong winds and extreme temperature fluctuations (below 15 C or above 35 C).",
+          "filename": "banana_tree_image.jpg"
+        }
+      ],
+      "questions": [
+        {
+          "question": "when should i give water i gave 2 hrs ago now",
+          "answer": "To figure out when to water your banana plants, consider these factors: Check the soil moisture. If the soil feels dry an inch or two below the surface, it s likely time to water. Keep track of rainfall. If you ve had 100-150mm of rainfall this month, you may not need to water. Remember that banana plants need 25-50mm of water per week, depending on their growth stage.",
+          "translated_answer": "To figure out when to water your banana plants, consider these factors: Check the soil moisture. If the soil feels dry an inch or two below the surface, it s likely time to water. Keep track of rainfall. If you ve had 100-150mm of rainfall this month, you may not need to water. Remember that banana plants need 25-50mm of water per week, depending on their growth stage.",
+          "timestamp": "2025-07-24T13:19:51.781446"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-07-24T13:22:03.458997",
+    "data": {
+      "analysis_id": "a5a98694-be5e-421c-83d3-e749218f78de",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/a5a98694-be5e-421c-83d3-e749218f78de_banana_tree_image.jpg",
+          "banana_detected": false,
+          "flower_detected": false,
+          "stage": "Vegetative Stage",
+          "num_leaves": 15,
+          "leaf_colors": [
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green"
+          ],
+          "advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on promoting strong pseudostem and root development. Ensure it gets high levels of potassium and nitrogen. Also, make sure the plant has a minimum soil depth of 60cm, well-draining but moisture-retentive soil, and 3-5 organic matter in the soil. Protect it from strong winds and extreme temperature fluctuations (below 15 C or above 35 C).",
+          "translated_advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on promoting strong pseudostem and root development. Ensure it gets high levels of potassium and nitrogen. Also, make sure the plant has a minimum soil depth of 60cm, well-draining but moisture-retentive soil, and 3-5 organic matter in the soil. Protect it from strong winds and extreme temperature fluctuations (below 15 C or above 35 C).",
+          "filename": "banana_tree_image.jpg"
+        }
+      ],
+      "questions": [
+        {
+          "question": "when should i give water i gave 2 hrs ago now",
+          "answer": "To figure out when to water your banana plants, consider these factors: Check the soil moisture. If the soil feels dry an inch or two below the surface, it s likely time to water. Keep track of rainfall. If you ve had 100-150mm of rainfall this month, you may not need to water. Remember that banana plants need 25-50mm of water per week, depending on their growth stage.",
+          "translated_answer": "To figure out when to water your banana plants, consider these factors: Check the soil moisture. If the soil feels dry an inch or two below the surface, it s likely time to water. Keep track of rainfall. If you ve had 100-150mm of rainfall this month, you may not need to water. Remember that banana plants need 25-50mm of water per week, depending on their growth stage.",
+          "timestamp": "2025-07-24T13:19:51.781446"
+        },
+        {
+          "question": "ok now its time to rain and it will rain around 10 mm should i give water now or after the rain i should consider\n",
+          "answer": "Since you re expecting 10mm of rain, wait and check the soil moisture after the rain. If the soil is still dry to the touch, then water your banana plants. If the soil is already moist, you can skip watering that week. Remember that variety-specific variations require 25-40mm of water per week.",
+          "translated_answer": "Since you re expecting 10mm of rain, wait and check the soil moisture after the rain. If the soil is still dry to the touch, then water your banana plants. If the soil is already moist, you can skip watering that week. Remember that variety-specific variations require 25-40mm of water per week.",
+          "timestamp": "2025-07-24T13:22:03.458647"
+        }
+      ]
+    }
+  }
+]

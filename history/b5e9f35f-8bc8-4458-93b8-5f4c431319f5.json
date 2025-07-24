@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2025-07-24T13:26:10.765299",
+    "data": {
+      "analysis_id": "e38276a5-c63d-425c-81f2-be33d916cd4b",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/e38276a5-c63d-425c-81f2-be33d916cd4b_banana_plant_image_wt.jpeg",
+          "banana_detected": false,
+          "flower_detected": true,
+          "stage": "Flowering Stage",
+          "num_leaves": 10,
+          "leaf_colors": [
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green"
+          ],
+          "advice": "Since your banana plant is in the flowering stage with healthy green leaves, focus on supporting fruit set. Make sure the plant gets 10-12 hours of direct sunlight daily and receives 35-40mm of water per week. The ideal temperature is between 26-28 C with 80-85 humidity. Also, ensure the plant has enough potassium and phosphorus, as these nutrients are critical during this stage.",
+          "translated_advice": "Aangesien u piesangplant in die blomstadium met gesonde groen blare is, fokus dit op die ondersteuning van vrugte.Maak seker dat die aanleg daagliks 10-12 uur direkte sonlig kry en 35-40 mm water per week ontvang.Die ideale temperatuur is tussen 26-28 C met 80-85 humiditeit.Sorg ook dat die plant genoeg kalium en fosfor het, aangesien hierdie voedingstowwe van kritieke belang is gedurende hierdie stadium.",
+          "filename": "banana_plant_image_wt.jpeg"
+        }
+      ],
+      "questions": []
+    }
+  }
+]
