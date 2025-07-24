@@ -96,3 +96,6 @@ def load_llm(_db):
         logger.error(f"Error initializing LLM or RAG chain: {e}")
         st.error(f"AI service initialization failed: {e}")
         return None
+
+if __name__ == "__main__":
+    pass

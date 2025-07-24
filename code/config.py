@@ -67,3 +67,6 @@ ELEVEN_LABS_API_KEY = os.getenv('ELEVEN_LABS_API_KEY')
 if not ELEVEN_LABS_API_KEY:
     logger.warning("ELEVEN_LABS_API_KEY not found in environment variables")
     
+
+if __name__ == "__main__":
+    pass

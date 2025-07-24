@@ -257,3 +257,6 @@ def load_history(session_id):
     except Exception as e:
         logger.error(f"Error in load_history: {e}")
         return []
+    
+if __name__ == "__main__":
+    pass

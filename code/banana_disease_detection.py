@@ -33,3 +33,7 @@ def predict_banana_disease(img_path: str, model_path: str = "models/banana_disea
     pred_index = int(np.argmax(outputs[0]))
     predicted_label = class_labels[pred_index]
     return predicted_label
+
+
+if __name__ == "__main__":
+    pass

@@ -104,3 +104,6 @@ def detect_banana(image_bytes, yolo_model):
     except Exception as e:
         logger.error(f"Unexpected error in detect_banana: {e}")
         return False
+    
+if __name__ == "__main__":
+    pass

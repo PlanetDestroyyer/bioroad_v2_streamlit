@@ -43,3 +43,9 @@ def analyze_leaf_colors(image_path, model_path=LEAF_COUNTER_MODEL, conf_threshol
 
     return num_leaves, leaf_colors
 
+if __name__ == "__main__":
+    pass
+
+        # Uncomment the line below to test with a specific image
+
+    # print(analyze_leaf_colors("static/uploads/72cd0a47-2812-4cd7-bd2a-3fbd8d3ee571_crop_banana_image_3.jpg"))
