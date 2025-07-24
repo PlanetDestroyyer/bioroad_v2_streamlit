@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2025-07-24T17:46:48.934334",
+    "data": {
+      "analysis_id": "7c31b61e-c25c-4dc8-a5d1-5766ef08c84c",
+      "name": "",
+      "age": "",
+      "result": {
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/7c31b61e-c25c-4dc8-a5d1-5766ef08c84c_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/7c31b61e-c25c-4dc8-a5d1-5766ef08c84c_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on your analysis, the banana plant is in the vegetative stage and has a Banana cordana leaf disease. Here s some care advice: Address the Leaf Disease: Identify and remove the affected leaves to prevent the spread of the disease. Apply a fungicide suitable for treating Banana cordana, following the product instructions carefully. General Care for Vegetative Stage: Ensure the plant has high potassium and nitrogen. Make sure the plant is getting enough water. Protect the plant from strong winds. Maintain temperatures between 15 C and 35 C.",
+        "translated_advice": "Based on your analysis, the banana plant is in the vegetative stage and has a Banana cordana leaf disease. Here s some care advice: Address the Leaf Disease: Identify and remove the affected leaves to prevent the spread of the disease. Apply a fungicide suitable for treating Banana cordana, following the product instructions carefully. General Care for Vegetative Stage: Ensure the plant has high potassium and nitrogen. Make sure the plant is getting enough water. Protect the plant from strong winds. Maintain temperatures between 15 C and 35 C."
+      },
+      "questions": []
+    }
+  }
+]

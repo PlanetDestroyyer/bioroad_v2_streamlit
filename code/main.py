@@ -16,8 +16,83 @@ from leaf_counter import analyze_leaf_colors
 from banana_disease_detection import predict_banana_disease
 import cv2
 from ultralytics import YOLO
+import base64
+st.set_page_config(page_title="Home",layout="wide",initial_sidebar_state="auto",menu_items=None)  
 
-# Clear Streamlit cache for YOLO model to ensure fresh inference
+def hideAll():
+    hide = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """   
+    st.markdown(hide, unsafe_allow_html=True)
+hideAll()
+
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as file:
+        encoded_string = base64.b64encode(file.read()).decode("utf-8")
+    return f"data:image/{image_file.split('.')[-1]};base64,{encoded_string}"
+
+def run_app():
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background: url({add_bg_from_local("static/styles/bg/background_image_4.jpg")});
+            background-size: cover;
+            color: yellowgreen;; /* Cream color for text */
+        }}
+        p {{
+            color: golden; /* Cream for body text */}}
+        h1 {{
+            color: #2E7D32; /* Dark green for agriculture theme */
+        }}
+        h2, h3 {{
+            color: #4A2F1A; /* Earthy brown for subheaders */
+        }}
+        .stTextInput input {{
+            background-color: #E8F5E9; /* Light green for input fields */
+            color: #4A2F1A; /* Earthy brown for input text */
+        }}
+        .stMarkdown, .stText, .stCaption, .stTextInput > label, .stFileUploader > label, .stButton > button {{
+            color: #FFF8E1; /* Cream for body text and labels for readability */
+        }}
+        .stSidebar .stMarkdown, .stSidebar .stText, .stSidebar .stSelectbox > label, .stSidebar .stCheckbox > label {{
+            color: #FFF8E1; /* Cream for sidebar text */
+        }}
+        .stButton > button {{
+            background-color: #689F38; /* Medium green for buttons */
+            color: #FFF8E1; /* Cream text on buttons */
+        }}
+        .stButton > button:hover {{
+            background-color: #8BC34A; /* Lighter green on hover */
+        }}
+        .stSpinner > div > div {{
+            color: #FFF8E1; /* Cream for spinner text */
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+run_app()
+
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background-color: white; /* Light gray background for the app */
+    }
+   .sidebar .sidebar-content {
+        background: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 @st.cache_resource
 def load_yolo_model():
     return YOLO(LEAF_COUNTER_MODEL)
@@ -37,7 +112,7 @@ qa_chain = load_llm(db)
 
 try:
     st.title("🍌 Banana Plant Care Advisor")
-    st.markdown("Upload one crop image and one leaf image of your banana plant to get expert multilingual care advice including disease detection.")
+    st.markdown('<h3 class="custom-subheader">Upload one crop image and one leaf image of your banana plant to get expert multilingual care advice including disease detection.</h3>', unsafe_allow_html=True)
 
     session_id = get_session_id()
     
