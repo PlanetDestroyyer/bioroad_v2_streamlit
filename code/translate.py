@@ -1,8 +1,9 @@
 from googletrans import Translator
 import logging
+import sys
 
 logging.basicConfig(
-    level=logging.DEBUG,  # Changed to DEBUG for detailed tracing
+    level=logging.DEBUG,  
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler('app.log'),

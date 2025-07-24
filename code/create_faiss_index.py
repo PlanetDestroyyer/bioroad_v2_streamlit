@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Load environment variables (optional for index creation, but good practice)
+
 load_dotenv()
 
 def create_faiss_index(pdf_path, index_name="banana_faiss_index"):
@@ -34,26 +34,24 @@ def create_faiss_index(pdf_path, index_name="banana_faiss_index"):
     print(f"Loading PDF from {pdf_path}...")
 
     try:
-        # 1. Load the PDF document
+        
         loader = PyPDFLoader(pdf_path)
         documents = loader.load()
         logger.info(f"Loaded {len(documents)} pages from the PDF.")
         print(f"Loaded {len(documents)} pages from the PDF.")
 
-        # 2. Split documents into chunks
-        # Adjusted chunk_size and chunk_overlap for potentially better context
+        
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150)
         chunks = text_splitter.split_documents(documents)
         logger.info(f"Split PDF into {len(chunks)} text chunks.")
         print(f"Split PDF into {len(chunks)} text chunks.")
 
-        # 3. Create embeddings
         print("Initializing embeddings model...")
         embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         logger.info("HuggingFaceEmbeddings model initialized.")
         print("Creating FAISS index from document chunks. This may take a while...")
 
-        # 4. Create and save the FAISS index
+      
         db = FAISS.from_documents(chunks, embeddings)
         db.save_local(index_name)
         logger.info(f"FAISS index saved successfully to '{index_name}'.")
@@ -66,8 +64,7 @@ def create_faiss_index(pdf_path, index_name="banana_faiss_index"):
         print("pip install pypdf langchain langchain-community sentence-transformers faiss-cpu python-dotenv")
 
 if __name__ == "__main__":
-    # Define the path to your PDF document
-    pdf_document_path = "Complete Banana Plant Life Cycle Guide.pdf" # Ensure this path is correct
+    
+    pdf_document_path = "docs/Complete Banana Plant Life Cycle Guide.pdf"
 
-    # Run the index creation
     create_faiss_index(pdf_document_path)

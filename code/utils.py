@@ -9,9 +9,8 @@ from googletrans import Translator
 from pydub import AudioSegment
 import traceback
 import io
-from config import logger, HISTORY_FOLDER, AUDIO_FOLDER, SUPPORTED_GOOGLE_LANGUAGES # Import from config
+from config import logger, HISTORY_FOLDER, AUDIO_FOLDER, SUPPORTED_GOOGLE_LANGUAGES , LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
 
-# Initialize Google Translator with error handling
 try:
     translator = Translator()
     logger.info("Google Translator initialized successfully")
@@ -28,7 +27,7 @@ def comprehensive_text_cleaner(text):
         
         logger.debug(f"Input text for cleaning: {text}")
         
-        # Remove markdown-specific formatting
+        
         text = re.sub(r'\*{1,3}(.*?)\*{1,3}', r'\1', text)  # Remove *text*, **text**, ***text***
         text = re.sub(r'`{1,3}(.*?)`{1,3}', r'\1', text)  # Remove code blocks
         text = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', text)  # Remove markdown links
@@ -38,7 +37,7 @@ def comprehensive_text_cleaner(text):
         text = re.sub(r'\|.*?\|', '', text)  # Remove tables
         text = re.sub(r'^[\s-]*$', '', text, flags=re.MULTILINE)  # Remove lines with only dashes/spaces
         
-        # Preserve Devanagari characters (Hindi, Marathi) and essential punctuation
+        
         text = re.sub(r'[^\w\s\.,!?;:()\-\n\u0900-\u097F]', ' ', text)  # Include Devanagari range
         
         # Normalize whitespace
@@ -62,10 +61,10 @@ def clean_text_for_tts(text):
         
         logger.debug(f"Input text for TTS cleaning: {text}")
         
-        # Apply comprehensive cleaning
+        
         text = comprehensive_text_cleaner(text)
         
-        # Preserve sentence boundaries for TTS
+        
         text = re.sub(r'\n+', '. ', text)  # Replace newlines with period + space
         text = re.sub(r'\s+', ' ', text)  # Normalize spaces
         text = text.strip()

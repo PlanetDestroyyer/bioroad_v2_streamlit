@@ -6,7 +6,8 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import RetrievalQA
 import os
-from config import logger # Import logger from config
+from config import logger 
+from config import LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
 
 @st.cache_resource
 def load_models():
@@ -14,15 +15,14 @@ def load_models():
     model, embeddings, db_faiss = None, None, None 
     
     try:
-        # Load YOLO model
+        
         try:
-            model = YOLO('yolov8n.pt')
+            model = YOLO('models/yolov8n.pt')
             logger.info("YOLO model loaded successfully")
         except Exception as e:
             logger.error(f"Error loading YOLO model: {e}")
             st.warning("⚠️ Object detection model failed to load. Plant detection may be limited.")
         
-        # Load embeddings
         try:
             embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
             logger.info("Embeddings model loaded successfully")
@@ -30,7 +30,6 @@ def load_models():
             logger.error(f"Error loading embeddings: {e}")
             st.warning("⚠️ Embeddings model failed to load.")
         
-        # Load FAISS database
         try:
             if embeddings:
                 db_faiss = FAISS.load_local( 
@@ -65,26 +64,24 @@ def load_llm(_db):
         )
         logger.info("LLM loaded successfully")
 
-        # Define prompt template for RAG
-        # KEY CHANGE: Changed {query} to {question} in the human template
         rag_prompt = ChatPromptTemplate.from_messages([
             ("system", """You are a helpful and friendly banana farming expert.
             Use the following context to answer the user's question about banana plants.
             If you don't know the answer, just say that you don't know, don't try to make up an answer.
             Provide clear, actionable advice in plain text without any asterisks (*), bold formatting, or special characters.
             Context: {context}"""),
-            ("human", "{question}") # <-- Changed from {query} to {question}
+            ("human", "{question}") 
         ])
         logger.info("RAG Prompt template created successfully")
 
-        # Create RetrievalQA chain
+        
         if _db: 
             qa_chain = RetrievalQA.from_chain_type(
                 llm=llm,
                 chain_type="stuff",
                 retriever=_db.as_retriever(), 
                 return_source_documents=False, 
-                chain_type_kwargs={"prompt": rag_prompt} # The chain will map 'query' input to 'question' for this prompt
+                chain_type_kwargs={"prompt": rag_prompt} 
             )
             logger.info("RetrievalQA chain initialized successfully")
             return qa_chain

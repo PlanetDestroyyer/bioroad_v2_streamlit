@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from PIL import Image
 import io
-from config import logger # Import logger from config
+from config import logger 
 
 def estimate_stage(banana_present, flower_present):
     """Estimate plant growth stage with error handling"""
@@ -26,7 +26,7 @@ def detect_flower(image_bytes):
             logger.error("No image bytes provided for flower detection")
             return False
             
-        # Open and process image
+       
         try:
             img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
             img_cv = np.array(img)
@@ -35,11 +35,11 @@ def detect_flower(image_bytes):
             logger.error(f"Error processing image for flower detection: {e}")
             return False
         
-        # HSV color detection
+        
         try:
             hsv = cv2.cvtColor(img_cv, cv2.COLOR_BGR2HSV)
             
-            # Define color ranges for flower detection
+            
             mask1 = cv2.inRange(hsv, np.array([0, 100, 70]), np.array([10, 255, 255]))
             mask2 = cv2.inRange(hsv, np.array([160, 100, 70]), np.array([180, 255, 255]))
             mask3 = cv2.inRange(hsv, np.array([120, 50, 50]), np.array([150, 255, 255]))
@@ -47,7 +47,7 @@ def detect_flower(image_bytes):
             combined_mask = mask1 + mask2 + mask3
             contours, _ = cv2.findContours(combined_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
             
-            # Check for significant contours
+            
             flower_detected = any(cv2.contourArea(c) > 1000 for c in contours)
             logger.info(f"Flower detection result: {flower_detected}")
             return flower_detected
@@ -71,14 +71,14 @@ def detect_banana(image_bytes, yolo_model):
             logger.warning("YOLO model not available for banana detection")
             return False
         
-        # Process image
+       
         try:
             img = Image.open(io.BytesIO(image_bytes))
         except Exception as e:
             logger.error(f"Error opening image for banana detection: {e}")
             return False
         
-        # Run YOLO detection
+        
         try:
             results = yolo_model(img, verbose=False)
             

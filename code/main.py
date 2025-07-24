@@ -3,33 +3,33 @@ import os
 import sys
 import traceback
 import uuid
-
-# Import modules
 from config import logger, create_directories, LANGUAGES, UPLOAD_FOLDER, AUDIO_FOLDER
-from models import load_models, load_llm # Updated import
+from models import load_models, load_llm 
 from utils import (
     get_session_id, save_to_history, load_history, 
     translate_text, text_to_audio, comprehensive_text_cleaner
 )
 from detection import detect_banana, detect_flower, estimate_stage
+from config import LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
+import datetime
 
-# Streamlit configuration
+
 try:
     st.set_page_config(page_title="Banana Plant Care Advisor", layout="wide")
     st.sidebar.selectbox("🔊 Select Language", options=list(LANGUAGES.keys()), key="selected_language")
 except Exception as e:
     logger.error(f"Error setting up Streamlit config: {e}")
 
-# Create directories
+
 if not create_directories():
     st.error("Application setup failed: Could not create necessary directories.")
     st.stop()
 
-# Load models and LLM
-model, embeddings, db = load_models()
-qa_chain = load_llm(db) # Pass db to load_llm
 
-# Main Streamlit App
+model, embeddings, db = load_models()
+qa_chain = load_llm(db) 
+
+
 try:
     st.title("🍌 Banana Plant Care Advisor")
     st.markdown("Upload banana plant images and get expert multilingual care advice.")
@@ -42,7 +42,7 @@ try:
         logger.error(f"Error getting language code: {e}")
         lang_code = "en"
 
-    # Create tabs with error handling
+    
     try:
         tab1, tab2 = st.tabs(["📸 Plant Analysis", "❓ Follow-up Questions"])
     except Exception as e:
@@ -108,9 +108,9 @@ try:
                                     Given this stage, what care advice should be provided?
                                     """
 
-                                    # Get AI response using the RAG chain
+                                    
                                     try:
-                                        # Use 'query' as the input key for RetrievalQA chain
+                                       
                                         response = qa_chain.invoke({"query": query})
                                         advice = response.get('result', "No advice available.") if isinstance(response, dict) else str(response)
                                         advice = comprehensive_text_cleaner(advice)
@@ -174,7 +174,7 @@ try:
                         # Display image safely
                         try:
                             if os.path.exists(result['image_path']):
-                                st.image(result['image_path'], caption=f"Image {i+1}", use_column_width=True)
+                                st.image(result['image_path'], caption=f"Image {i+1}", use_container_width=True)
                             else:
                                 st.warning(f"Image {i+1} file not found")
                         except Exception as e:
@@ -225,10 +225,10 @@ try:
                         else:
                             with st.spinner("Processing your question..."):
                                 try:
-                                    # Translate question to English if needed
+                                    
                                     question_en = question if lang_code == 'en' else translate_text(question, 'en')
                                     
-                                    # Get AI response using the RAG chain
+                                    
                                     response = qa_chain.invoke({"query": question_en})
                                     answer = response.get('result', "No answer available.") if isinstance(response, dict) else str(response)
                                     answer = comprehensive_text_cleaner(answer)
@@ -241,7 +241,7 @@ try:
                                         "timestamp": datetime.now().isoformat()
                                     }
 
-                                    # Update history
+                                    
                                     current_analysis = st.session_state.current_analysis
                                     current_analysis['questions'].append(question_data)
                                     
@@ -259,7 +259,7 @@ try:
                         logger.error(f"Error in question submission: {e}")
                         st.error("Error submitting question")
 
-                # Display question history
+                
                 try:
                     if st.session_state.current_analysis.get('questions'):
                         st.subheader("Question History")
@@ -269,7 +269,7 @@ try:
                                 answer_text = q.get('translated_answer', 'Answer not available')
                                 st.write(f"**A{i+1}:** {answer_text}")
                                 
-                                # Audio for answers
+                               
                                 question_audio_filepath = os.path.join(AUDIO_FOLDER, f"question_{current_analysis['analysis_id']}_{i}.mp3")
                                 if st.button(f"Play Answer {i+1}", key=f"play_question_{i}"):
                                     with st.spinner("Generating audio..."):
@@ -300,7 +300,7 @@ except Exception as e:
     logger.error(traceback.format_exc())
     st.error("Application encountered a critical error. Please refresh the page.")
 
-# Footer with error handling
+
 try:
     st.markdown("---")
     st.markdown("### 🌱 Tips for Better Results")
@@ -313,7 +313,7 @@ try:
 except Exception as e:
     logger.error(f"Error displaying footer: {e}")
 
-# Health check
+
 try:
     if st.sidebar.button("🔧 System Status"):
         st.sidebar.write("**System Status:**")
@@ -321,8 +321,6 @@ try:
         st.sidebar.write(f"✅ Embeddings: {'Loaded' if embeddings else '❌ Failed'}")
         st.sidebar.write(f"✅ Database: {'Loaded' if db else '❌ Failed'}")
         st.sidebar.write(f"✅ LLM: {'Connected' if qa_chain else '❌ Failed'}")
-        # Assuming translator is available in utils.py and can be accessed if needed.
-        # For simplicity in main app, we just check if it was initialized without error.
         st.sidebar.write(f"✅ API Key: {'Configured' if os.getenv('GOOGLE_API_KEY') else '❌ Missing'}")
 except Exception as e:
     logger.error(f"Error in system status: {e}")
