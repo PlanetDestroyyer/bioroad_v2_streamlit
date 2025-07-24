@@ -3,7 +3,7 @@ import logging
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-from googletrans import LANGUAGES as GOOGLE_LANGUAGES
+# from googletrans import LANGUAGES as GOOGLE_LANGUAGES
 
 
 logging.basicConfig(
@@ -61,13 +61,6 @@ def create_directories():
         return False
 
 
-LANGUAGES = {v: k for k, v in GOOGLE_LANGUAGES.items()} 
-
-LANGUAGES['English'] = 'en'
-LANGUAGES['Hindi'] = 'hi'
-LANGUAGES['Marathi'] = 'mr'
-
-SUPPORTED_GOOGLE_LANGUAGES = list(GOOGLE_LANGUAGES.keys())
 
 
 ELEVEN_LABS_API_KEY = os.getenv('ELEVEN_LABS_API_KEY')

@@ -5,18 +5,12 @@ import uuid
 from datetime import datetime
 import re
 from gtts import gTTS
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 from pydub import AudioSegment
 import traceback
 import io
-from config import logger, HISTORY_FOLDER, AUDIO_FOLDER, SUPPORTED_GOOGLE_LANGUAGES , LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
+from config import logger, HISTORY_FOLDER, AUDIO_FOLDER , LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
 
-try:
-    translator = Translator()
-    logger.info("Google Translator initialized successfully")
-except Exception as e:
-    logger.error(f"Error initializing translator: {e}")
-    translator = None
 
 def comprehensive_text_cleaner(text):
     """Comprehensive text cleaning function to remove formatting while preserving language structure"""
@@ -88,125 +82,107 @@ def clean_text_for_display(text):
         return str(text) if text else ""
 
 def text_to_audio(text, audio_filepath, lang_code='en'):
-    """Generate audio from text with comprehensive error handling"""
+    """Generate audio from text with error handling using gTTS"""
     try:
         if not text or not isinstance(text, str):
             logger.error("Invalid text provided for TTS")
             return False
-            
+
         cleaned_text = clean_text_for_tts(text)
-        
         if not cleaned_text.strip():
             logger.error("No valid text after cleaning for TTS")
             return False
-        
-        # Verify language code
+
+        # Define supported languages manually (gTTS supported ones)
+        SUPPORTED_GOOGLE_LANGUAGES = {
+            'en', 'hi', 'mr', 'ta', 'te', 'kn', 'gu', 'bn', 'ml', 'pa', 'ur'
+        }
+
         if lang_code not in SUPPORTED_GOOGLE_LANGUAGES:
-            logger.warning(f"Language {lang_code} not supported by gTTS, falling back to English")
+            logger.warning(f"Language '{lang_code}' not supported by gTTS. Falling back to English.")
             lang_code = 'en'
-        
-        logger.debug(f"Generating TTS for text: {cleaned_text} in language: {lang_code}")
-        
-        # Generate TTS
+
+        logger.debug(f"Generating TTS for language '{lang_code}' with text: {cleaned_text}")
+
+        # Save temporary audio file
+        temp_filepath = audio_filepath.replace(".mp3", "_temp.mp3")
+
         try:
             tts = gTTS(text=cleaned_text, lang=lang_code, slow=False)
-        except Exception as e:
-            logger.error(f"gTTS initialization error: {e}")
-            # Fallback to English
-            try:
-                tts = gTTS(text=cleaned_text, lang='en', slow=False)
-                logger.info("Fallback to English TTS")
-            except Exception as e2:
-                logger.error(f"Fallback TTS failed: {e2}")
-                return False
-        
-        # Create temporary file
-        temp_filepath = audio_filepath.replace(".mp3", "_temp.mp3")
-        
-        try:
             tts.save(temp_filepath)
         except Exception as e:
-            logger.error(f"Error saving TTS file: {e}")
-            return False
-        
-        # Process audio with pydub
-        try:
-            if os.path.exists(temp_filepath):
-                audio = AudioSegment.from_file(temp_filepath)
-                audio_with_altered_speed = audio.speedup(playback_speed=1.1)  # Adjusted for natural human-like pace
-                audio_with_altered_speed.export(audio_filepath, format="mp3")
-                
-                # Clean up temporary file
-                if os.path.exists(temp_filepath):
-                    os.remove(temp_filepath)
-                    
-                logger.info(f"Audio generated successfully: {audio_filepath}")
-                return True
+            logger.error(f"gTTS failed with lang={lang_code}: {e}")
+            if lang_code != 'en':
+                # Retry in English
+                try:
+                    logger.info("Retrying TTS in English.")
+                    tts = gTTS(text=cleaned_text, lang='en', slow=False)
+                    tts.save(temp_filepath)
+                    lang_code = 'en'
+                except Exception as e2:
+                    logger.error(f"Fallback TTS in English failed: {e2}")
+                    return False
             else:
-                logger.error("Temporary audio file not created")
                 return False
-                
-        except Exception as e:
-            logger.error(f"Error processing audio: {e}")
-            # Clean up temp file if it exists
-            try:
-                if os.path.exists(temp_filepath):
-                    os.remove(temp_filepath)
-            except:
-                pass
+
+        # Load with pydub and speed adjust
+        if os.path.exists(temp_filepath):
+            audio = AudioSegment.from_file(temp_filepath)
+            audio_with_altered_speed = audio.speedup(playback_speed=1.1)
+            audio_with_altered_speed.export(audio_filepath, format="mp3")
+            os.remove(temp_filepath)
+            logger.info(f"Audio generated and saved: {audio_filepath}")
+            return True
+        else:
+            logger.error("TTS temporary audio file not found after saving.")
             return False
-            
+
     except Exception as e:
         logger.error(f"Unexpected error in text_to_audio: {e}")
         logger.error(traceback.format_exc())
         return False
 
+
+
 def translate_text(text, target_lang):
-    """Translate text with comprehensive error handling"""
-    global translator
+    """Translate text using deep-translator with comprehensive error handling"""
     try:
         if not text or not isinstance(text, str):
             logger.debug("Empty or invalid text input for translation")
             return ""
-            
-        if target_lang == 'en' or not translator:
-            logger.debug("No translation needed or translator unavailable")
+
+        if target_lang == 'en':
+            logger.debug("No translation needed for English")
             return text
-            
-        # Clean text before translation
+
         clean_input = comprehensive_text_cleaner(text)
         logger.debug(f"Input text for translation: {clean_input}")
-        
-        # Split long text into chunks to avoid translation limits
-        max_chunk_size = 2000  # Reduced for better accuracy
+
+        max_chunk_size = 2000  # Keep chunks smaller for reliability
         if len(clean_input) > max_chunk_size:
-            chunks = [clean_input[i:i+max_chunk_size] 
-                     for i in range(0, len(clean_input), max_chunk_size)]
+            chunks = [clean_input[i:i + max_chunk_size] for i in range(0, len(clean_input), max_chunk_size)]
             translated_chunks = []
-            
+
             for chunk in chunks:
                 try:
-                    translated = translator.translate(chunk.strip(), dest=target_lang)
-                    translated_chunks.append(translated.text.strip())
+                    translated_text = GoogleTranslator(source='auto', target=target_lang).translate(chunk.strip())
+                    translated_chunks.append(translated_text.strip())
                 except Exception as e:
                     logger.error(f"Error translating chunk: {e}")
-                    translated_chunks.append(chunk.strip())  # Use original if translation fails
-                    
-            # Join chunks with period and space for sentence boundaries
+                    translated_chunks.append(chunk.strip())  # fallback
+
             result = ". ".join(translated_chunks)
         else:
             try:
-                translated = translator.translate(clean_input, dest=target_lang)
-                result = translated.text.strip()
+                result = GoogleTranslator(source='auto', target=target_lang).translate(clean_input.strip())
             except Exception as e:
                 logger.error(f"Translation error: {e}")
-                result = clean_input  # Return original text if translation fails
-        
-        # Clean the translated result
+                result = clean_input
+
         cleaned_result = comprehensive_text_cleaner(result)
         logger.debug(f"Translated and cleaned text: {cleaned_result}")
         return cleaned_result
-        
+
     except Exception as e:
         logger.error(f"Unexpected error in translate_text: {e}")
         return comprehensive_text_cleaner(text) if text else ""

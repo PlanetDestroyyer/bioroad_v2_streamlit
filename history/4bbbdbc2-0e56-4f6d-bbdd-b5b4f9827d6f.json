@@ -1,0 +1,78 @@
+[
+  {
+    "timestamp": "2025-07-24T15:45:59.000865",
+    "data": {
+      "analysis_id": "9247c4f0-32e1-4e42-b53b-b0ea4328222d",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/9247c4f0-32e1-4e42-b53b-b0ea4328222d_banana_tree_image.jpg",
+          "banana_detected": false,
+          "flower_detected": false,
+          "stage": "Vegetative Stage",
+          "num_leaves": 15,
+          "leaf_colors": [
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green"
+          ],
+          "advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on these care tips: Rapid leaf production (1-2 leaves per week) Pseudostem thickening and strengthening Development of 15-20 leaves Root system expansion (up to 1.5m radius) Active sucker production Corm (underground stem) development Nutrients: High potassium and nitrogen requirements 1. Nutrients: Ensure the plant gets high potassium and nitrogen. 2. Soil Depth: Make sure the soil is at least 60cm (2 feet) deep for good root growth. 3. Soil Drainage: The soil should drain well but still hold moisture. 4. Organic Matter: Aim for 3-5 organic matter in the soil. 5. Wind Protection: Protect the plant from strong winds. 6. Temperature: Keep the temperature above 15 C and below 35 C.",
+          "translated_advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on these care tips: Rapid leaf production (1-2 leaves per week) Pseudostem thickening and strengthening Development of 15-20 leaves Root system expansion (up to 1.5m radius) Active sucker production Corm (underground stem) development Nutrients: High potassium and nitrogen requirements 1. Nutrients: Ensure the plant gets high potassium and nitrogen. 2. Soil Depth: Make sure the soil is at least 60cm (2 feet) deep for good root growth. 3. Soil Drainage: The soil should drain well but still hold moisture. 4. Organic Matter: Aim for 3-5 organic matter in the soil. 5. Wind Protection: Protect the plant from strong winds. 6. Temperature: Keep the temperature above 15 C and below 35 C.",
+          "filename": "banana_tree_image.jpg"
+        }
+      ],
+      "questions": []
+    }
+  },
+  {
+    "timestamp": "2025-07-24T15:46:43.136608",
+    "data": {
+      "analysis_id": "57fe2484-8a4f-4007-b2ea-c989ed72299c",
+      "name": "",
+      "age": "",
+      "results": [
+        {
+          "image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/57fe2484-8a4f-4007-b2ea-c989ed72299c_banana_tree_image.jpg",
+          "banana_detected": false,
+          "flower_detected": false,
+          "stage": "Vegetative Stage",
+          "num_leaves": 15,
+          "leaf_colors": [
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green",
+            "Healthy Green"
+          ],
+          "advice": "Since your banana plant is in the vegetative stage with 15 healthy green leaves, focus on promoting strong pseudostem and root development. Ensure it gets high levels of potassium and nitrogen. Also, make sure the plant has a minimum soil depth of 60cm, well-draining but moisture-retentive soil, and 3-5 organic matter in the soil. Protect it from strong winds and extreme temperature fluctuations (below 15 C or above 35 C).",
+          "translated_advice": "आपली केळीची वनस्पती 15 निरोगी हिरव्या पानांसह वनस्पतिवत् होणार् या अवस्थेत असल्याने मजबूत स्यूडोस्टेम आणि रूट डेव्हलपमेंटला प्रोत्साहन देण्यावर लक्ष केंद्रित करा. याची खात्री करुन घ्या की त्यास पोटॅशियम आणि नायट्रोजनचे उच्च प्रमाण मिळेल. तसेच, हे सुनिश्चित करा की वनस्पतीमध्ये कमीतकमी 60 सेमी मातीची खोली, सुसंस्कृत परंतु ओलावा-प्रतिरोधक माती आणि मातीमध्ये 3-5 सेंद्रिय पदार्थ आहे. जोरदार वारा आणि तापमानात चढ -उतार (15 से किंवा 35 सी पेक्षा कमी) पासून त्याचे रक्षण करा.",
+          "filename": "banana_tree_image.jpg"
+        }
+      ],
+      "questions": []
+    }
+  }
+]

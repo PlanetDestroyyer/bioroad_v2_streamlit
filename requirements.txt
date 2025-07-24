@@ -11,3 +11,6 @@ langchain-community
 langchain-google-genai
 python-dotenv
 faiss-cpu
+elevenlabs==0.3.0b0 
+onnxruntime
+sentence-transformers

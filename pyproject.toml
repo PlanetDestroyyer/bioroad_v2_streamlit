@@ -5,9 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11.11"
 dependencies = [
-    "elevenlabs",
+    "deep-translator>=1.11.4",
     "faiss-cpu>=1.11.0.post1",
-    "googletrans==4.0.0rc1",
     "gtts>=2.5.4",
     "langchain>=0.2.16",
     "langchain-community>=0.2.16",
@@ -22,6 +21,3 @@ dependencies = [
     "streamlit>=1.47.0",
     "ultralytics>=8.3.169",
 ]
-
-[tool.uv.sources]
-elevenlabs = { git = "https://github.com/elevenlabs/elevenlabs-python", rev = "v3" }

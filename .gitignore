@@ -14,3 +14,4 @@ app.log
 
 yolo11x_leaf.pt
 yolov8n.pt
+models/banana_disease_prediction.onnx
