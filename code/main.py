@@ -27,16 +27,16 @@ from datetime import datetime, timedelta
 
 st.set_page_config(page_title="Home",layout="wide",initial_sidebar_state="auto",menu_items=None)  
 
-def hideAll():
-    hide = """
-        <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
-        </style>
-        """   
-    st.markdown(hide, unsafe_allow_html=True)
-hideAll()
+# def hideAll():
+#     hide = """
+#         <style>
+#         #MainMenu {visibility: hidden;}
+#         footer {visibility: hidden;}
+#         header {visibility: hidden;}
+#         </style>
+#         """   
+#     st.markdown(hide, unsafe_allow_html=True)
+# hideAll()
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as file:
@@ -282,7 +282,7 @@ def run_app():
         f"""
         <style>
         .stApp {{
-            background: url({add_bg_from_local("static/styles/bg/background_image_4.jpg")});
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({add_bg_from_local("static/styles/bg/background_image.jpg")});
             background-size: cover;
             color: yellowgreen;; /* Cream color for text */
         }}
