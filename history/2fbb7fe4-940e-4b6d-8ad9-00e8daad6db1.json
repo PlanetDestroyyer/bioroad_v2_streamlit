@@ -1,0 +1,68 @@
+[
+  {
+    "timestamp": "2025-07-25T14:41:58.305705",
+    "data": {
+      "analysis_id": "ea42fa5f-5405-4b69-907a-45bf3da40922",
+      "name": "Banana Plant",
+      "age": "3",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/ea42fa5f-5405-4b69-907a-45bf3da40922_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/ea42fa5f-5405-4b69-907a-45bf3da40922_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information you provided, here s some care advice for your 3-year-old banana plant in the vegetative stage, which is showing signs of Banana Cordana: 1. Current Plant Health and Growth Stage: Your plant is in the vegetative stage, meaning it s focused on leaf and pseudostem development. The presence of Banana Cordana indicates a fungal infection that needs attention. 2. Weather Conditions and Their Impact: Since weather data for Pune is unavailable, I ll provide general advice. Banana plants thrive in warm, humid conditions. Protect the plant from strong winds, which can damage the large leaves. Avoid temperatures below 15 C or above 35 C. 3. Disease Prevention Treatment Recommendations: Banana Cordana is a fungal disease. Remove and destroy affected leaves to prevent further spread. Improve air circulation around the plant by pruning away crowded or dead foliage. Apply a fungicide specifically labeled for use on banana plants, following the product instructions carefully. Ensure proper plant nutrition to boost its natural defenses. 4. Watering Schedule: Without specific weather data, a general guideline is to water deeply when the top inch of soil feels dry. Ensure the soil is well-draining to prevent root rot. Reduce watering during cooler periods. 5. Frost Protection: If temperatures are expected to drop near or below freezing, provide frost protection. Wrap the pseudostem with insulating material like burlap or horticultural fleece. Consider moving the plant to a sheltered location if it s in a container. 6. Optimal Growing Conditions: Ensure the plant is in a location with at least 10-12 hours of direct sunlight. Maintain soil pH between 6.0-6.8. Fertilize regularly with a balanced fertilizer, paying attention to potassium and nitrogen levels, as these are critical during the vegetative stage. 7. Immediate Actions Needed: Treat the Banana Cordana immediately to prevent it from spreading and weakening the plant. Monitor the plant closely for any other signs of stress or disease. Once weather data is available, adjust watering and protection strategies accordingly.",
+        "translated_advice": "Based on the information you provided, here s some care advice for your 3-year-old banana plant in the vegetative stage, which is showing signs of Banana Cordana: 1. Current Plant Health and Growth Stage: Your plant is in the vegetative stage, meaning it s focused on leaf and pseudostem development. The presence of Banana Cordana indicates a fungal infection that needs attention. 2. Weather Conditions and Their Impact: Since weather data for Pune is unavailable, I ll provide general advice. Banana plants thrive in warm, humid conditions. Protect the plant from strong winds, which can damage the large leaves. Avoid temperatures below 15 C or above 35 C. 3. Disease Prevention Treatment Recommendations: Banana Cordana is a fungal disease. Remove and destroy affected leaves to prevent further spread. Improve air circulation around the plant by pruning away crowded or dead foliage. Apply a fungicide specifically labeled for use on banana plants, following the product instructions carefully. Ensure proper plant nutrition to boost its natural defenses. 4. Watering Schedule: Without specific weather data, a general guideline is to water deeply when the top inch of soil feels dry. Ensure the soil is well-draining to prevent root rot. Reduce watering during cooler periods. 5. Frost Protection: If temperatures are expected to drop near or below freezing, provide frost protection. Wrap the pseudostem with insulating material like burlap or horticultural fleece. Consider moving the plant to a sheltered location if it s in a container. 6. Optimal Growing Conditions: Ensure the plant is in a location with at least 10-12 hours of direct sunlight. Maintain soil pH between 6.0-6.8. Fertilize regularly with a balanced fertilizer, paying attention to potassium and nitrogen levels, as these are critical during the vegetative stage. 7. Immediate Actions Needed: Treat the Banana Cordana immediately to prevent it from spreading and weakening the plant. Monitor the plant closely for any other signs of stress or disease. Once weather data is available, adjust watering and protection strategies accordingly."
+      },
+      "questions": []
+    }
+  }
+]

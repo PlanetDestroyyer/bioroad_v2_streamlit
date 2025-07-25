@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2025-07-25T12:54:01.890745",
+    "data": {
+      "analysis_id": "f7a8795a-c148-430e-a783-389306185c9e",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "result": {
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/f7a8795a-c148-430e-a783-389306185c9e_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/f7a8795a-c148-430e-a783-389306185c9e_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on your analysis, your 3-month-old banana plant, Banana Plant , is in the seedling stage and has Banana cordana. Here s some care advice: Address the Leaf Disease: Banana cordana needs to be addressed quickly. Apply a fungicide to control the spread of the disease. Follow the instructions on the fungicide label carefully. Remove and dispose of any severely affected leaves to prevent further spread. General Care for Seedling Stage: Your plant should be in the seedling stage, so make sure it gets enough light. It needs indirect bright light for 12-14 hours daily. Keep the soil moist but not soggy. Lightly mist the plant 2-3 times daily. Ensure the plant has high potassium and nitrogen.",
+        "translated_advice": "Based on your analysis, your 3-month-old banana plant, Banana Plant , is in the seedling stage and has Banana cordana. Here s some care advice: Address the Leaf Disease: Banana cordana needs to be addressed quickly. Apply a fungicide to control the spread of the disease. Follow the instructions on the fungicide label carefully. Remove and dispose of any severely affected leaves to prevent further spread. General Care for Seedling Stage: Your plant should be in the seedling stage, so make sure it gets enough light. It needs indirect bright light for 12-14 hours daily. Keep the soil moist but not soggy. Lightly mist the plant 2-3 times daily. Ensure the plant has high potassium and nitrogen."
+      },
+      "questions": []
+    }
+  }
+]

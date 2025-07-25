@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2025-07-25T12:51:48.200611",
+    "data": {
+      "analysis_id": "081ee17a-0f45-4028-afa3-f91e7eea7ea8",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "location": "Pune,IN",
+      "result": {
+        "weather_data": [],
+        "weather_summary": "Weather data unavailable",
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/081ee17a-0f45-4028-afa3-f91e7eea7ea8_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/081ee17a-0f45-4028-afa3-f91e7eea7ea8_leaf_di_bana.jpg",
+        "num_leaves": 0,
+        "leaf_colors": [],
+        "leaf_disease": "Unknown",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information provided, your Banana Plant is in the Seedling Stage. Here s some care advice: Environmental Requirements: Temperature: Try to maintain temperatures between 26-30 C. Moisture: Ensure 80-90 humidity. Soil: Make sure the plant is in well-draining, fertile soil with a pH level of 6.0-6.8. Water: Water the plant with 20-30mm per week (80-120mm monthly). Sunlight: Provide 8-10 hours of direct sunlight. Nutrient needs: Your plant needs high potassium and nitrogen. Additional tips: Protect the plant from strong winds.",
+        "translated_advice": "Based on the information provided, your Banana Plant is in the Seedling Stage. Here s some care advice: Environmental Requirements: Temperature: Try to maintain temperatures between 26-30 C. Moisture: Ensure 80-90 humidity. Soil: Make sure the plant is in well-draining, fertile soil with a pH level of 6.0-6.8. Water: Water the plant with 20-30mm per week (80-120mm monthly). Sunlight: Provide 8-10 hours of direct sunlight. Nutrient needs: Your plant needs high potassium and nitrogen. Additional tips: Protect the plant from strong winds."
+      },
+      "questions": []
+    }
+  }
+]

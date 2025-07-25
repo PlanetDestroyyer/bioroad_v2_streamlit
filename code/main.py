@@ -3,6 +3,8 @@ import os
 import sys
 import traceback
 import uuid
+import requests
+from datetime import datetime, timedelta
 from config import logger, create_directories, LANGUAGES, UPLOAD_FOLDER, AUDIO_FOLDER
 from models import load_models, load_llm 
 from utils import (
@@ -11,12 +13,18 @@ from utils import (
 )
 from detection import detect_banana, detect_flower, estimate_stage
 from config import LEAF_COUNTER_MODEL, BANANA_DISEASE_MODEL, BANANA_MODEL, BANANA_STAGE_MODEL
-from datetime import datetime
 from leaf_counter import analyze_leaf_colors
 from banana_disease_detection import predict_banana_disease
 import cv2
 from ultralytics import YOLO
 import base64
+import requests
+from datetime import datetime, timedelta
+import streamlit as st
+import requests
+from datetime import datetime, timedelta
+
+
 st.set_page_config(page_title="Home",layout="wide",initial_sidebar_state="auto",menu_items=None)  
 
 def hideAll():
@@ -34,6 +42,240 @@ def add_bg_from_local(image_file):
     with open(image_file, "rb") as file:
         encoded_string = base64.b64encode(file.read()).decode("utf-8")
     return f"data:image/{image_file.split('.')[-1]};base64,{encoded_string}"
+
+# def get_weather_forecast(location):
+#     """Get weather forecast for agricultural planning"""
+#     # API setup
+#     url = "https://weather-api167.p.rapidapi.com/api/weather/forecast"
+#     querystring = {"place": location, "units": "metric"}
+#     headers = {
+#         "x-rapidapi-key": "132d97dc1emsh74614bee7028c43p1ce01bjsna30851e6698e",
+#         "x-rapidapi-host": "weather-api167.p.rapidapi.com",
+#         "Accept": "application/json"
+#     }
+    
+#     # Automatically set dates
+#     today = datetime.now().date()
+#     yesterday = today - timedelta(days=1)
+#     tomorrow = today + timedelta(days=1)
+    
+#     try:
+#         # Make API request
+#         response = requests.get(url, headers=headers, params=querystring, timeout=10)
+#         data = response.json()
+        
+#         # Function to calculate Growing Degree Days (GDD)
+#         def calculate_gdd(temp_min, temp_max, base_temp=10):
+#             avg_temp = (temp_min + temp_max) / 2
+#             gdd = max(0, avg_temp - base_temp)
+#             return round(gdd, 2)
+        
+#         # Function to estimate evapotranspiration
+#         def estimate_et(temp, humidity):
+#             et = max(0, (temp - 10) * (1 - humidity / 100) * 0.1)
+#             return round(et, 2)
+        
+#         # Process and return results
+#         results = []
+#         if response.status_code == 200 and 'list' in data:
+#             for entry in data['list']:
+#                 try:
+#                     forecast_date = datetime.strptime(entry['dt_txt'], '%Y-%m-%d %H:%M:%S').date()
+#                 except (ValueError, KeyError):
+#                     continue
+                    
+#                 if forecast_date in [yesterday, today, tomorrow]:
+#                     temp = entry['main']['temperature']
+#                     temp_min = entry['main']['temperature_min']
+#                     temp_max = entry['main']['temperature_max']
+#                     feels_like = entry['main']['temperature_feels_like']
+                    
+#                     gdd = calculate_gdd(temp_min, temp_max)
+#                     et = estimate_et(temp, entry['main']['humidity'])
+#                     frost_warning = "Yes" if temp_min <= 0 else "No"
+#                     severe_weather = "Yes" if entry['wind']['speed'] > 10 or entry.get('rain', {}).get('amount', 0) > 10 else "No"
+                    
+#                     weather_data = {
+#                         "date_time": entry['dt_txt'],
+#                         "temperature": round(temp, 2),
+#                         "feels_like": round(feels_like, 2),
+#                         "temp_min": round(temp_min, 2),
+#                         "temp_max": round(temp_max, 2),
+#                         "humidity": entry['main']['humidity'],
+#                         "precipitation": entry.get('rain', {}).get('amount', 0),
+#                         "wind_speed": entry['wind']['speed'],
+#                         "wind_direction": f"{entry['wind']['direction']} ({entry['wind']['degrees']}°)",
+#                         "cloud_cover": entry['clouds']['cloudiness'],
+#                         "frost_warning": frost_warning,
+#                         "gdd": gdd,
+#                         "evapotranspiration": et,
+#                         "severe_weather": severe_weather,
+#                         "description": entry['weather'][0]['description']
+#                     }
+#                     results.append(weather_data)
+#             return results
+#         else:
+#             logger.error(f"Weather API error: {data.get('message', 'Unknown error')}")
+#             return [{"error": f"Error fetching weather data: {data.get('message', 'Unknown error')}"}]
+#     except Exception as e:
+#         logger.error(f"Weather API request failed: {e}")
+#         return [{"error": f"Weather service unavailable: {str(e)}"}]
+
+# def format_weather_for_ai(weather_data, location):
+#     """Format weather data for AI consumption"""
+#     if not weather_data or weather_data[0].get('error'):
+#         return f"Weather data for {location} is currently unavailable."
+    
+#     weather_summary = f"Weather forecast for {location}:\n"
+#     for day_data in weather_data:
+#         weather_summary += f"""
+# Date: {day_data['date_time']}
+# Temperature: {day_data['temperature']}°C (Min: {day_data['temp_min']}°C, Max: {day_data['temp_max']}°C)
+# Humidity: {day_data['humidity']}%
+# Precipitation: {day_data['precipitation']}mm
+# Wind: {day_data['wind_speed']} m/s
+# Growing Degree Days: {day_data['gdd']}
+# Evapotranspiration: {day_data['evapotranspiration']}mm
+# Frost Warning: {day_data['frost_warning']}
+# Severe Weather: {day_data['severe_weather']}
+# Description: {day_data['description']}
+# ---
+# """
+#     return weather_summary
+
+
+def get_weather_forecast(location):
+    url = "https://weather-api167.p.rapidapi.com/api/weather/forecast"
+    querystring = {f"place": {location}, "units": "metric"}
+    headers = {
+        "x-rapidapi-key": "46d33ff5a0mshe40b3178c84a8b4p1f5cf6jsnb84963ce1cd1",
+        "x-rapidapi-host": "weather-api167.p.rapidapi.com",
+        "Accept": "application/json"
+    }
+
+    today = datetime.now().date()
+    yesterday = today - timedelta(days=1)
+    tomorrow = today + timedelta(days=1)
+
+    response = requests.get(url, headers=headers, params=querystring)
+    data = response.json()
+
+    def calculate_gdd(temp_min, temp_max, base_temp=10):
+        avg_temp = (temp_min + temp_max) / 2
+        gdd = max(0, avg_temp - base_temp)
+        return round(gdd, 2)
+
+    def estimate_et(temp, humidity):
+        et = max(0, (temp - 10) * (1 - humidity / 100) * 0.1)
+        return round(et, 2)
+
+    results = []
+    if response.status_code == 200 and 'list' in data:
+        for entry in data['list']:
+            try:
+                forecast_date = datetime.strptime(entry['dt_txt'], '%Y-%m-%d %H:%M:%S').date()
+            except (ValueError, KeyError):
+                return [{"error": "Invalid date format or missing dt_txt in response"}]
+
+            if forecast_date in [yesterday, today, tomorrow]:
+                main = entry['main']
+                wind = entry['wind']
+                clouds = entry['clouds']
+                rain = entry.get('rain', {})
+                weather_desc = entry['weather'][0]['description']
+
+                temp = main['temprature']
+                temp_min = main['temprature_min']
+                temp_max = main['temprature_max']
+                feels_like = main['temprature_feels_like']
+                humidity = main['humidity']
+                precipitation = rain.get('amount', 0)
+
+                gdd = calculate_gdd(temp_min, temp_max)
+                et = estimate_et(temp, humidity)
+                frost_warning = "Yes" if temp_min <= 0 else "No"
+                severe_weather = "Yes" if wind['speed'] > 10 or precipitation > 10 else "No"
+
+                weather_data = {
+                    "date_time": entry['dt_txt'],
+                    "temperature": round(temp, 2),
+                    "feels_like": round(feels_like, 2),
+                    "temp_min": round(temp_min, 2),
+                    "temp_max": round(temp_max, 2),
+                    "humidity": humidity,
+                    "precipitation": precipitation,
+                    "wind_speed": wind['speed'],
+                    "wind_direction": f"{wind['direction']} ({wind['degrees']}°)",
+                    "cloud_cover": clouds['cloudiness'],
+                    "frost_warning": frost_warning,
+                    "gdd": gdd,
+                    "evapotranspiration": et,
+                    "severe_weather": severe_weather,
+                    "description": weather_desc
+                }
+                results.append(weather_data)
+        return results
+    else:
+        return [{"error": f"Error fetching data: {data.get('message', 'Unknown error')}"}]
+
+# Run and print result
+def format_weather_for_ai(weather_data, location):
+    """Format weather data for AI consumption"""
+    if not weather_data or weather_data[0].get('error'):
+        return f"Weather data for {location} is currently unavailable."
+    
+    weather_summary = f"Weather forecast for {location}:\n"
+    for day_data in weather_data:
+        weather_summary += f"""
+Date: {day_data['date_time']}
+Temperature: {day_data['temperature']}°C (Min: {day_data['temp_min']}°C, Max: {day_data['temp_max']}°C)
+Humidity: {day_data['humidity']}%
+Precipitation: {day_data['precipitation']}mm
+Wind: {day_data['wind_speed']} m/s
+Growing Degree Days: {day_data['gdd']}
+Evapotranspiration: {day_data['evapotranspiration']}mm
+Frost Warning: {day_data['frost_warning']}
+Severe Weather: {day_data['severe_weather']}
+Description: {day_data['description']}
+---
+"""
+    return weather_summary
+
+
+
+def build_conversation_context(current_analysis):
+    """Build conversation context including previous questions and answers"""
+    context = ""
+    
+    # Add plant analysis context
+    if current_analysis:
+        result = current_analysis.get('result', {})
+        context += f"""
+Plant Analysis Context:
+- Plant Name: {current_analysis.get('name', 'Unknown')}
+- Plant Age: {current_analysis.get('age', 'Unknown')}
+- Banana Detected: {'Yes' if result.get('banana_detected', False) else 'No'}
+- Flower Detected: {'Yes' if result.get('flower_detected', False) else 'No'}
+- Estimated Stage: {result.get('stage', 'Unknown')}
+- Leaf Analysis: Detected {result.get('num_leaves', 0)} leaves with colors: {', '.join(result.get('leaf_colors', []))}
+- Leaf Disease: {result.get('leaf_disease', 'Unknown')}
+
+Previous Advice Given:
+{result.get('advice', 'No previous advice')}
+
+"""
+        
+        # Add previous questions and answers
+        questions = current_analysis.get('questions', [])
+        if questions:
+            context += "Previous Questions and Answers:\n"
+            for i, qa in enumerate(questions, 1):
+                context += f"Q{i}: {qa.get('question', 'No question')}\n"
+                context += f"A{i}: {qa.get('answer', 'No answer')}\n\n"
+    
+    return context
+
+
 
 def run_app():
     st.markdown(
@@ -112,7 +354,7 @@ qa_chain = load_llm(db)
 
 try:
     st.title("🍌 Banana Plant Care Advisor")
-    st.markdown('<h3 class="custom-subheader">Upload one crop image and one leaf image of your banana plant to get expert multilingual care advice including disease detection.</h3>', unsafe_allow_html=True)
+    st.markdown('<h3 class="custom-subheader">Upload crop and leaf images of your banana plant to get expert multilingual care advice with weather-based recommendations.</h3>', unsafe_allow_html=True)
 
     session_id = get_session_id()
     
@@ -123,7 +365,7 @@ try:
         lang_code = "en"
 
     # Debug mode toggle in sidebar
-    debug_mode = st.sidebar.checkbox("Enable Debug Mode", value=True)  # Default to True for troubleshooting
+    debug_mode = st.sidebar.checkbox("Enable Debug Mode", value=True)
 
     with st.expander("Upload Plant Photos & Get Advice", expanded=True):
         st.header("Plant Analysis")
@@ -131,6 +373,8 @@ try:
         try:
             name = st.text_input("Plant Name (Optional)", key="plant_name_input")
             age = st.text_input("Plant Age (e.g., '3 months')", key="plant_age_input")
+            location = st.text_input("Location (for weather data)", placeholder="e.g., Mumbai, India", key="location_input")
+            
             crop_file = st.file_uploader(
                 "Upload Crop Image (whole plant or fruit)", 
                 type=["png", "jpg", "jpeg", "webp"], 
@@ -154,13 +398,28 @@ try:
                 elif qa_chain is None:
                     st.error("AI service is not available. Please check configuration.")
                 else:
-                    with st.spinner("Analyzing your plant..."):
+                    with st.spinner("Analyzing your plant and fetching weather data..."):
                         # Clear previous session state
                         if 'current_analysis' in st.session_state:
                             del st.session_state.current_analysis
                         analysis_id = str(uuid.uuid4())
                         result = {}
 
+                        # Get weather data if location provided
+                        weather_context = ""
+                        if location:
+                            try:
+                                weather_data = get_weather_forecast(location)
+                                weather_context = format_weather_for_ai(weather_data, location.strip())
+
+                                result['weather_data'] = weather_data
+
+                                logger.info(f"Weather data fetched for {location}: {weather_data[:1]}")  # Log first entry for brevity
+                                if debug_mode:
+                                    st.write(f"Debug: Weather data fetched for {location}")
+                            except Exception as e:
+                                logger.error(f"Weather fetch error: {e}")
+                                weather_context = f"Weather data unavailable for {location}"
                         # Process crop image
                         try:
                             crop_bytes = crop_file.read()
@@ -168,19 +427,16 @@ try:
                             crop_unique_filename = f"{analysis_id}_crop_{crop_filename}"
                             crop_filepath = os.path.join(UPLOAD_FOLDER, crop_unique_filename)
                             
-                            # Save crop file
                             with open(crop_filepath, "wb") as f:
                                 f.write(crop_bytes)
                             logger.info(f"Crop file saved: {crop_filepath}")
 
-                            # Validate crop image
                             img_check = cv2.imread(crop_filepath)
                             if img_check is None or img_check.shape[0] < 100 or img_check.shape[1] < 100:
                                 logger.error(f"Invalid or low-resolution crop image: {crop_filepath}")
                                 st.error("Invalid or low-resolution crop image. Please upload a valid image.")
                                 raise ValueError("Invalid crop image")
 
-                            # Detect features
                             banana_present = detect_banana(crop_bytes, model)
                             flower_present = detect_flower(crop_bytes)
                             stage = estimate_stage(banana_present, flower_present)
@@ -206,44 +462,33 @@ try:
                             leaf_unique_filename = f"{analysis_id}_leaf_{leaf_filename}"
                             leaf_filepath = os.path.join(UPLOAD_FOLDER, leaf_unique_filename)
                             
-                            # Save leaf file
                             with open(leaf_filepath, "wb") as f:
                                 f.write(leaf_bytes)
                             logger.info(f"Leaf file saved: {leaf_filepath}")
 
-                            # Validate leaf image
                             img_check = cv2.imread(leaf_filepath)
                             if img_check is None or img_check.shape[0] < 100 or img_check.shape[1] < 100:
-                                logger.error(f"Invalid or low-resolution leaf image: {leaf_filepath}, shape: {img_check.shape if img_check is not None else 'None'}")
+                                logger.error(f"Invalid or low-resolution leaf image: {leaf_filepath}")
                                 st.error("Invalid or low-resolution leaf image. Please upload a valid image.")
                                 raise ValueError("Invalid leaf image")
 
-                            # Log image details
-                            logger.info(f"Leaf image details: {leaf_filepath}, size: {len(leaf_bytes)} bytes, resolution: {img_check.shape}")
-
-                            # Analyze leaf colors using provided function
                             try:
                                 num_leaves, leaf_colors = analyze_leaf_colors(leaf_filepath)
                                 logger.info(f"Leaf analysis result: {num_leaves} leaves, colors: {leaf_colors}")
-                                leaf_summary = f"Detected {num_leaves} leaves with colors: {', '.join(leaf_colors)}"
                                 if debug_mode:
                                     st.write(f"Debug: Leaf analysis - Leaves: {num_leaves}, Colors: {leaf_colors}")
                             except Exception as e:
                                 logger.error(f"Error in leaf color analysis: {e}")
                                 num_leaves = 0
                                 leaf_colors = []
-                                leaf_summary = "Leaf analysis failed"
 
-                            # Disease detection for leaf only
                             try:
                                 leaf_disease = predict_banana_disease(leaf_filepath)
-                                leaf_disease_summary = f"Leaf disease: {leaf_disease}"
                                 if debug_mode:
                                     st.write(f"Debug: Leaf disease - {leaf_disease}")
                             except Exception as e:
                                 logger.error(f"Error in leaf disease detection: {e}")
                                 leaf_disease = "Unknown"
-                                leaf_disease_summary = "Leaf disease detection failed"
 
                             result.update({
                                 "leaf_image_path": leaf_filepath,
@@ -257,15 +502,32 @@ try:
                             st.error(f"Error processing leaf image: {e}")
                             raise e
 
-                        # Generate query for RAG
+                        # Enhanced query for RAG with weather integration
                         query = f"""
-                        Analyzing banana plant named '{name}' which is {age} old.
-                        Fruits detected: {'Yes' if result.get('banana_detected', False) else 'No'}
-                        Flowers detected: {'Yes' if result.get('flower_detected', False) else 'No'}
-                        Estimated Stage: {result.get('stage', 'Unknown')}
-                        Leaf Analysis: Detected {result.get('num_leaves', 0)} leaves with colors: {', '.join(result.get('leaf_colors', []))}
-                        Leaf Disease: {result.get('leaf_disease', 'Unknown')}
-                        Given this information, what care advice should be provided?
+                        As an expert agricultural advisor, analyze this banana plant and provide comprehensive care advice based on both your agricultural knowledge and current weather conditions.
+
+                        PLANT ANALYSIS:
+                        - Plant Name: '{name}' 
+                        - Plant Age: {age}
+                        - Fruits detected: {'Yes' if result.get('banana_detected', False) else 'No'}
+                        - Flowers detected: {'Yes' if result.get('flower_detected', False) else 'No'}
+                        - Estimated Growth Stage: {result.get('stage', 'Unknown')}
+                        - Leaf Analysis: Detected {result.get('num_leaves', 0)} leaves with colors: {', '.join(result.get('leaf_colors', []))}
+                        - Leaf Disease Status: {result.get('leaf_disease', 'Unknown')}
+
+                        WEATHER CONDITIONS:
+                        {weather_context}
+
+                        Please provide detailed care advice that considers:
+                        1. Current plant health and growth stage
+                        2. Weather conditions and their impact on the plant
+                        3. Disease prevention/treatment recommendations
+                        4. Watering schedule based on weather and evapotranspiration
+                        5. Frost protection if needed
+                        6. Optimal growing conditions for the current stage
+                        7. Any immediate actions needed based on weather alerts
+
+                        Base your recommendations on both agricultural best practices and the specific weather conditions provided.
                         """
 
                         try:
@@ -292,6 +554,7 @@ try:
                             "analysis_id": analysis_id,
                             "name": name,
                             "age": age,
+                            "location": location.strip() if location.strip() else "Not provided",
                             "result": result,
                             "questions": []
                         }
@@ -314,40 +577,53 @@ try:
             st.subheader("Latest Analysis Results")
             st.write(f"**Plant Name:** {current_analysis.get('name', 'Unknown')}")
             st.write(f"**Plant Age:** {current_analysis.get('age', 'Unknown')}")
+            st.write(f"**Location:** {current_analysis.get('location', 'Not provided')}")
 
             result = current_analysis.get('result', {})
-            try:
-                st.write("---")
-                
-                # Display crop image
-                try:
-                    if os.path.exists(result.get('crop_image_path', '')):
-                        st.image(result['crop_image_path'], caption="Crop Image", width=300)
-                    else:
-                        st.warning("Crop image file not found")
-                except Exception as e:
-                    logger.error(f"Error displaying crop image: {e}")
-                    st.warning("Could not display crop image")
+            
+            # Display weather information if available
+            if 'weather_data' in result and result['weather_data']:
+                weather_data = result['weather_data']
+                if not weather_data[0].get('error'):
+                    st.subheader("🌤️ Weather Forecast")
+                    for day_data in weather_data[:3]:  # Show max 3 days
+                        col1, col2, col3, col4 = st.columns(4)
+                        with col1:
+                            st.metric("Temperature", f"{day_data['temperature']}°C")
+                        with col2:
+                            st.metric("Humidity", f"{day_data['humidity']}%")
+                        with col3:
+                            st.metric("GDD", f"{day_data['gdd']}")
+                        with col4:
+                            st.metric("Precipitation", f"{day_data['precipitation']}mm")
+                        
+                        if day_data['frost_warning'] == 'Yes':
+                            st.warning("⚠️ Frost Warning - Protect your plants!")
+                        if day_data['severe_weather'] == 'Yes':
+                            st.warning("⚠️ Severe Weather Alert")
+                        st.write(f"**Conditions:** {day_data['description']}")
+                        st.write("---")
 
+            try:
+                # Display crop image
+                if os.path.exists(result.get('crop_image_path', '')):
+                    st.image(result['crop_image_path'], caption="Crop Image", width=300)
+                
                 # Display leaf image
-                try:
-                    if os.path.exists(result.get('leaf_image_path', '')):
-                        st.image(result['leaf_image_path'], caption="Leaf Image", width=300)
-                    else:
-                        st.warning("Leaf image file not found")
-                except Exception as e:
-                    logger.error(f"Error displaying leaf image: {e}")
-                    st.warning("Could not display leaf image")
+                if os.path.exists(result.get('leaf_image_path', '')):
+                    st.image(result['leaf_image_path'], caption="Leaf Image", width=300)
 
                 st.write(f"**Banana Detected:** {'Yes' if result.get('banana_detected', False) else 'No'}")
                 st.write(f"**Flower Detected:** {'Yes' if result.get('flower_detected', False) else 'No'}")
                 st.write(f"**Estimated Stage:** {result.get('stage', 'Unknown')}")
                 st.write(f"**Leaf Analysis:** Detected {result.get('num_leaves', 0)} leaves with colors: {', '.join(result.get('leaf_colors', []))}")
-                st.write(f"**Leaf Disease:** {result.get('leaf_disease', 'Unknown')}")
                 
-                st.subheader("Care Advice:")
+                st.write(f"**Leaf Disease:** {result.get('leaf_disease', 'Unknown')}")
+                # st.write(f"**Weather Report:** {weather_data}")
+                
+                st.subheader("🌱 Care Advice (Weather-Enhanced):")
                 advice_text = result.get('translated_advice', 'No advice available')
-                st.write(advice_text)
+                st.markdown(advice_text)
 
                 # Audio generation
                 advice_audio_filepath = os.path.join(AUDIO_FOLDER, f"advice_{current_analysis['analysis_id']}.mp3")
@@ -371,11 +647,11 @@ try:
             logger.error(f"Error displaying current analysis: {e}")
             st.error("Error displaying analysis results")
 
-    # Follow-up questions
+    # Enhanced Follow-up questions with conversation memory
     st.header("Follow-up Questions")
     try:
         if 'current_analysis' in st.session_state:
-            question = st.text_area("Ask a follow-up question about your plant:", key="follow_up_question")
+            question = st.text_area("Ask a follow-up question about your plant (I remember our conversation):", key="follow_up_question")
             if st.button("Submit Question"):
                 try:
                     if not question.strip():
@@ -385,8 +661,36 @@ try:
                     else:
                         with st.spinner("Processing your question..."):
                             try:
+                                # Build conversation context
+                                conversation_context = build_conversation_context(st.session_state.current_analysis)
+                                
+                                # Get weather context if available
+                                current_analysis = st.session_state.current_analysis
+                                weather_context = ""
+                                if 'result' in current_analysis and 'weather_data' in current_analysis['result']:
+                                    location = current_analysis.get('location', '')
+                                    weather_context = format_weather_for_ai(current_analysis['result']['weather_data'], location)
+                                
+                                # Enhanced query with full context
                                 question_en = question if lang_code == 'en' else translate_text(question, 'en')
-                                response = qa_chain.invoke({"query": question_en})
+                                enhanced_query = f"""
+                                {conversation_context}
+                                
+                                Current Weather Context:
+                                {weather_context}
+                                
+                                NEW QUESTION: {question_en}
+                                
+                                Please answer this new question considering:
+                                1. All the previous plant analysis and advice given
+                                2. Previous questions and answers in our conversation
+                                3. Current weather conditions and their impact
+                                4. Provide specific, actionable advice based on the complete context
+                                
+                                Remember to reference previous advice when relevant and build upon our conversation history.
+                                """
+                                
+                                response = qa_chain.invoke({"query": enhanced_query})
                                 answer = response.get('result', "No answer available.") if isinstance(response, dict) else str(response)
                                 answer = comprehensive_text_cleaner(answer)
                                 translated_answer = translate_text(answer, lang_code)
@@ -459,9 +763,10 @@ try:
     st.markdown("""
     - Upload clear, well-lit images of your banana plant
     - Ensure the crop image shows the whole plant or fruit clearly
-    - Ensure the leaf image shows leaves clearly for accurate disease detection and color analysis
-    - Provide plant age and name for more accurate advice
-    - Ask specific questions about care concerns or detected leaf diseases
+    - Ensure the leaf image shows leaves clearly for accurate disease detection
+    - Provide plant age, name, and location for personalized weather-based advice
+    - Ask specific questions about care concerns - I remember our entire conversation!
+    - Check weather alerts and frost warnings for immediate plant protection
     """)
 except Exception as e:
     logger.error(f"Error displaying footer: {e}")
@@ -474,5 +779,6 @@ try:
         st.sidebar.write(f"✅ Database: {'Loaded' if db else 'Failed'}")
         st.sidebar.write(f"✅ LLM: {'Connected' if qa_chain else 'Failed'}")
         st.sidebar.write(f"✅ API Key: {'Configured' if os.getenv('GOOGLE_API_KEY') else 'Missing'}")
+        st.sidebar.write(f"🌤️ Weather API: Available")
 except Exception as e:
     logger.error(f"Error in system status: {e}")

@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2025-07-25T14:23:50.444866",
+    "data": {
+      "analysis_id": "e6c6a46e-f16c-441f-8fcd-60b29607ba5f",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Weather service unavailable: 429 Client Error: Too Many Requests for url: https://weather-api167.p.rapidapi.com/api/weather/forecast?place=Pune&units=metric. Please check location."
+          }
+        ],
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/e6c6a46e-f16c-441f-8fcd-60b29607ba5f_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Detection Failed",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Okay, I can provide care advice for your 3-month-old banana plant, keeping in mind that I don t have weather data for Pune. Based on the information you provided, your banana plant is in the seedling stage. The presence of three healthy green leaves indicates that the plant is currently healthy. Here s what I recommend: 1. Growth Stage: Your plant is in the seedling stage (1-3 months). Focus on promoting strong root and pseudostem development. 2. Weather Conditions: Since I don t have weather data, I can t give specific advice related to temperature, humidity, or rainfall. However, I can provide general recommendations. Temperature: Banana plants thrive in warm conditions. If temperatures are consistently below 15 C or above 35 C, take protective measures. Watering: Without evapotranspiration data, it s difficult to provide a precise watering schedule. Check the soil moisture regularly. The soil should be moist but not waterlogged. Water thoroughly when the top inch of soil feels dry. Wind: Banana plants are susceptible to wind damage. If you experience strong winds, provide support to prevent the plant from toppling over. 3. Disease Prevention: You mentioned that leaf disease detection failed. Continue to monitor the leaves regularly for any signs of disease, such as spots, discoloration, or wilting. Ensure good air circulation around the plant to help prevent fungal diseases. 4. Frost Protection: Since I don t have frost warnings, I can t provide specific advice. However, if temperatures are expected to drop near freezing, protect the plant with a blanket or move it indoors. 5. Optimal Growing Conditions: Sunlight: Ensure the plant receives 10-12 hours of direct sunlight daily. Soil: Make sure the plant is in well-draining soil that is rich in organic matter. Nutrients: Banana plants require high levels of potassium and nitrogen. Use a balanced fertilizer or one specifically formulated for banana plants. 6. Immediate Actions: Without weather alerts, I can t recommend any immediate actions related to severe weather. Stay informed about local weather conditions and take appropriate precautions if necessary. Remember to adjust these recommendations based on your local weather conditions and your plant s specific needs.",
+        "translated_advice": "Okay, I can provide care advice for your 3-month-old banana plant, keeping in mind that I don t have weather data for Pune. Based on the information you provided, your banana plant is in the seedling stage. The presence of three healthy green leaves indicates that the plant is currently healthy. Here s what I recommend: 1. Growth Stage: Your plant is in the seedling stage (1-3 months). Focus on promoting strong root and pseudostem development. 2. Weather Conditions: Since I don t have weather data, I can t give specific advice related to temperature, humidity, or rainfall. However, I can provide general recommendations. Temperature: Banana plants thrive in warm conditions. If temperatures are consistently below 15 C or above 35 C, take protective measures. Watering: Without evapotranspiration data, it s difficult to provide a precise watering schedule. Check the soil moisture regularly. The soil should be moist but not waterlogged. Water thoroughly when the top inch of soil feels dry. Wind: Banana plants are susceptible to wind damage. If you experience strong winds, provide support to prevent the plant from toppling over. 3. Disease Prevention: You mentioned that leaf disease detection failed. Continue to monitor the leaves regularly for any signs of disease, such as spots, discoloration, or wilting. Ensure good air circulation around the plant to help prevent fungal diseases. 4. Frost Protection: Since I don t have frost warnings, I can t provide specific advice. However, if temperatures are expected to drop near freezing, protect the plant with a blanket or move it indoors. 5. Optimal Growing Conditions: Sunlight: Ensure the plant receives 10-12 hours of direct sunlight daily. Soil: Make sure the plant is in well-draining soil that is rich in organic matter. Nutrients: Banana plants require high levels of potassium and nitrogen. Use a balanced fertilizer or one specifically formulated for banana plants. 6. Immediate Actions: Without weather alerts, I can t recommend any immediate actions related to severe weather. Stay informed about local weather conditions and take appropriate precautions if necessary. Remember to adjust these recommendations based on your local weather conditions and your plant s specific needs."
+      },
+      "questions": []
+    }
+  }
+]

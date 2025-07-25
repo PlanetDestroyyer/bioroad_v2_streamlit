@@ -10,6 +10,8 @@ from pydub import AudioSegment
 import traceback
 import io
 from config import logger, HISTORY_FOLDER, AUDIO_FOLDER , LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
+import requests
+from datetime import datetime, timedelta
 
 
 def comprehensive_text_cleaner(text):
@@ -258,5 +260,78 @@ def load_history(session_id):
         logger.error(f"Error in load_history: {e}")
         return []
     
+def get_weather_forecast(location):
+    # API setup
+    url = "https://weather-api167.p.rapidapi.com/api/weather/forecast"
+    querystring = {"place": location, "units": "metric"}
+    headers = {
+        "x-rapidapi-key": "132d97dc1emsh74614bee7028c43p1ce01bjsna30851e6698e",
+        "x-rapidapi-host": "weather-api167.p.rapidapi.com",
+        "Accept": "application/json"
+    }
+
+    # Automatically set dates
+    today = datetime.now().date()
+    yesterday = today - timedelta(days=1)
+    tomorrow = today + timedelta(days=1)
+
+    # Make API request
+    response = requests.get(url, headers=headers, params=querystring)
+    data = response.json()
+
+    # Function to calculate Growing Degree Days (GDD)
+    def calculate_gdd(temp_min, temp_max, base_temp=10):
+        avg_temp = (temp_min + temp_max) / 2
+        gdd = max(0, avg_temp - base_temp)
+        return round(gdd, 2)
+
+    # Function to estimate evapotranspiration
+    def estimate_et(temp, humidity):
+        et = max(0, (temp - 10) * (1 - humidity / 100) * 0.1)
+        return round(et, 2)
+
+    # Process and return results
+    results = []
+    if response.status_code == 200 and 'list' in data:
+        for entry in data['list']:
+            try:
+                forecast_date = datetime.strptime(entry['dt_txt'], '%Y-%m-%d %H:%M:%S').date()
+            except (ValueError, KeyError):
+                return [{"error": "Invalid date format or missing dt_txt in response"}]
+
+            if forecast_date in [yesterday, today, tomorrow]:
+                temp = entry['main']['temperature'] if querystring.get('units') == 'metric' else entry['main']['temperature'] - 273.15
+                temp_min = entry['main']['temperature_min'] if querystring.get('units') == 'metric' else entry['main']['temperature_min'] - 273.15
+                temp_max = entry['main']['temperature_max'] if querystring.get('units') == 'metric' else entry['main']['temperature_max'] - 273.15
+                feels_like = entry['main']['temperature_feels_like'] if querystring.get('units') == 'metric' else entry['main']['temperature_feels_like'] - 273.15
+
+                gdd = calculate_gdd(temp_min, temp_max)
+                et = estimate_et(temp, entry['main']['humidity'])
+                frost_warning = "Yes" if temp_min <= 0 else "No"
+                severe_weather = "Yes" if entry['wind']['speed'] > 10 or entry.get('rain', {}).get('amount', 0) > 10 else "No"
+
+                weather_data = {
+                    "date_time": entry['dt_txt'],
+                    "temperature": round(temp, 2),
+                    "feels_like": round(feels_like, 2),
+                    "temp_min": round(temp_min, 2),
+                    "temp_max": round(temp_max, 2),
+                    "humidity": entry['main']['humidity'],
+                    "precipitation": entry.get('rain', {}).get('amount', 0),
+                    "wind_speed": entry['wind']['speed'],
+                    "wind_direction": f"{entry['wind']['direction']} ({entry['wind']['degrees']}°)",
+                    "cloud_cover": entry['clouds']['cloudiness'],
+                    "frost_warning": frost_warning,
+                    "gdd": gdd,
+                    "evapotranspiration": et,
+                    "severe_weather": severe_weather,
+                    "description": entry['weather'][0]['description']
+                }
+                results.append(weather_data)
+        return results
+    else:
+        return [{"error": f"Error fetching data: {data.get('message', 'Unknown error')}"}]
+
+
 if __name__ == "__main__":
     pass

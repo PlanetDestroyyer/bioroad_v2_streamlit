@@ -1,0 +1,63 @@
+[
+  {
+    "timestamp": "2025-07-25T11:18:37.425728",
+    "data": {
+      "analysis_id": "49c83972-fbb2-4570-907e-e422ccdbfb70",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "result": {
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/49c83972-fbb2-4570-907e-e422ccdbfb70_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/49c83972-fbb2-4570-907e-e422ccdbfb70_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on your analysis, your 3-month-old banana plant, Banana Plant , is in the seedling stage and has a leaf disease called Banana Cordana. Here s some care advice: Address the Banana Cordana: Research treatments for Banana Cordana. You may need to use a fungicide. Follow the instructions on the fungicide carefully.",
+        "translated_advice": "Based on your analysis, your 3-month-old banana plant, Banana Plant , is in the seedling stage and has a leaf disease called Banana Cordana. Here s some care advice: Address the Banana Cordana: Research treatments for Banana Cordana. You may need to use a fungicide. Follow the instructions on the fungicide carefully."
+      },
+      "questions": []
+    }
+  },
+  {
+    "timestamp": "2025-07-25T11:20:17.370450",
+    "data": {
+      "analysis_id": "49c83972-fbb2-4570-907e-e422ccdbfb70",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "result": {
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/49c83972-fbb2-4570-907e-e422ccdbfb70_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/49c83972-fbb2-4570-907e-e422ccdbfb70_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on your analysis, your 3-month-old banana plant, Banana Plant , is in the seedling stage and has a leaf disease called Banana Cordana. Here s some care advice: Address the Banana Cordana: Research treatments for Banana Cordana. You may need to use a fungicide. Follow the instructions on the fungicide carefully.",
+        "translated_advice": "Based on your analysis, your 3-month-old banana plant, Banana Plant , is in the seedling stage and has a leaf disease called Banana Cordana. Here s some care advice: Address the Banana Cordana: Research treatments for Banana Cordana. You may need to use a fungicide. Follow the instructions on the fungicide carefully."
+      },
+      "questions": [
+        {
+          "question": "How much water i should give now as it will be raining in somewhile",
+          "answer": "I do not have the ability to determine how much water you should give your banana plants, as I do not have access to real-time weather data. However, I can tell you that banana plants need 35-40mm of water per week. You should also consider that the ideal rainfall for banana plants is 125-150mm per month.",
+          "translated_answer": "I do not have the ability to determine how much water you should give your banana plants, as I do not have access to real-time weather data. However, I can tell you that banana plants need 35-40mm of water per week. You should also consider that the ideal rainfall for banana plants is 125-150mm per month.",
+          "timestamp": "2025-07-25T11:20:17.370032"
+        }
+      ]
+    }
+  }
+]

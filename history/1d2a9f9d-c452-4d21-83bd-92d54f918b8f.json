@@ -1,0 +1,71 @@
+[
+  {
+    "timestamp": "2025-07-25T13:08:59.022268",
+    "data": {
+      "analysis_id": "7935aadc-3bcf-4b62-af04-ec5ec91d7458",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/7935aadc-3bcf-4b62-af04-ec5ec91d7458_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/7935aadc-3bcf-4b62-af04-ec5ec91d7458_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information provided, here s some care advice for your 3-month-old banana plant in the vegetative stage, which is currently affected by Banana Cordana: 1. Current Plant Health and Growth Stage: The plant is in the seedling stage, characterized by rapid leaf production and pseudostem thickening. The presence of Banana Cordana indicates a need for immediate treatment to prevent further spread. 2. Disease Prevention Treatment Recommendations: Address the Banana Cordana immediately. Apply a suitable fungicide according to the manufacturer s instructions. Ensure good air circulation around the plant to reduce humidity, which can exacerbate fungal diseases. Remove and dispose of any severely affected leaves to prevent the disease from spreading. 3. Optimal Growing Conditions for the Current Stage: Maintain optimal conditions for the vegetative stage. Ensure the plant receives high levels of potassium and nitrogen to support leaf and pseudostem development. Here are some things that I am missing to provide a complete answer: Specific weather conditions Details about the Banana Cordana infection Information about the type of fungicide available to you",
+        "translated_advice": "Based on the information provided, here s some care advice for your 3-month-old banana plant in the vegetative stage, which is currently affected by Banana Cordana: 1. Current Plant Health and Growth Stage: The plant is in the seedling stage, characterized by rapid leaf production and pseudostem thickening. The presence of Banana Cordana indicates a need for immediate treatment to prevent further spread. 2. Disease Prevention Treatment Recommendations: Address the Banana Cordana immediately. Apply a suitable fungicide according to the manufacturer s instructions. Ensure good air circulation around the plant to reduce humidity, which can exacerbate fungal diseases. Remove and dispose of any severely affected leaves to prevent the disease from spreading. 3. Optimal Growing Conditions for the Current Stage: Maintain optimal conditions for the vegetative stage. Ensure the plant receives high levels of potassium and nitrogen to support leaf and pseudostem development. Here are some things that I am missing to provide a complete answer: Specific weather conditions Details about the Banana Cordana infection Information about the type of fungicide available to you"
+      },
+      "questions": []
+    }
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "timestamp": "2025-07-25T13:13:37.054066",
+    "data": {
+      "analysis_id": "d6d01e73-3209-451a-8a2a-78e2760e60c0",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/d6d01e73-3209-451a-8a2a-78e2760e60c0_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/d6d01e73-3209-451a-8a2a-78e2760e60c0_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information provided, here s some care advice for your 3-month-old banana plant in the vegetative stage, which is also known as the seedling stage: 1. Current Plant Health and Growth Stage: Your banana plant is in the seedling stage. At this stage, the plant should be between 2-12 inches (5-30 cm) tall. You have detected 3 healthy green leaves, which is a good sign. The plant is showing signs of Banana Cordana. 2. Weather Conditions and Their Impact on the Plant: Weather data for Pune is unavailable, so I can t give specific advice based on current conditions. Generally, banana plants need warm temperatures and high humidity. Without specific weather data, I will provide general recommendations. 3. Disease Prevention Treatment Recommendations: Banana Cordana: Remove and destroy affected leaves to prevent the spread of the disease. Ensure good air circulation around the plant to reduce humidity, which can exacerbate fungal diseases. Apply a fungicide if the infection is severe, following the product instructions carefully. 4. Watering Schedule: In the seedling stage, banana plants need consistent moisture but not waterlogged soil. Without weather data, a general guideline is to water when the top inch of soil feels dry to the touch. Ensure the pot has good drainage to prevent root rot. 5. Frost Protection: If temperatures drop below 15 C (59 F), provide frost protection. Move the plant indoors or use a frost blanket to cover it. 6. Optimal Growing Conditions: Sunlight: Provide bright, indirect light for 12-14 hours daily. Temperature: Maintain temperatures between 26-30 C (79-86 F). Soil: Use a well-draining, fertile soil with a slightly acidic pH (5.5-6.5). Nutrients: Banana plants in the seedling stage need high potassium and nitrogen. Use a balanced fertilizer, and follow the product instructions. 7. Immediate Actions Needed: Monitor the plant closely for any signs of stress or disease. Once weather data is available, adjust watering and protection strategies accordingly. Ensure the plant has enough space for its roots to grow. If the plant is root-bound, transplant it into a larger pot.",
+        "translated_advice": "Based on the information provided, here s some care advice for your 3-month-old banana plant in the vegetative stage, which is also known as the seedling stage: 1. Current Plant Health and Growth Stage: Your banana plant is in the seedling stage. At this stage, the plant should be between 2-12 inches (5-30 cm) tall. You have detected 3 healthy green leaves, which is a good sign. The plant is showing signs of Banana Cordana. 2. Weather Conditions and Their Impact on the Plant: Weather data for Pune is unavailable, so I can t give specific advice based on current conditions. Generally, banana plants need warm temperatures and high humidity. Without specific weather data, I will provide general recommendations. 3. Disease Prevention Treatment Recommendations: Banana Cordana: Remove and destroy affected leaves to prevent the spread of the disease. Ensure good air circulation around the plant to reduce humidity, which can exacerbate fungal diseases. Apply a fungicide if the infection is severe, following the product instructions carefully. 4. Watering Schedule: In the seedling stage, banana plants need consistent moisture but not waterlogged soil. Without weather data, a general guideline is to water when the top inch of soil feels dry to the touch. Ensure the pot has good drainage to prevent root rot. 5. Frost Protection: If temperatures drop below 15 C (59 F), provide frost protection. Move the plant indoors or use a frost blanket to cover it. 6. Optimal Growing Conditions: Sunlight: Provide bright, indirect light for 12-14 hours daily. Temperature: Maintain temperatures between 26-30 C (79-86 F). Soil: Use a well-draining, fertile soil with a slightly acidic pH (5.5-6.5). Nutrients: Banana plants in the seedling stage need high potassium and nitrogen. Use a balanced fertilizer, and follow the product instructions. 7. Immediate Actions Needed: Monitor the plant closely for any signs of stress or disease. Once weather data is available, adjust watering and protection strategies accordingly. Ensure the plant has enough space for its roots to grow. If the plant is root-bound, transplant it into a larger pot."
+      },
+      "questions": []
+    }
+  }
+]

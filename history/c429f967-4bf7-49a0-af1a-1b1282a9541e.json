@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2025-07-25T14:53:11.825751",
+    "data": {
+      "analysis_id": "49500f09-e4a3-43d3-a7f6-c197a2cced75",
+      "name": "Banana  Plant",
+      "age": "3",
+      "location": "Pune",
+      "result": {
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/49500f09-e4a3-43d3-a7f6-c197a2cced75_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/49500f09-e4a3-43d3-a7f6-c197a2cced75_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information provided, here s some care advice for your banana plant: 1. Current Plant Health and Growth Stage: Your 3-year-old banana plant is in the vegetative stage with healthy green leaves, but it s showing signs of Banana Cordana disease. It has not yet produced flowers or fruit. 2. Weather Conditions and Their Impact: Weather data is unavailable for Pune, so I can t give specific advice based on current conditions. However, I can provide general recommendations. 3. Disease Prevention Treatment Recommendations: Banana Cordana: Since your plant has Banana Cordana, remove and destroy affected leaves to prevent the spread of the disease. Ensure good air circulation around the plant. Apply a fungicide if the infection is severe, following the product instructions carefully. 4. Watering Schedule: Without weather data, it s hard to give a precise watering schedule. Generally, keep the soil consistently moist but not waterlogged. Check the soil moisture by sticking your finger about an inch deep into the soil. If it feels dry, it s time to water. 5. Frost Protection: I don t have weather information, so I can t determine if frost protection is needed. 6. Optimal Growing Conditions for the Current Stage: Nutrients: Your plant needs high potassium and nitrogen during the vegetative stage. Use a balanced fertilizer formulated for banana plants, following the instructions on the label. Sunlight: Ensure your plant receives 10-12 hours of direct sunlight daily. Soil: Make sure the soil is well-draining and rich in organic matter. The soil depth should be at least 60cm (2 feet). 7. Immediate Actions Needed: Treat Banana Cordana immediately by removing affected leaves and applying fungicide if necessary. Monitor weather forecasts for Pune and adjust watering and protection strategies accordingly.",
+        "translated_advice": "Based on the information provided, here s some care advice for your banana plant: 1. Current Plant Health and Growth Stage: Your 3-year-old banana plant is in the vegetative stage with healthy green leaves, but it s showing signs of Banana Cordana disease. It has not yet produced flowers or fruit. 2. Weather Conditions and Their Impact: Weather data is unavailable for Pune, so I can t give specific advice based on current conditions. However, I can provide general recommendations. 3. Disease Prevention Treatment Recommendations: Banana Cordana: Since your plant has Banana Cordana, remove and destroy affected leaves to prevent the spread of the disease. Ensure good air circulation around the plant. Apply a fungicide if the infection is severe, following the product instructions carefully. 4. Watering Schedule: Without weather data, it s hard to give a precise watering schedule. Generally, keep the soil consistently moist but not waterlogged. Check the soil moisture by sticking your finger about an inch deep into the soil. If it feels dry, it s time to water. 5. Frost Protection: I don t have weather information, so I can t determine if frost protection is needed. 6. Optimal Growing Conditions for the Current Stage: Nutrients: Your plant needs high potassium and nitrogen during the vegetative stage. Use a balanced fertilizer formulated for banana plants, following the instructions on the label. Sunlight: Ensure your plant receives 10-12 hours of direct sunlight daily. Soil: Make sure the soil is well-draining and rich in organic matter. The soil depth should be at least 60cm (2 feet). 7. Immediate Actions Needed: Treat Banana Cordana immediately by removing affected leaves and applying fungicide if necessary. Monitor weather forecasts for Pune and adjust watering and protection strategies accordingly."
+      },
+      "questions": []
+    }
+  }
+]

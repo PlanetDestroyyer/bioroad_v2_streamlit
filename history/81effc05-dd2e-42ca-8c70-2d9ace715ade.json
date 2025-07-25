@@ -1,0 +1,71 @@
+[
+  {
+    "timestamp": "2025-07-25T14:19:12.543300",
+    "data": {
+      "analysis_id": "aecdc5c9-2eec-43ae-858c-938fa44e9f79",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/aecdc5c9-2eec-43ae-858c-938fa44e9f79_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/aecdc5c9-2eec-43ae-858c-938fa44e9f79_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information provided, here s some care advice for your 3-month-old banana plant in the vegetative stage, which is also known as the seedling stage: 1. Plant Health and Growth Stage: Your banana plant is in the seedling stage. At this stage, rapid leaf production and root system expansion are key. The plant needs high potassium and nitrogen. 2. Weather Conditions and Their Impact: Weather data for Pune is unavailable, so I can t tailor advice to current conditions. However, I can provide general guidance. Without specific weather data, assume moderate conditions. If it s generally hot and dry, the plant will need more frequent watering. If it s cooler and humid, reduce watering to prevent overwatering and potential fungal issues. 3. Disease Prevention Treatment: You mentioned the plant has Banana Cordana. Since I don t have information on Banana Cordana, I can t provide specific treatment advice. Please consult a local agricultural expert or research specific treatments for Banana Cordana in your region. To prevent other diseases, ensure good air circulation around the plant. Avoid overhead watering to minimize fungal issues. Regularly inspect the plant for any signs of disease or pests. 4. Watering Schedule: Without weather data, a general watering schedule is every 2-3 days. The soil should be moist but not soggy. Check the soil moisture by sticking your finger about an inch deep into the soil. If it feels dry, it s time to water. Adjust frequency based on weather conditions. 5. Frost Protection: I don t know if frost is a concern in Pune. If temperatures are expected to drop below 15 C (59 F), provide frost protection. This could involve moving the plant indoors, covering it with a cloth, or using a cold frame. 6. Optimal Growing Conditions: During the seedling stage, ensure the plant receives indirect bright light for 12-14 hours daily. Maintain a slightly acidic soil pH between 5.5 and 6.5. The ideal temperature range is 26-30 C (79-86 F). 7. Immediate Actions Based on Weather Alerts: Since weather alerts are unavailable, stay informed about local weather forecasts. Take immediate action to protect the plant from extreme conditions like strong winds, heavy rain, or temperature fluctuations. Additional Tips: Fertilize the plant with a balanced fertilizer, paying attention to potassium and nitrogen levels. Ensure the plant is in a well-draining pot or location to prevent waterlogging.",
+        "translated_advice": "Based on the information provided, here s some care advice for your 3-month-old banana plant in the vegetative stage, which is also known as the seedling stage: 1. Plant Health and Growth Stage: Your banana plant is in the seedling stage. At this stage, rapid leaf production and root system expansion are key. The plant needs high potassium and nitrogen. 2. Weather Conditions and Their Impact: Weather data for Pune is unavailable, so I can t tailor advice to current conditions. However, I can provide general guidance. Without specific weather data, assume moderate conditions. If it s generally hot and dry, the plant will need more frequent watering. If it s cooler and humid, reduce watering to prevent overwatering and potential fungal issues. 3. Disease Prevention Treatment: You mentioned the plant has Banana Cordana. Since I don t have information on Banana Cordana, I can t provide specific treatment advice. Please consult a local agricultural expert or research specific treatments for Banana Cordana in your region. To prevent other diseases, ensure good air circulation around the plant. Avoid overhead watering to minimize fungal issues. Regularly inspect the plant for any signs of disease or pests. 4. Watering Schedule: Without weather data, a general watering schedule is every 2-3 days. The soil should be moist but not soggy. Check the soil moisture by sticking your finger about an inch deep into the soil. If it feels dry, it s time to water. Adjust frequency based on weather conditions. 5. Frost Protection: I don t know if frost is a concern in Pune. If temperatures are expected to drop below 15 C (59 F), provide frost protection. This could involve moving the plant indoors, covering it with a cloth, or using a cold frame. 6. Optimal Growing Conditions: During the seedling stage, ensure the plant receives indirect bright light for 12-14 hours daily. Maintain a slightly acidic soil pH between 5.5 and 6.5. The ideal temperature range is 26-30 C (79-86 F). 7. Immediate Actions Based on Weather Alerts: Since weather alerts are unavailable, stay informed about local weather forecasts. Take immediate action to protect the plant from extreme conditions like strong winds, heavy rain, or temperature fluctuations. Additional Tips: Fertilize the plant with a balanced fertilizer, paying attention to potassium and nitrogen levels. Ensure the plant is in a well-draining pot or location to prevent waterlogging."
+      },
+      "questions": []
+    }
+  }
+]

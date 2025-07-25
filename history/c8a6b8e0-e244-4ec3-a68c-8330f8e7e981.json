@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2025-07-25T13:58:46.729174",
+    "data": {
+      "analysis_id": "1a773b5c-e592-4c93-9151-445444fd3348",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "location": "Pune",
+      "result": {
+        "weather_data": [],
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/1a773b5c-e592-4c93-9151-445444fd3348_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Detection Failed",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Okay, here s some advice for your banana plant based on the information you ve provided. Plant Assessment: Your banana plant is 3 months old with 3 healthy green leaves and no signs of flowers or fruit. Based on the life cycle information, it is likely in the seedling stage. General Care Advice (Without Weather Data): Since I don t have weather data for Pune, I will provide general advice for the seedling stage. Watering: Water thoroughly when the top inch of soil feels dry. Ensure good drainage to prevent root rot. Nutrients: Banana plants in the seedling stage need high potassium and nitrogen. Use a balanced liquid fertilizer diluted to half strength every 2-3 weeks. Sunlight: Provide plenty of sunlight, ideally 10-12 hours a day. Soil: Make sure the plant is in well-draining soil that is rich in organic matter. Pest and Disease Control: Regularly inspect the leaves for any signs of pests or diseases. Since the leaf disease status detection failed, keep a close eye on the leaves. If you notice anything unusual, send another analysis. Optimal Growing Conditions: During the seedling stage, aim for temperatures between 21-30 C (70-86 F) and high humidity (around 60-70 ). Important Considerations When Weather Data Becomes Available: Once weather data is available, here s how to adjust your care: Temperature: If temperatures are consistently below 15 C (59 F) or above 35 C (95 F), take action. For cold, consider moving the plant indoors or providing a heat source. For heat, provide shade during the hottest part of the day. Rainfall: Adjust watering based on rainfall. If there s heavy rain, ensure the pot has good drainage to prevent waterlogging. Wind: Protect the plant from strong winds, which can damage the leaves. Fertilizing: Adjust fertilizer application based on the season. Reduce or stop fertilizing during the dormant season (typically winter). I hope this helps!",
+        "translated_advice": "Okay, here s some advice for your banana plant based on the information you ve provided. Plant Assessment: Your banana plant is 3 months old with 3 healthy green leaves and no signs of flowers or fruit. Based on the life cycle information, it is likely in the seedling stage. General Care Advice (Without Weather Data): Since I don t have weather data for Pune, I will provide general advice for the seedling stage. Watering: Water thoroughly when the top inch of soil feels dry. Ensure good drainage to prevent root rot. Nutrients: Banana plants in the seedling stage need high potassium and nitrogen. Use a balanced liquid fertilizer diluted to half strength every 2-3 weeks. Sunlight: Provide plenty of sunlight, ideally 10-12 hours a day. Soil: Make sure the plant is in well-draining soil that is rich in organic matter. Pest and Disease Control: Regularly inspect the leaves for any signs of pests or diseases. Since the leaf disease status detection failed, keep a close eye on the leaves. If you notice anything unusual, send another analysis. Optimal Growing Conditions: During the seedling stage, aim for temperatures between 21-30 C (70-86 F) and high humidity (around 60-70 ). Important Considerations When Weather Data Becomes Available: Once weather data is available, here s how to adjust your care: Temperature: If temperatures are consistently below 15 C (59 F) or above 35 C (95 F), take action. For cold, consider moving the plant indoors or providing a heat source. For heat, provide shade during the hottest part of the day. Rainfall: Adjust watering based on rainfall. If there s heavy rain, ensure the pot has good drainage to prevent waterlogging. Wind: Protect the plant from strong winds, which can damage the leaves. Fertilizing: Adjust fertilizer application based on the season. Reduce or stop fertilizing during the dormant season (typically winter). I hope this helps!"
+      },
+      "questions": []
+    }
+  }
+]

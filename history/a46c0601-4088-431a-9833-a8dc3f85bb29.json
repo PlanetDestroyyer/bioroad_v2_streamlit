@@ -1,0 +1,68 @@
+[
+  {
+    "timestamp": "2025-07-25T14:34:22.848414",
+    "data": {
+      "analysis_id": "64ee5d68-6e8a-4fd2-99ad-11a1d4794bd7",
+      "name": "Banana Plant",
+      "age": "3 ",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          },
+          {
+            "error": "Data parsing error: unsupported operand type(s) for +: 'NoneType' and 'NoneType'"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/64ee5d68-6e8a-4fd2-99ad-11a1d4794bd7_crop_banana_plant_image_wt.jpeg",
+        "banana_detected": false,
+        "flower_detected": true,
+        "stage": "Flowering Stage",
+        "crop_filename": "banana_plant_image_wt.jpeg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/64ee5d68-6e8a-4fd2-99ad-11a1d4794bd7_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information you ve provided, here s some care advice for your banana plant: Current Plant Health and Growth Stage: Your banana plant is in the flowering stage, which is a critical time for fruit development. The presence of healthy green leaves is a good sign. However, the detection of Banana Cordana disease needs immediate attention. Weather Conditions and Their Impact: Since weather data for Pune is unavailable, I will provide general advice. Banana plants thrive in warm, humid conditions. Without specific weather data, it s difficult to tailor the advice precisely. Disease Prevention Treatment Recommendations: Your plant has Banana Cordana. Remove the affected leaves immediately and dispose of them away from your banana plant to prevent the spread of the disease. Improve air circulation around the plant. Consider applying a fungicide labeled for use on bananas, following the product instructions carefully. Watering Schedule: Without weather data, a general recommendation is to water deeply when the top inch of soil feels dry. Ensure good drainage to prevent root rot. Frost Protection: Without weather data, I cannot determine if frost protection is needed. If temperatures are expected to drop below 15 C, provide protection. Optimal Growing Conditions for the Current Stage: Maintain a temperature between 26-28 C. Ensure the plant receives 10-12 hours of direct sunlight daily. Provide adequate water, aiming for 35-40mm per week. High potassium and phosphorus are needed at this stage. Immediate Actions Needed: Treat the Banana Cordana disease. Monitor the plant closely for any signs of stress or further disease. Once weather data is available, adjust watering and protection strategies accordingly.",
+        "translated_advice": "Based on the information you ve provided, here s some care advice for your banana plant: Current Plant Health and Growth Stage: Your banana plant is in the flowering stage, which is a critical time for fruit development. The presence of healthy green leaves is a good sign. However, the detection of Banana Cordana disease needs immediate attention. Weather Conditions and Their Impact: Since weather data for Pune is unavailable, I will provide general advice. Banana plants thrive in warm, humid conditions. Without specific weather data, it s difficult to tailor the advice precisely. Disease Prevention Treatment Recommendations: Your plant has Banana Cordana. Remove the affected leaves immediately and dispose of them away from your banana plant to prevent the spread of the disease. Improve air circulation around the plant. Consider applying a fungicide labeled for use on bananas, following the product instructions carefully. Watering Schedule: Without weather data, a general recommendation is to water deeply when the top inch of soil feels dry. Ensure good drainage to prevent root rot. Frost Protection: Without weather data, I cannot determine if frost protection is needed. If temperatures are expected to drop below 15 C, provide protection. Optimal Growing Conditions for the Current Stage: Maintain a temperature between 26-28 C. Ensure the plant receives 10-12 hours of direct sunlight daily. Provide adequate water, aiming for 35-40mm per week. High potassium and phosphorus are needed at this stage. Immediate Actions Needed: Treat the Banana Cordana disease. Monitor the plant closely for any signs of stress or further disease. Once weather data is available, adjust watering and protection strategies accordingly."
+      },
+      "questions": []
+    }
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2025-07-25T10:35:15.118894",
+    "data": {
+      "analysis_id": "dab0fa44-b97c-401a-8df4-634fdaf8e05d",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "result": {
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/dab0fa44-b97c-401a-8df4-634fdaf8e05d_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/dab0fa44-b97c-401a-8df4-634fdaf8e05d_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on your analysis, your 3-month-old banana plant, Banana Plant , is in the seedling stage and has a leaf disease called Banana Cordana. Here s some care advice: Address the Banana Cordana: Research treatments for Banana Cordana. You may need to use a fungicide. Follow the instructions on the fungicide carefully.",
+        "translated_advice": "आपल्या विश्लेषणाच्या आधारे, आपल्या 3 महिन्यांच्या केळीची वनस्पती, केळीची वनस्पती, बीपासून नुकतेच तयार झालेले अवस्था आहे आणि त्याला केळी कॉर्डाना नावाचा एक पान रोग आहे. येथे काही काळजी सल्लाः केळी कॉर्डानाला संबोधित करा: केळी कॉर्डानासाठी संशोधन उपचार. आपल्याला बुरशीनाशक वापरण्याची आवश्यकता असू शकते. बुरशीनाशकावरील सूचनांचे काळजीपूर्वक अनुसरण करा."
+      },
+      "questions": []
+    }
+  }
+]

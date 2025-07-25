@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": "2025-07-25T13:00:26.055633",
+    "data": {
+      "analysis_id": "e51b7470-f945-4197-bd75-4737556b7fad",
+      "name": "Banana Plant",
+      "age": "3 months",
+      "location": "Pune , IN",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Weather service unavailable: 'temperature'"
+          }
+        ],
+        "location": "Pune , IN",
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/e51b7470-f945-4197-bd75-4737556b7fad_crop_banana_tree_image.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "banana_tree_image.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/e51b7470-f945-4197-bd75-4737556b7fad_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information you provided, here s some advice for your 3-month-old banana plant in the vegetative stage: 1. Plant Health and Growth Stage: Your banana plant is in the seedling stage, characterized by rapid leaf production and root system expansion. The presence of three healthy green leaves indicates good health. 2. Weather Conditions: Since weather data for Pune, IN is unavailable, I will provide general recommendations. Banana plants thrive in warm, humid conditions. Protect the plant from strong winds. 3. Disease Prevention Treatment: You mentioned the plant has Banana Cordana. Apply a fungicide according to the product label. Ensure good air circulation around the plant to reduce humidity and prevent fungal diseases. 4. Watering Schedule: Without specific weather data, water deeply when the top inch of soil feels dry. Ensure the pot has good drainage to prevent waterlogging. 5. Frost Protection: If temperatures drop below 15 C, provide frost protection. Move the plant indoors or cover it with a cloth. 6. Optimal Growing Conditions: Provide 10-12 hours of direct sunlight daily. Maintain a temperature between 26-28 C. Use a well-draining, fertile soil with a pH between 6.0-6.8. 7. Immediate Actions: Treat the Banana Cordana with an appropriate fungicide. Monitor the plant regularly for any signs of stress or disease. Once weather data is available, adjust watering and protection strategies accordingly.",
+        "translated_advice": "Based on the information you provided, here s some advice for your 3-month-old banana plant in the vegetative stage: 1. Plant Health and Growth Stage: Your banana plant is in the seedling stage, characterized by rapid leaf production and root system expansion. The presence of three healthy green leaves indicates good health. 2. Weather Conditions: Since weather data for Pune, IN is unavailable, I will provide general recommendations. Banana plants thrive in warm, humid conditions. Protect the plant from strong winds. 3. Disease Prevention Treatment: You mentioned the plant has Banana Cordana. Apply a fungicide according to the product label. Ensure good air circulation around the plant to reduce humidity and prevent fungal diseases. 4. Watering Schedule: Without specific weather data, water deeply when the top inch of soil feels dry. Ensure the pot has good drainage to prevent waterlogging. 5. Frost Protection: If temperatures drop below 15 C, provide frost protection. Move the plant indoors or cover it with a cloth. 6. Optimal Growing Conditions: Provide 10-12 hours of direct sunlight daily. Maintain a temperature between 26-28 C. Use a well-draining, fertile soil with a pH between 6.0-6.8. 7. Immediate Actions: Treat the Banana Cordana with an appropriate fungicide. Monitor the plant regularly for any signs of stress or disease. Once weather data is available, adjust watering and protection strategies accordingly."
+      },
+      "questions": []
+    }
+  }
+]
