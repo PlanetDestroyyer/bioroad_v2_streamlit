@@ -13,6 +13,35 @@ from config import logger, HISTORY_FOLDER, AUDIO_FOLDER , LEAF_COUNTER_MODEL , B
 import requests
 from datetime import datetime, timedelta
 
+import re
+
+def parse_age(age_str):
+    """
+    Parse age string (e.g., '3 months', '1 year') into a numerical value in months.
+    Returns (value_in_months, success_flag).
+    """
+    if not age_str or not isinstance(age_str, str):
+        return None, False
+    
+    # Remove extra whitespace and convert to lowercase
+    age_str = age_str.strip().lower()
+    
+    # Regex to extract number and unit
+    match = re.match(r"(\d+\.?\d*)\s*(month|months|year|years|day|days)", age_str)
+    if not match:
+        return None, False
+    
+    value, unit = float(match.group(1)), match.group(2)
+    
+    # Convert to months
+    if unit in ["month", "months"]:
+        return value, True
+    elif unit in ["year", "years"]:
+        return value * 12, True
+    elif unit in ["day", "days"]:
+        return value / 30.42, True  # Approximate months (365/12)
+    
+    return None, False
 
 def comprehensive_text_cleaner(text):
     """Comprehensive text cleaning function to remove formatting while preserving language structure"""

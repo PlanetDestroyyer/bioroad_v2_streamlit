@@ -65,6 +65,6 @@ def create_faiss_index(pdf_path, index_name="banana_faiss_index"):
 
 if __name__ == "__main__":
     
-    pdf_document_path = "docs/Complete Banana Plant Life Cycle Guide.pdf"
+    pdf_document_path = "docs/banana_care_pdf.pdf"
 
     create_faiss_index(pdf_document_path)

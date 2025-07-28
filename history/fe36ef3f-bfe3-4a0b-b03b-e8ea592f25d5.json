@@ -1,0 +1,33 @@
+[
+  {
+    "timestamp": "2025-07-25T17:07:13.029829",
+    "data": {
+      "analysis_id": "5962f4a7-2527-4231-a3c8-a0b277a8c092",
+      "name": "",
+      "age": "3",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Error fetching data: You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/maruf111/api/weather-api167"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/5962f4a7-2527-4231-a3c8-a0b277a8c092_crop_download.jpeg",
+        "banana_detected": true,
+        "flower_detected": false,
+        "stage": "Early Fruit Stage",
+        "crop_filename": "download.jpeg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/5962f4a7-2527-4231-a3c8-a0b277a8c092_leaf_banana sigatoka.jpg",
+        "num_leaves": 1,
+        "leaf_colors": [
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana Black Sigatoka Disease",
+        "leaf_filename": "banana sigatoka.jpg",
+        "advice": "Based on your plant analysis, your banana plant is in the early fruit stage, has healthy green leaves, but is affected by Black Sigatoka disease. Since weather data for Pune is unavailable, I will provide general recommendations, and you should adjust them based on local conditions. 1. Current Plant Health and Growth Stage: The plant is in the fruit development stage, so it needs adequate nutrients and water. Black Sigatoka needs immediate attention to prevent yield loss. 2. Weather Conditions and Their Impact: Without specific weather data, assume moderate conditions. Monitor temperature and rainfall. High humidity can worsen Black Sigatoka. 3. Disease Prevention Treatment: Apply a fungicide specifically for Black Sigatoka. Follow the product instructions carefully. Remove and destroy severely infected leaves to reduce the spread of the disease. Ensure good air circulation around the plant by pruning excess leaves. 4. Watering Schedule: Water deeply but infrequently. Allow the topsoil to dry slightly between waterings. During fruit development, ensure consistent soil moisture. If it rains, reduce or skip watering. 5. Frost Protection: If frost is expected, cover the plant with a blanket or horticultural fleece. Mulch around the base of the plant to insulate the roots. 6. Optimal Growing Conditions: Ensure the plant receives at least 10-12 hours of sunlight daily. Maintain soil fertility with regular applications of a balanced fertilizer, high in potassium. Protect the plant from strong winds, which can damage leaves and pseudostems. 7. Immediate Actions: Apply fungicide to treat Black Sigatoka. Remove and dispose of infected leaves. Monitor weather forecasts and adjust care accordingly. Ensure adequate watering, adjusting for rainfall.",
+        "translated_advice": "Based on your plant analysis, your banana plant is in the early fruit stage, has healthy green leaves, but is affected by Black Sigatoka disease. Since weather data for Pune is unavailable, I will provide general recommendations, and you should adjust them based on local conditions. 1. Current Plant Health and Growth Stage: The plant is in the fruit development stage, so it needs adequate nutrients and water. Black Sigatoka needs immediate attention to prevent yield loss. 2. Weather Conditions and Their Impact: Without specific weather data, assume moderate conditions. Monitor temperature and rainfall. High humidity can worsen Black Sigatoka. 3. Disease Prevention Treatment: Apply a fungicide specifically for Black Sigatoka. Follow the product instructions carefully. Remove and destroy severely infected leaves to reduce the spread of the disease. Ensure good air circulation around the plant by pruning excess leaves. 4. Watering Schedule: Water deeply but infrequently. Allow the topsoil to dry slightly between waterings. During fruit development, ensure consistent soil moisture. If it rains, reduce or skip watering. 5. Frost Protection: If frost is expected, cover the plant with a blanket or horticultural fleece. Mulch around the base of the plant to insulate the roots. 6. Optimal Growing Conditions: Ensure the plant receives at least 10-12 hours of sunlight daily. Maintain soil fertility with regular applications of a balanced fertilizer, high in potassium. Protect the plant from strong winds, which can damage leaves and pseudostems. 7. Immediate Actions: Apply fungicide to treat Black Sigatoka. Remove and dispose of infected leaves. Monitor weather forecasts and adjust care accordingly. Ensure adequate watering, adjusting for rainfall."
+      },
+      "questions": []
+    }
+  }
+]

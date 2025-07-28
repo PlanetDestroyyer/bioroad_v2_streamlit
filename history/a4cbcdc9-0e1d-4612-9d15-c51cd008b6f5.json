@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2025-07-28T11:09:25.916471",
+    "data": {
+      "analysis_id": "bd326851-a3b6-4758-a81b-e96734fe39dd",
+      "name": "Banana Plant",
+      "age": "1 months",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Error fetching data: You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/maruf111/api/weather-api167"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/bd326851-a3b6-4758-a81b-e96734fe39dd_crop_seeding_1.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Seeding Stage",
+        "crop_filename": "seeding_1.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/bd326851-a3b6-4758-a81b-e96734fe39dd_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information provided, here s some care advice for your banana plant: 1. Current Plant Health and Growth Stage: Your banana plant is in the seedling stage, which lasts from 1 to 3 months. The plant is 2-12 inches (5-30 cm) in height. You have 3 healthy green leaves, which is a good sign. 2. Weather Conditions and Their Impact: Weather data for Pune is unavailable, so I can t give specific advice based on current conditions. Generally, banana plants need protection from strong winds and temperatures below 15 C or above 35 C. 3. Disease Prevention Treatment: Your plant has Banana Cordana. I am sorry, I cannot provide information on Banana Cordana. 4. Watering Schedule: Without weather data, it s hard to give a precise watering schedule. In general, keep the soil consistently moist but not waterlogged. Check the soil moisture regularly by sticking your finger about an inch deep into the soil. If it feels dry, water the plant. 5. Frost Protection: I don t have weather information, so I can t determine if frost protection is needed. If temperatures are expected to drop below 15 C, consider covering the plant with a cloth or moving it indoors. 6. Optimal Growing Conditions: During the seedling stage, your banana plant needs: Temperature: 21-30 C (70-86 F) Moisture: 70-80 humidity Soil: Well-draining, fertile soil with a pH of 5.5-6.5 Sunlight: 6-8 hours of direct sunlight daily Nutrients: High potassium and nitrogen requirements 7. Immediate Actions Needed: Find out the current weather conditions in Pune. This will help you adjust watering, temperature control, and frost protection measures. Monitor the plant regularly for any signs of stress or disease. Ensure the plant is getting enough sunlight. Fertilize with a balanced fertilizer, paying attention to potassium and nitrogen levels.",
+        "translated_advice": "Based on the information provided, here s some care advice for your banana plant: 1. Current Plant Health and Growth Stage: Your banana plant is in the seedling stage, which lasts from 1 to 3 months. The plant is 2-12 inches (5-30 cm) in height. You have 3 healthy green leaves, which is a good sign. 2. Weather Conditions and Their Impact: Weather data for Pune is unavailable, so I can t give specific advice based on current conditions. Generally, banana plants need protection from strong winds and temperatures below 15 C or above 35 C. 3. Disease Prevention Treatment: Your plant has Banana Cordana. I am sorry, I cannot provide information on Banana Cordana. 4. Watering Schedule: Without weather data, it s hard to give a precise watering schedule. In general, keep the soil consistently moist but not waterlogged. Check the soil moisture regularly by sticking your finger about an inch deep into the soil. If it feels dry, water the plant. 5. Frost Protection: I don t have weather information, so I can t determine if frost protection is needed. If temperatures are expected to drop below 15 C, consider covering the plant with a cloth or moving it indoors. 6. Optimal Growing Conditions: During the seedling stage, your banana plant needs: Temperature: 21-30 C (70-86 F) Moisture: 70-80 humidity Soil: Well-draining, fertile soil with a pH of 5.5-6.5 Sunlight: 6-8 hours of direct sunlight daily Nutrients: High potassium and nitrogen requirements 7. Immediate Actions Needed: Find out the current weather conditions in Pune. This will help you adjust watering, temperature control, and frost protection measures. Monitor the plant regularly for any signs of stress or disease. Ensure the plant is getting enough sunlight. Fertilize with a balanced fertilizer, paying attention to potassium and nitrogen levels."
+      },
+      "questions": []
+    }
+  }
+]

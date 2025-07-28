@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2025-07-26T12:33:58.040984",
+    "data": {
+      "analysis_id": "03bb3aec-d570-4d25-afdb-732fc24ebc58",
+      "name": "Plant",
+      "age": "1 months",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Error fetching data: You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/maruf111/api/weather-api167"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/03bb3aec-d570-4d25-afdb-732fc24ebc58_crop_IMG_20250717_132636026.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "IMG_20250717_132636026.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/03bb3aec-d570-4d25-afdb-732fc24ebc58_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information provided, here s some care advice for your banana plant: 1. Current Plant Health and Growth Stage: Your plant is in the seedling stage, about 1 month old, with healthy green leaves, but showing signs of Banana Cordana. Focus should be on promoting strong root and leaf development. 2. Weather Conditions and Their Impact: Since weather data for Pune is unavailable, I will provide general advice. Ideal temperatures for this stage are between 22-30 C. Protect from strong winds. 3. Disease Prevention Treatment: Your plant has Banana Cordana. Remove and destroy affected leaves to prevent spread. Improve air circulation around the plant. Apply a fungicide if the infection is severe, following the product instructions carefully. 4. Watering Schedule: Without weather data, water when the top inch of soil feels dry. Ensure good drainage to prevent root rot. Water deeply but less frequently. 5. Frost Protection: Not applicable unless temperatures drop below 15 C. If frost is a risk, cover the plant with a cloth or move it indoors. 6. Optimal Growing Conditions: Provide indirect bright light, 12-14 hours daily. Maintain 80-90 humidity. Use well-draining, fertile soil with a pH between 5.5-6.5. 7. Immediate Actions Needed: Treat the Banana Cordana immediately by removing affected leaves and applying fungicide if necessary. Monitor the plant closely for any signs of stress or disease. Once weather data is available, adjust watering and protection strategies accordingly.",
+        "translated_advice": "Based on the information provided, here s some care advice for your banana plant: 1. Current Plant Health and Growth Stage: Your plant is in the seedling stage, about 1 month old, with healthy green leaves, but showing signs of Banana Cordana. Focus should be on promoting strong root and leaf development. 2. Weather Conditions and Their Impact: Since weather data for Pune is unavailable, I will provide general advice. Ideal temperatures for this stage are between 22-30 C. Protect from strong winds. 3. Disease Prevention Treatment: Your plant has Banana Cordana. Remove and destroy affected leaves to prevent spread. Improve air circulation around the plant. Apply a fungicide if the infection is severe, following the product instructions carefully. 4. Watering Schedule: Without weather data, water when the top inch of soil feels dry. Ensure good drainage to prevent root rot. Water deeply but less frequently. 5. Frost Protection: Not applicable unless temperatures drop below 15 C. If frost is a risk, cover the plant with a cloth or move it indoors. 6. Optimal Growing Conditions: Provide indirect bright light, 12-14 hours daily. Maintain 80-90 humidity. Use well-draining, fertile soil with a pH between 5.5-6.5. 7. Immediate Actions Needed: Treat the Banana Cordana immediately by removing affected leaves and applying fungicide if necessary. Monitor the plant closely for any signs of stress or disease. Once weather data is available, adjust watering and protection strategies accordingly."
+      },
+      "questions": []
+    }
+  }
+]

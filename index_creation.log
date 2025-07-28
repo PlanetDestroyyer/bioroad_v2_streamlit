@@ -1,0 +1,10 @@
+2025-07-28 11:42:01,441 - __main__ - INFO - Starting FAISS index creation for docs/banana_care_pdf.pdf
+2025-07-28 11:42:02,066 - __main__ - INFO - Loaded 11 pages from the PDF.
+2025-07-28 11:42:02,067 - __main__ - INFO - Split PDF into 22 text chunks.
+2025-07-28 11:42:08,971 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-07-28 11:42:08,971 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-07-28 11:42:13,945 - __main__ - INFO - HuggingFaceEmbeddings model initialized.
+2025-07-28 11:42:16,666 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 11:42:16,705 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-07-28 11:42:16,715 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2025-07-28 11:42:16,720 - __main__ - INFO - FAISS index saved successfully to 'banana_faiss_index'.

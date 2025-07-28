@@ -5,12 +5,12 @@ pillow
 numpy
 gTTS
 pydub
-googletrans==4.0.0-rc1
+deep-translator   
 langchain
 langchain-community
 langchain-google-genai
 python-dotenv
 faiss-cpu
-elevenlabs==0.3.0b0 
+# elevenlabs==0.3.0b0 
 onnxruntime
 sentence-transformers

@@ -1,0 +1,31 @@
+[
+  {
+    "timestamp": "2025-07-25T16:45:43.553186",
+    "data": {
+      "analysis_id": "57ffbb79-e6b3-404d-8a6f-893d4be3a4a3",
+      "name": "Banana Plant",
+      "age": "3 ",
+      "location": "pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Error fetching data: You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/maruf111/api/weather-api167"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/57ffbb79-e6b3-404d-8a6f-893d4be3a4a3_crop_1000152556.jpg",
+        "banana_detected": false,
+        "flower_detected": true,
+        "stage": "Flowering Stage",
+        "crop_filename": "1000152556.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/57ffbb79-e6b3-404d-8a6f-893d4be3a4a3_leaf_1000152565.jpg",
+        "num_leaves": 0,
+        "leaf_colors": [],
+        "leaf_disease": "Banana Bacterial Soft Rot",
+        "leaf_filename": "1000152565.jpg",
+        "advice": "Based on the information you provided, here s some care advice for your banana plant: Current Plant Health and Growth Stage: Your banana plant is in the flowering stage and has Banana Bacterial Soft Rot. Weather Conditions and Impact: Weather data is unavailable, so I will provide general advice. Disease Prevention Treatment: Your plant has Banana Bacterial Soft Rot. Remove the infected parts of the plant immediately and destroy them. Ensure good drainage to prevent waterlogging, which favors the spread of the disease. Apply a copper-based fungicide according to the product label. Watering Schedule: Without weather data, it s hard to give a precise watering schedule. In the flowering stage, bananas need 35-40mm of water per week. Check the soil moisture regularly. Water deeply when the top inch of soil feels dry. Avoid overwatering. Frost Protection: I cannot determine if frost protection is needed without weather data. Optimal Growing Conditions: During the flowering stage, the ideal temperature is 26-28 C (79-82 F) with 80-85 humidity. Ensure your plant gets 10-12 hours of direct sunlight. The soil pH should be between 6.0-6.8. Immediate Actions Needed: Treat the Bacterial Soft Rot. Monitor the plant closely for any changes.",
+        "translated_advice": "Based on the information you provided, here s some care advice for your banana plant: Current Plant Health and Growth Stage: Your banana plant is in the flowering stage and has Banana Bacterial Soft Rot. Weather Conditions and Impact: Weather data is unavailable, so I will provide general advice. Disease Prevention Treatment: Your plant has Banana Bacterial Soft Rot. Remove the infected parts of the plant immediately and destroy them. Ensure good drainage to prevent waterlogging, which favors the spread of the disease. Apply a copper-based fungicide according to the product label. Watering Schedule: Without weather data, it s hard to give a precise watering schedule. In the flowering stage, bananas need 35-40mm of water per week. Check the soil moisture regularly. Water deeply when the top inch of soil feels dry. Avoid overwatering. Frost Protection: I cannot determine if frost protection is needed without weather data. Optimal Growing Conditions: During the flowering stage, the ideal temperature is 26-28 C (79-82 F) with 80-85 humidity. Ensure your plant gets 10-12 hours of direct sunlight. The soil pH should be between 6.0-6.8. Immediate Actions Needed: Treat the Bacterial Soft Rot. Monitor the plant closely for any changes."
+      },
+      "questions": []
+    }
+  }
+]

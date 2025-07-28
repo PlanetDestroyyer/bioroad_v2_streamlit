@@ -11,8 +11,8 @@ from utils import (
     get_session_id, save_to_history, load_history, 
     translate_text, text_to_audio, comprehensive_text_cleaner
 )
-from detection import detect_banana, detect_flower, estimate_stage
-from config import LEAF_COUNTER_MODEL, BANANA_DISEASE_MODEL, BANANA_MODEL, BANANA_STAGE_MODEL
+from detection import detect_banana, detect_flower, estimate_stage , detect_seedling
+from config import LEAF_COUNTER_MODEL, BANANA_DISEASE_MODEL, BANANA_MODEL, BANANA_STAGE_MODEL , SEEDLING_MODEL
 from leaf_counter import analyze_leaf_colors
 from banana_disease_detection import predict_banana_disease
 import cv2
@@ -24,6 +24,8 @@ import streamlit as st
 import requests
 from datetime import datetime, timedelta
 
+st.cache_data.clear()
+st.cache_resource.clear()
 
 st.set_page_config(page_title="Home",layout="wide",initial_sidebar_state="auto",menu_items=None)  
 
@@ -391,6 +393,7 @@ try:
             logger.error(f"Error creating input widgets: {e}")
             st.error("Error setting up input fields")
 
+        # Inside the "Analyze Plant" button block
         if st.button("Analyze Plant"):
             try:
                 if not crop_file or not leaf_file:
@@ -411,22 +414,21 @@ try:
                             try:
                                 weather_data = get_weather_forecast(location)
                                 weather_context = format_weather_for_ai(weather_data, location.strip())
-
                                 result['weather_data'] = weather_data
-
-                                logger.info(f"Weather data fetched for {location}: {weather_data[:1]}")  # Log first entry for brevity
+                                logger.info(f"Weather data fetched for {location}: {weather_data[:1]}")
                                 if debug_mode:
                                     st.write(f"Debug: Weather data fetched for {location}")
                             except Exception as e:
                                 logger.error(f"Weather fetch error: {e}")
                                 weather_context = f"Weather data unavailable for {location}"
+
                         # Process crop image
                         try:
                             crop_bytes = crop_file.read()
                             crop_filename = crop_file.name
                             crop_unique_filename = f"{analysis_id}_crop_{crop_filename}"
                             crop_filepath = os.path.join(UPLOAD_FOLDER, crop_unique_filename)
-                            
+
                             with open(crop_filepath, "wb") as f:
                                 f.write(crop_bytes)
                             logger.info(f"Crop file saved: {crop_filepath}")
@@ -439,7 +441,9 @@ try:
 
                             banana_present = detect_banana(crop_bytes, model)
                             flower_present = detect_flower(crop_bytes)
-                            stage = estimate_stage(banana_present, flower_present)
+                            seedling_present = detect_seedling(crop_bytes, SEEDLING_MODEL)
+                            # Pass age to estimate_stage
+                            stage = estimate_stage(banana_present, flower_present, seedling_present, age=age)
 
                             result.update({
                                 "crop_image_path": crop_filepath,
@@ -455,7 +459,6 @@ try:
                             st.error(f"Error processing crop image: {e}")
                             raise e
 
-                        # Process leaf image
                         try:
                             leaf_bytes = leaf_file.read()
                             leaf_filename = leaf_file.name
@@ -504,32 +507,46 @@ try:
 
                         # Enhanced query for RAG with weather integration
                         query = f"""
-                        As an expert agricultural advisor, analyze this banana plant and provide comprehensive care advice based on both your agricultural knowledge and current weather conditions.
+As an expert agricultural advisor, analyze the provided banana plant data and deliver comprehensive, stage-specific care advice based on agricultural best practices, current weather conditions, and the 'Banana Plant Life Cycle Guide' from Bandhan Agritech Private Limited[](https://bandhanagri.com). The growth stage is primarily determined by the plant's age ({age}), refined by image analysis. All recommendations must align with the guide’s fertilizer, pest management, and sustainability practices, referencing specific products (e.g., BioStart, Bamida) where applicable.
 
-                        PLANT ANALYSIS:
-                        - Plant Name: '{name}' 
-                        - Plant Age: {age}
-                        - Fruits detected: {'Yes' if result.get('banana_detected', False) else 'No'}
-                        - Flowers detected: {'Yes' if result.get('flower_detected', False) else 'No'}
-                        - Estimated Growth Stage: {result.get('stage', 'Unknown')}
-                        - Leaf Analysis: Detected {result.get('num_leaves', 0)} leaves with colors: {', '.join(result.get('leaf_colors', []))}
-                        - Leaf Disease Status: {result.get('leaf_disease', 'Unknown')}
+PLANT ANALYSIS:
+- Plant Name: '{name}'
+- Plant Age: {age}
+- Fruits Detected: {'Yes' if result.get('banana_detected', False) else 'No'}
+- Flowers Detected: {'Yes' if result.get('flower_detected', False) else 'No'}
+- Estimated Growth Stage: {result.get('stage', 'Unknown')}
+- Leaf Analysis: Detected {result.get('num_leaves', 0)} leaves with colors: {', '.join(result.get('leaf_colors', []))}
+- Leaf Disease Status: {result.get('leaf_disease', 'Unknown')}
 
-                        WEATHER CONDITIONS:
-                        {weather_context}
+WEATHER CONDITIONS:
+{weather_context}
 
-                        Please provide detailed care advice that considers:
-                        1. Current plant health and growth stage
-                        2. Weather conditions and their impact on the plant
-                        3. Disease prevention/treatment recommendations
-                        4. Watering schedule based on weather and evapotranspiration
-                        5. Frost protection if needed
-                        6. Optimal growing conditions for the current stage
-                        7. Any immediate actions needed based on weather alerts
+Provide detailed care advice addressing:
+1. **Plant Health and Growth Stage**: Tailor recommendations to the age-based growth stage ({result.get('stage', 'Unknown')}), detailing:
+   - Optimal environmental conditions (temperature, humidity, sunlight) from the guide.
+   - Fertilizer applications (e.g., product, rate, method, timing) for the stage, including organic options.
+   - Physiological needs (e.g., root development, fruit filling) and monitoring techniques.
+2. **Weather Impact**: Adjust care based on weather conditions, including:
+   - Watering schedule (liters/week or mm/week) considering evapotranspiration rates and rainfall.
+   - Temperature and humidity management (e.g., misting, shade nets).
+   - Wind protection measures (e.g., windbreaks) if high winds are reported.
+3. **Disease and Pest Management**: Recommend prevention/treatment based on leaf disease status and stage-specific risks, using Bandhan Agritech insecticides (e.g., Bamida, WeevilGuard, FruitSafe, EcoShield):
+   - Specify product, application rate (e.g., mL/ha), and timing.
+   - Include integrated pest management (IPM) practices (e.g., biological controls, cultural methods).
+4. **Frost Protection**: If frost risk exists (temperatures below , suggest protective measures (e.g., mulching, frost blankets).
+5. **Immediate Actions**: Highlight urgent tasks (e.g., pest treatment, irrigation adjustments) based on weather alerts or plant health.
+6. **AI-Driven Insights**: Provide:
+   - Yield protection estimates (e.g., tonnes/ha gain from interventions).
+   - Cost-benefit analysis for fertilizers/pesticides
+   - Optimization tips (e.g., precision agriculture tools, soil testing frequency).
 
-                        Base your recommendations on both agricultural best practices and the specific weather conditions provided.
-                        """
+Ensure recommendations are:
+- **Stage-Specific**: Align with the guide’s stages (Germination, Seedling, Vegetative, Flowering, Fruit Development, Harvesting).
+- **Sustainable**: Prioritize organic fertilizers (e.g., vermicompost) and IPM, referencing the guide’s sustainability practices.
+- **Weather-Adapted**: Account for current temperature, humidity, rainfall, and alerts in {weather_context}.
 
+Base advice on the 'Banana Plant Life Cycle Guide,' Bandhan Agritech’s product catalog, and real-time weather data, ensuring practical, actionable recommendations for farmers.
+"""
                         try:
                             response = qa_chain.invoke({"query": query})
                             advice = response.get('result', "No advice available.") if isinstance(response, dict) else str(response)

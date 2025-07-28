@@ -21,6 +21,7 @@ LEAF_COUNTER_MODEL = "models/yolo11x_leaf.pt"
 BANANA_MODEL = 'models/yolo8n.pt'
 BANANA_DISEASE_MODEL = "models/banana_disease_prediction.h5"
 BANANA_STAGE_MODEL = "models/banana_stage_classifier.h5"
+SEEDLING_MODEL = "models/seedling_yolo_model.pt"
 
 
 try:

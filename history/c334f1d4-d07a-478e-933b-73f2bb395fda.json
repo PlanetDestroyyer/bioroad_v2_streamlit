@@ -1,0 +1,35 @@
+[
+  {
+    "timestamp": "2025-07-28T11:00:14.673127",
+    "data": {
+      "analysis_id": "909d5ded-e115-48ea-b431-4c402f0da976",
+      "name": "Banana",
+      "age": "1 months",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Error fetching data: You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/maruf111/api/weather-api167"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/909d5ded-e115-48ea-b431-4c402f0da976_crop_IMG_20250717_132636026.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Vegetative Stage",
+        "crop_filename": "IMG_20250717_132636026.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/909d5ded-e115-48ea-b431-4c402f0da976_leaf_di_bana.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": "Banana cordana",
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Based on the information you provided, here s some care advice for your one-month-old banana plant in the vegetative stage: 1. Plant Health and Growth Stage: Your banana plant is in the seedling stage, characterized by rapid leaf production and root system expansion. The presence of three healthy green leaves indicates good initial health. 2. Weather Conditions and Their Impact: Since weather data for Pune is unavailable, I will provide general recommendations. Ideal temperatures for this stage are between 28-30 C. Protect the plant from strong winds. 3. Disease Prevention Treatment: Your plant has Banana Cordana. Apply a fungicide according to the product label. Ensure good air circulation around the plant to reduce humidity. 4. Watering Schedule: Without weather data, a general watering guideline is to keep the soil consistently moist but not waterlogged. Check the soil moisture daily by feeling the top inch of soil. If it feels dry, water thoroughly. Ensure proper drainage to prevent root rot. 5. Frost Protection: Not applicable, as banana plants are unlikely to experience frost in Pune. 6. Optimal Growing Conditions: Provide 12-14 hours of bright, indirect sunlight daily. Maintain high humidity (60-70 ) around the plant. Use a well-draining, fertile soil mix with a slightly acidic pH (5.5-6.5). 7. Immediate Actions: Monitor the plant daily for any signs of stress or disease progression. Adjust watering frequency based on soil moisture levels. Apply fungicide to treat Banana Cordana.",
+        "translated_advice": "Based on the information you provided, here s some care advice for your one-month-old banana plant in the vegetative stage: 1. Plant Health and Growth Stage: Your banana plant is in the seedling stage, characterized by rapid leaf production and root system expansion. The presence of three healthy green leaves indicates good initial health. 2. Weather Conditions and Their Impact: Since weather data for Pune is unavailable, I will provide general recommendations. Ideal temperatures for this stage are between 28-30 C. Protect the plant from strong winds. 3. Disease Prevention Treatment: Your plant has Banana Cordana. Apply a fungicide according to the product label. Ensure good air circulation around the plant to reduce humidity. 4. Watering Schedule: Without weather data, a general watering guideline is to keep the soil consistently moist but not waterlogged. Check the soil moisture daily by feeling the top inch of soil. If it feels dry, water thoroughly. Ensure proper drainage to prevent root rot. 5. Frost Protection: Not applicable, as banana plants are unlikely to experience frost in Pune. 6. Optimal Growing Conditions: Provide 12-14 hours of bright, indirect sunlight daily. Maintain high humidity (60-70 ) around the plant. Use a well-draining, fertile soil mix with a slightly acidic pH (5.5-6.5). 7. Immediate Actions: Monitor the plant daily for any signs of stress or disease progression. Adjust watering frequency based on soil moisture levels. Apply fungicide to treat Banana Cordana."
+      },
+      "questions": []
+    }
+  }
+]
