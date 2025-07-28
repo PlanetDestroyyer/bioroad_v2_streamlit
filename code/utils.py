@@ -77,6 +77,40 @@ def comprehensive_text_cleaner(text):
         logger.error(f"Error in comprehensive_text_cleaner: {e}")
         return str(text) if text else ""
 
+def comprehensive_text_cleaner_text(text):
+    """Comprehensive text cleaning function to remove formatting while preserving language structure"""
+    try:
+        if not text or not isinstance(text, str):
+            logger.debug("Empty or invalid text input for cleaning")
+            return ""
+        
+        logger.debug(f"Input text for cleaning: {text}")
+        
+        
+        text = re.sub(r'\*{1,3}(.*?)\*{1,3}', r'\1', text)  # Remove *text*, **text**, ***text***
+        text = re.sub(r'`{1,3}(.*?)`{1,3}', r'\1', text)  # Remove code blocks
+        text = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', text)  # Remove markdown links
+        text = re.sub(r'!\[(.*?)\]\(.*?\)', r'\1', text)  # Remove images
+        text = re.sub(r'_{1,2}(.*?)_{1,2}', r'\1', text)  # Remove underline formatting
+        text = re.sub(r'~~(.*?)~~', r'\1', text)  # Remove strikethrough
+        text = re.sub(r'\|.*?\|', '', text)  # Remove tables
+        # text = re.sub(r'^[\s-]*$', '', text, flags=re.MULTILINE)  # Remove lines with only dashes/spaces
+        
+        
+        text = re.sub(r'[^\w\s\.,!?;:()\-\n\u0900-\u097F]', ' ', text)  # Include Devanagari range
+        
+        # Normalize whitespace
+        text = re.sub(r'\n{2,}', '\n', text)  # Reduce multiple newlines to one
+        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with single space
+        text = text.strip()
+        
+        logger.debug(f"Cleaned text: {text}")
+        return text
+        
+    except Exception as e:
+        logger.error(f"Error in comprehensive_text_cleaner: {e}")
+        return str(text) if text else ""
+
 def clean_text_for_tts(text):
     """Clean text specifically for text-to-speech while preserving sentence structure"""
     try:
@@ -105,7 +139,7 @@ def clean_text_for_display(text):
     """Clean text for display with preserved structure"""
     try:
         logger.debug(f"Input text for display cleaning: {text}")
-        cleaned_text = comprehensive_text_cleaner(text)
+        cleaned_text = comprehensive_text_cleaner_text(text)
         logger.debug(f"Display cleaned text: {cleaned_text}")
         return cleaned_text
     except Exception as e:
