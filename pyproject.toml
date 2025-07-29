@@ -8,6 +8,7 @@ dependencies = [
     "deep-translator>=1.11.4",
     "faiss-cpu>=1.11.0.post1",
     "gtts>=2.5.4",
+    "inference",
     "langchain>=0.2.16",
     "langchain-community>=0.2.16",
     "langchain-google-genai>=1.0.10",
@@ -20,6 +21,7 @@ dependencies = [
     "python-dotenv>=1.1.1",
     "sentence-transformers>=5.0.0",
     "streamlit>=1.47.0",
+    "supervision",
     "ultralytics>=8.3.169",
     "ultralyticsplus>=0.0.7",
 ]

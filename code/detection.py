@@ -318,14 +318,36 @@ def detect_flower(image_input):
         logger.error(f"Error in flower detection: {e}")
         return False
 
-def detect_seedling(image_input, seedling_model):
+def detect_seedling(image_input, seedling_model="/home/x/bandhan_work/streamlit_bioroad/models/seedling_yolo_model.pt"):
     """
     Fixed seedling detection
+    Args:
+        image_input: Can be file path, bytes, or Streamlit uploaded file
+        seedling_model: YOLO model instance or path to model file (default: None)
+    Returns:
+        bool: True if seedling detected, False otherwise
     """
     try:
+        # Load model if a string path is provided or None
         if seedling_model is None:
-            logger.warning("Seedling model not available")
+            default_model_path = "models/seedling_yolo_model.pt"
+            if not os.path.exists(default_model_path):
+                logger.error(f"Default seedling model file not found: {default_model_path}")
+                return False
+            seedling_model = YOLO(default_model_path)
+            # logger.info(f"Loaded default seedling model: {default_model_path}")
+        elif isinstance(seedling_model, str):
+            if not os.path.exists(seedling_model):
+                logger.error(f"Seedling model file not found: {seedling_model}")
+                return False
+            seedling_model = YOLO(seedling_model)
+            # logger.info(f"Loaded seedling model: {seedling_model}")
+        elif not isinstance(seedling_model, YOLO):
+            logger.error(f"Invalid seedling model type: {type(seedling_model)}")
             return False
+        
+        # Log model type for debugging
+        logger.info(f"Seedling model type: {type(seedling_model)}")
         
         # Convert input to PIL Image
         if isinstance(image_input, str):
@@ -333,17 +355,26 @@ def detect_seedling(image_input, seedling_model):
                 logger.error(f"Seedling image file not found: {image_input}")
                 return False
             img = Image.open(image_input).convert("RGB")
+            logger.info(f"Processing image file: {image_input}")
         elif isinstance(image_input, bytes):
             img = Image.open(io.BytesIO(image_input)).convert("RGB")
+            logger.info("Processing image from bytes")
         elif hasattr(image_input, 'read'):
             image_input.seek(0)
             img = Image.open(image_input).convert("RGB")
+            logger.info("Processing image from Streamlit file")
         else:
             logger.error(f"Unsupported input type for seedling detection: {type(image_input)}")
             return False
         
+        # Ensure image is valid
+        if img.size[0] < 50 or img.size[1] < 50:
+            logger.error("Image too small for detection")
+            return False
+        
         try:
-            results = seedling_model(img, verbose=False)
+            results = seedling_model(img, conf=0.3, verbose=False)  # Added confidence threshold
+            logger.info(f"YOLO results: {len(results)} detections")
             
             for result in results:
                 if result.boxes is not None and len(result.boxes) > 0:
@@ -360,7 +391,7 @@ def detect_seedling(image_input, seedling_model):
                                     logger.info(f"Seedling detected: {class_name}")
                                     return True
                         except Exception as e:
-                            logger.error(f"Error processing seedling detection: {e}")
+                            logger.error(f"Error processing seedling detection box: {e}")
                             continue
             
             logger.info("No seedling detected")
@@ -373,3 +404,7 @@ def detect_seedling(image_input, seedling_model):
     except Exception as e:
         logger.error(f"Error in seedling detection: {e}")
         return False
+    
+if __name__ == "__main__":
+    img = "/home/x/Downloads/seeding/IMG_20250717_133142007.jpg"
+    print(detect_seedling(img))

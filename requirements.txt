@@ -14,3 +14,5 @@ faiss-cpu
 # elevenlabs==0.3.0b0 
 onnxruntime
 sentence-transformers
+inference
+supervision
