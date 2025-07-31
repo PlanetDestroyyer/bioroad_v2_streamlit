@@ -342,6 +342,7 @@ try:
                     age = selected_age
                 location = st.text_input(UI_STRINGS["location_label"], placeholder=UI_STRINGS["location_placeholder"], key="location_input")
                 
+                water_given = st.text_input("Last Time Water Given (in liters) with Time", placeholder="e.g., 5 liters at 8 am", key="water_given_input")
                 crop_file = st.file_uploader(
                     UI_STRINGS["crop_image_label"], 
                     type=["png", "jpg", "jpeg", "webp"], 
@@ -468,6 +469,7 @@ As an expert agricultural advisor, analyze the provided banana plant data and de
 PLANT ANALYSIS:
 - Plant Name: '{name}'
 - Plant Age: {age}
+- Last Time Water Given with Amount: {water_given} liters
 - Fruits Detected: {'Yes' if result.get('banana_detected', False) else 'No'}
 - Flowers Detected: {'Yes' if result.get('flower_detected', False) else 'No'}
 - Estimated Growth Stage: {result.get('stage', 'Unknown')}
@@ -477,31 +479,48 @@ PLANT ANALYSIS:
 WEATHER CONDITIONS:
 {weather_context}
 
+**Disease Validation**:
+- Verify if the detected Leaf Disease Status ({result.get('leaf_disease', 'Unknown')}) is plausible for the Estimated Growth Stage ({result.get('stage', 'Unknown')}) based on general agricultural knowledge and the 'Banana Plant Life Cycle Guide'. If the disease is unlikely for the stage, note potential misidentification or contributing factors (e.g., environmental stress, image quality) and adjust recommendations accordingly.
+
+**Structured Output for Disease Cases**:
+If the Leaf Disease Status is not 'Unknown' or 'Healthy', structure the response as follows:
+1. **Information about the Disease**:
+   - Provide a detailed description of the disease, including symptoms, causes (e.g., fungal, bacterial, viral), and typical conditions (e.g., humidity, temperature) that promote it.
+2. **Prevention from Disease**:
+   - Recommend preventive measures to avoid spread or recurrence, including cultural practices (e.g., spacing, pruning), integrated pest management (IPM) techniques, and environmental adjustments.
+3. **Cure and Suggested Products**:
+   - Suggest specific treatments using Bandhan Agritech products (e.g., Bamida, WeevilGuard, FruitSafe, EcoShield), specifying product name, application rate (e.g., mL/ha), method, and timing.
+   - Include organic or sustainable treatment options where applicable.
+4. **Rest of the Advice**:
+   - Provide the remaining care advice as detailed below, formatted as normal text.
+
+**General Care Advice** (for all cases, placed after disease section if applicable):
 Provide detailed care advice addressing:
 1. **Plant Health and Growth Stage**: Tailor recommendations to the age-based growth stage ({result.get('stage', 'Unknown')}), detailing:
    - Optimal environmental conditions (temperature, humidity, sunlight) from the guide.
    - Fertilizer applications (e.g., product, rate, method, timing) for the stage, including organic options.
    - Physiological needs (e.g., root development, fruit filling) and monitoring techniques.
 2. **Weather Impact**: Adjust care based on weather conditions, including:
-   - Watering schedule (liters/week or mm/week) considering evapotranspiration rates and rainfall.
+   - Watering schedule (liters/week or mm/week) considering evapotranspiration rates, rainfall, and the last watering event ({water_given} liters).
+   - Specific recommendation for the next watering time (e.g., date or time interval) based on the plant’s growth stage, weather forecast, and prior watering.
    - Temperature and humidity management (e.g., misting, shade nets).
    - Wind protection measures (e.g., windbreaks) if high winds are reported.
-3. **Disease and Pest Management**: Recommend prevention/treatment based on leaf disease status and stage-specific risks, using Bandhan Agritech insecticides (e.g., Bamida, WeevilGuard, FruitSafe, EcoShield):
+3. **Disease and Pest Management** (if no specific disease is detected): Recommend prevention/treatment for stage-specific risks, using Bandhan Agritech insecticides (e.g., Bamida, WeevilGuard, FruitSafe, EcoShield):
    - Specify product, application rate (e.g., mL/ha), and timing.
    - Include integrated pest management (IPM) practices (e.g., biological controls, cultural methods).
-4. **Frost Protection**: If frost risk exists (temperatures below , suggest protective measures (e.g., mulching, frost blankets).
+4. **Frost Protection**: If frost risk exists (temperatures below 0°C), suggest protective measures (e.g., mulching, frost blankets).
 5. **Immediate Actions**: Highlight urgent tasks (e.g., pest treatment, irrigation adjustments) based on weather alerts or plant health.
 6. **AI-Driven Insights**: Provide:
    - Yield protection estimates (e.g., tonnes/ha gain from interventions).
-   - Cost-benefit analysis for fertilizers/pesticides
+   - Cost-benefit analysis for fertilizers/pesticides.
    - Optimization tips (e.g., precision agriculture tools, soil testing frequency).
 
-Ensure recommendations are:
-- **Stage-Specific**: Align with the guide’s stages (Germination, Seedling, Vegetative, Flowering, Fruit Development, Harvesting).
-- **Sustainable**: Prioritize organic fertilizers (e.g., vermicompost) and IPM, referencing the guide’s sustainability practices.
-- **Weather-Adapted**: Account for current temperature, humidity, rainfall, and alerts in {weather_context}.
-
-Base advice on the 'Banana Plant Life Cycle Guide,' Bandhan Agritech’s product catalog, and real-time weather data, ensuring practical, actionable recommendations for farmers.
+**Output Requirements**:
+- Ensure recommendations are:
+  - **Stage-Specific**: Align with the guide’s stages (Seedling, Vegetative, Flowering, Fruit Development, Harvesting).
+  - **Sustainable**: Prioritize organic fertilizers (e.g., vermicompost) and IPM, referencing the guide’s sustainability practices.
+  - **Weather-Adapted**: Account for current temperature, humidity, rainfall, alerts, and the last watering event in {weather_context}.
+- Base advice on the 'Banana Plant Life Cycle Guide,' Bandhan Agritech’s product catalog, and real-time weather data, ensuring practical, actionable recommendations for farmers.
 """
                             try:
                                 response = qa_chain.invoke({"query": query})

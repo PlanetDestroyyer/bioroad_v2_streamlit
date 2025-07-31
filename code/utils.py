@@ -87,22 +87,22 @@ def comprehensive_text_cleaner_text(text):
         logger.debug(f"Input text for cleaning: {text}")
         
         
-        text = re.sub(r'\*{1,3}(.*?)\*{1,3}', r'\1', text)  # Remove *text*, **text**, ***text***
-        text = re.sub(r'`{1,3}(.*?)`{1,3}', r'\1', text)  # Remove code blocks
-        text = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', text)  # Remove markdown links
-        text = re.sub(r'!\[(.*?)\]\(.*?\)', r'\1', text)  # Remove images
-        text = re.sub(r'_{1,2}(.*?)_{1,2}', r'\1', text)  # Remove underline formatting
-        text = re.sub(r'~~(.*?)~~', r'\1', text)  # Remove strikethrough
-        text = re.sub(r'\|.*?\|', '', text)  # Remove tables
-        # text = re.sub(r'^[\s-]*$', '', text, flags=re.MULTILINE)  # Remove lines with only dashes/spaces
+        # text = re.sub(r'\*{1,3}(.*?)\*{1,3}', r'\1', text)  # Remove *text*, **text**, ***text***
+        # text = re.sub(r'`{1,3}(.*?)`{1,3}', r'\1', text)  # Remove code blocks
+        # text = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', text)  # Remove markdown links
+        # text = re.sub(r'!\[(.*?)\]\(.*?\)', r'\1', text)  # Remove images
+        # text = re.sub(r'_{1,2}(.*?)_{1,2}', r'\1', text)  # Remove underline formatting
+        # text = re.sub(r'~~(.*?)~~', r'\1', text)  # Remove strikethrough
+        # text = re.sub(r'\|.*?\|', '', text)  # Remove tables
+        # # text = re.sub(r'^[\s-]*$', '', text, flags=re.MULTILINE)  # Remove lines with only dashes/spaces
         
         
-        text = re.sub(r'[^\w\s\.,!?;:()\-\n\u0900-\u097F]', ' ', text)  # Include Devanagari range
+        # text = re.sub(r'[^\w\s\.,!?;:()\-\n\u0900-\u097F]', ' ', text)  # Include Devanagari range
         
-        # Normalize whitespace
-        text = re.sub(r'\n{2,}', '\n', text)  # Reduce multiple newlines to one
-        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with single space
-        text = text.strip()
+        # # Normalize whitespace
+        # text = re.sub(r'\n{2,}', '\n', text)  # Reduce multiple newlines to one
+        # text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with single space
+        # text = text.strip()
         
         logger.debug(f"Cleaned text: {text}")
         return text
