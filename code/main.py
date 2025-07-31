@@ -116,9 +116,9 @@ def add_bg_from_local(image_file):
 
 def get_weather_forecast(location):
     url = "https://weather-api167.p.rapidapi.com/api/weather/forecast"
-    querystring = {"place": location, "units": "metric"}
+    querystring = {f"place": {location}, "units": "metric"}
     headers = {
-        "x-rapidapi-key": "46d33ff5a0mshe40b3178c84a8b4p1f5cf6jsnb84963ce1cd1",
+        "x-rapidapi-key": "1d2cc170b7msh0e480d85b882724p18bbf0jsn633e482ffa39",
         "x-rapidapi-host": "weather-api167.p.rapidapi.com",
         "Accept": "application/json"
     }
@@ -154,10 +154,10 @@ def get_weather_forecast(location):
                 rain = entry.get('rain', {})
                 weather_desc = entry['weather'][0]['description']
 
-                temp = main['temperature']
-                temp_min = main['temp_min']
-                temp_max = main['temp_max']
-                feels_like = main['temperature_feels_like']
+                temp = main['temprature']
+                temp_min = main['temprature_min']
+                temp_max = main['temprature_max']
+                feels_like = main['temprature_feels_like']
                 humidity = main['humidity']
                 precipitation = rain.get('amount', 0)
 
@@ -188,13 +188,15 @@ def get_weather_forecast(location):
     else:
         return [{"error": f"Error fetching data: {data.get('message', 'Unknown error')}"}]
 
-def format_weather_for_ai(weather_data, location, lang_code):
+# Run and print result
+def format_weather_for_ai(weather_data, location):
+    """Format weather data for AI consumption"""
     if not weather_data or weather_data[0].get('error'):
-        return translate_text(f"Weather data for {location} is currently unavailable.", lang_code)
+        return f"Weather data for {location} is currently unavailable."
     
-    weather_summary = translate_text(f"Weather forecast for {location}:\n", lang_code)
+    weather_summary = f"Weather forecast for {location}:\n"
     for day_data in weather_data:
-        weather_summary += translate_text(f"""
+        weather_summary += f"""
 Date: {day_data['date_time']}
 Temperature: {day_data['temperature']}°C (Min: {day_data['temp_min']}°C, Max: {day_data['temp_max']}°C)
 Humidity: {day_data['humidity']}%
@@ -206,7 +208,7 @@ Frost Warning: {day_data['frost_warning']}
 Severe Weather: {day_data['severe_weather']}
 Description: {day_data['description']}
 ---
-""", lang_code)
+"""
     return weather_summary
 
 def build_conversation_context(current_analysis, lang_code):
@@ -378,7 +380,7 @@ try:
                             if location:
                                 try:
                                     weather_data = get_weather_forecast(location)
-                                    weather_context = format_weather_for_ai(weather_data, location.strip(), lang_code)
+                                    weather_context = format_weather_for_ai(weather_data, location.strip())
                                     result['weather_data'] = weather_data
                                     logger.info(f"Weather data fetched for {location}: {weather_data[:1]}")
                                 except Exception as e:
@@ -653,7 +655,7 @@ Provide detailed care advice addressing:
                                     weather_context = ""
                                     if 'result' in current_analysis and 'weather_data' in current_analysis['result']:
                                         location = current_analysis.get('location', '')
-                                        weather_context = format_weather_for_ai(current_analysis['result']['weather_data'], location, lang_code)
+                                        weather_context = format_weather_for_ai(current_analysis['result']['weather_data'], location)
                                     
                                     question_en = question if lang_code == 'en' else translate_text(question, 'en')
                                     enhanced_query = f"""

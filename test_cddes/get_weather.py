@@ -1,11 +1,11 @@
 import requests
 from datetime import datetime, timedelta
 
-def get_pune_weather_forecast(location):
+def get_weather_forecast(location):
     url = "https://weather-api167.p.rapidapi.com/api/weather/forecast"
     querystring = {f"place": {location}, "units": "metric"}
     headers = {
-        "x-rapidapi-key": "46d33ff5a0mshe40b3178c84a8b4p1f5cf6jsnb84963ce1cd1",
+        "x-rapidapi-key": "1d2cc170b7msh0e480d85b882724p18bbf0jsn633e482ffa39",
         "x-rapidapi-host": "weather-api167.p.rapidapi.com",
         "Accept": "application/json"
     }
@@ -100,7 +100,7 @@ Description: {day_data['description']}
 
 
 city = "Pune"
-weather_data = get_pune_weather_forecast(city)
+weather_data = get_weather_forecast(city)
 print(weather_data)
 formatted_weather = format_weather_for_ai(weather_data, city)
 print( format_weather_for_ai(weather_data, city))
