@@ -141,7 +141,7 @@ def clean_text_for_display(text):
         logger.debug(f"Input text for display cleaning: {text}")
         cleaned_text = comprehensive_text_cleaner_text(text)
         logger.debug(f"Display cleaned text: {cleaned_text}")
-        return cleaned_text
+        return text
     except Exception as e:
         logger.error(f"Error in clean_text_for_display: {e}")
         return str(text) if text else ""

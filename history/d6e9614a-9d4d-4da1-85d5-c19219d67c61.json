@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": "2025-07-29T17:28:06.611908",
+    "data": {
+      "analysis_id": "2c16cc71-9ee1-4933-af86-19bc9b203f58",
+      "name": "Banana",
+      "age": "1 month",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Error fetching data: You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/maruf111/api/weather-api167"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/2c16cc71-9ee1-4933-af86-19bc9b203f58_crop_banana_plant_image_wt.jpeg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Seeding Stage",
+        "crop_filename": "banana_plant_image_wt.jpeg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/2c16cc71-9ee1-4933-af86-19bc9b203f58_leaf_di_bana_annotated.jpg",
+        "num_leaves": 3,
+        "leaf_colors": [
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": [
+          "No detections"
+        ],
+        "leaf_filename": "di_bana.jpg",
+        "advice": "Okay, here s some stage-specific care advice for your banana plant, keeping in mind that weather data for Pune is currently unavailable. Plant Health and Growth Stage: Your banana plant is in the Seedling Stage (1 month old). Optimal Environmental Conditions: Temperature: Aim for 28-32 C (82-90 F). Moisture: Maintain 70-80 humidity. Sunlight: Ensure 6-8 hours of direct sunlight daily. Fertilizer Applications: Product: BioStart (or similar starter fertilizer with high phosphorus content). Rate: Follow the instructions on the product label for seedling application. Method: Apply as a soil drench around the base of the plant. Timing: Apply weekly for the first month to promote strong root development. Organic Option: Use a diluted compost tea (1:10 ratio) as an alternative to chemical fertilizers. Physiological Needs and Monitoring: Focus on root development during this stage. Monitor leaf color and growth rate. Healthy green leaves indicate good nutrient uptake. Check for signs of nutrient deficiencies (e.g., yellowing leaves). Weather Impact: Since I don t have weather data for Pune, I ll give general advice. You ll need to adjust based on your local conditions. Watering Schedule: Without rainfall data, water when the top inch of soil feels dry. Avoid overwatering, which can lead to root rot. Ensure good drainage in the pot or planting area. Temperature and Humidity Management: If temperatures are consistently high, provide shade during the hottest part of the day. If humidity is low, mist the plant regularly to increase moisture levels. Wind Protection Measures: If you experience high winds, provide a windbreak to protect the young plant from damage. Disease and Pest Management: At this stage, the plant is susceptible to fungal diseases and pests like aphids. Prevention: Apply EcoShield as a preventative measure against fungal diseases. Follow the label instructions for application rate (mL ha converted to your plant size). If you notice aphids, use Bamida at the recommended rate (mL ha converted to your plant size). IPM Practices: Encourage beneficial insects (e.g., ladybugs) to control aphids. Frost Protection: If temperatures drop below 10 C (50 F), protect the plant with a frost blanket or move it indoors. Immediate Actions: Monitor soil moisture levels and adjust watering as needed. Check regularly for pests and diseases and take action promptly. AI-Driven Insights: Without specific AI data, I can t provide yield protection estimates or cost-benefit analyses. However, consider the following: Yield Protection: Early pest and disease control can significantly increase yield potential. Cost-Benefit: Investing in quality fertilizers and pest control products can result in healthier plants and higher yields, offsetting the initial cost. Optimization Tips: Conduct regular soil testing to determine nutrient levels and adjust fertilizer applications accordingly. Remember to always follow the instructions on the product labels for fertilizers and pesticides.",
+        "translated_advice": "Okay, here s some stage-specific care advice for your banana plant, keeping in mind that weather data for Pune is currently unavailable. Plant Health and Growth Stage: Your banana plant is in the Seedling Stage (1 month old). Optimal Environmental Conditions: Temperature: Aim for 28-32 C (82-90 F). Moisture: Maintain 70-80 humidity. Sunlight: Ensure 6-8 hours of direct sunlight daily. Fertilizer Applications: Product: BioStart (or similar starter fertilizer with high phosphorus content). Rate: Follow the instructions on the product label for seedling application. Method: Apply as a soil drench around the base of the plant. Timing: Apply weekly for the first month to promote strong root development. Organic Option: Use a diluted compost tea (1:10 ratio) as an alternative to chemical fertilizers. Physiological Needs and Monitoring: Focus on root development during this stage. Monitor leaf color and growth rate. Healthy green leaves indicate good nutrient uptake. Check for signs of nutrient deficiencies (e.g., yellowing leaves). Weather Impact: Since I don t have weather data for Pune, I ll give general advice. You ll need to adjust based on your local conditions. Watering Schedule: Without rainfall data, water when the top inch of soil feels dry. Avoid overwatering, which can lead to root rot. Ensure good drainage in the pot or planting area. Temperature and Humidity Management: If temperatures are consistently high, provide shade during the hottest part of the day. If humidity is low, mist the plant regularly to increase moisture levels. Wind Protection Measures: If you experience high winds, provide a windbreak to protect the young plant from damage. Disease and Pest Management: At this stage, the plant is susceptible to fungal diseases and pests like aphids. Prevention: Apply EcoShield as a preventative measure against fungal diseases. Follow the label instructions for application rate (mL ha converted to your plant size). If you notice aphids, use Bamida at the recommended rate (mL ha converted to your plant size). IPM Practices: Encourage beneficial insects (e.g., ladybugs) to control aphids. Frost Protection: If temperatures drop below 10 C (50 F), protect the plant with a frost blanket or move it indoors. Immediate Actions: Monitor soil moisture levels and adjust watering as needed. Check regularly for pests and diseases and take action promptly. AI-Driven Insights: Without specific AI data, I can t provide yield protection estimates or cost-benefit analyses. However, consider the following: Yield Protection: Early pest and disease control can significantly increase yield potential. Cost-Benefit: Investing in quality fertilizers and pest control products can result in healthier plants and higher yields, offsetting the initial cost. Optimization Tips: Conduct regular soil testing to determine nutrient levels and adjust fertilizer applications accordingly. Remember to always follow the instructions on the product labels for fertilizers and pesticides."
+      },
+      "questions": []
+    }
+  },
+  {
+    "timestamp": "2025-07-29T17:30:33.262063",
+    "data": {
+      "analysis_id": "5a796ebf-6cc7-4052-821b-b20cb6b8d9b1",
+      "name": "Banana",
+      "age": "1 month",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Error fetching data: You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/maruf111/api/weather-api167"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/5a796ebf-6cc7-4052-821b-b20cb6b8d9b1_crop_banana_plant_image_wt.jpeg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Seeding Stage",
+        "crop_filename": "banana_plant_image_wt.jpeg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/5a796ebf-6cc7-4052-821b-b20cb6b8d9b1_leaf_black_sigota_annotated.jpg",
+        "num_leaves": 4,
+        "leaf_colors": [
+          "Brown/Red",
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": [
+          "panama",
+          "8"
+        ],
+        "leaf_filename": "black_sigota.jpg",
+        "advice": "Okay, here s a breakdown of care advice for your banana plant based on the information you ve provided and the Banana Plant Life Cycle Guide . Plant Health and Growth Stage: Your banana plant is in the Seedling Stage (1 month old). Environmental Conditions: Temperature: Aim for 28-32 C (82-90 F). Moisture: Maintain 70-80 humidity. Sunlight: Ensure 6-8 hours of indirect sunlight. Soil: Keep the soil pH between 5.5-6.5. Fertilizer: Apply BioStart at 20 kg ha. This will promote strong root development. Consider using vermicompost as an organic option to enrich the soil. Physiological Needs: Focus on root development during this stage. Monitor leaf color and growth rate to ensure the plant is thriving. Weather Impact: Since weather data for Pune is unavailable, I will provide general advice. You ll need to adjust based on actual conditions. Watering: Water the plant with 0.2-0.3 L every other day, but check the soil moisture before watering. If it s hot and dry, increase watering frequency. If it s humid, reduce watering. Temperature and Humidity: If temperatures are consistently high, consider misting the plants to increase humidity. If temperatures drop, consider moving the plants indoors or providing some form of shelter. Disease and Pest Management: The leaf analysis indicates a potential issue with panama and 8 . It s unclear what 8 refers to, so monitor closely for any unusual symptoms. Prevention: Apply EcoShield at 250 mL ha as a preventative measure against fungal diseases. Inspect plants regularly for pests. Treatment: If you notice any pests, use Bamida at 200 mL ha. For panama , ensure proper soil drainage and consider soil solarization if the problem persists. Integrated Pest Management (IPM): Introduce beneficial insects to control pests naturally. Remove any infected leaves promptly to prevent the spread of disease. Frost Protection: Without weather data, I can t assess frost risk. If temperatures are expected to drop below 15 C (59 F), take precautions. Immediate Actions: Address the potential disease issue indicated by the leaf analysis. Monitor soil moisture levels and adjust watering as needed. AI-Driven Insights: Without specific AI data, I can t provide precise yield protection estimates or cost-benefit analyses. However, consistent monitoring and timely interventions will significantly improve plant health and potential yield. General Recommendations: Regularly inspect your plants for any signs of stress or disease. Maintain good soil health through proper fertilization and watering. Adapt your care routine based on the specific needs of your plants and the prevailing weather conditions.",
+        "translated_advice": "Okay, here s a breakdown of care advice for your banana plant based on the information you ve provided and the Banana Plant Life Cycle Guide . Plant Health and Growth Stage: Your banana plant is in the Seedling Stage (1 month old). Environmental Conditions: Temperature: Aim for 28-32 C (82-90 F). Moisture: Maintain 70-80 humidity. Sunlight: Ensure 6-8 hours of indirect sunlight. Soil: Keep the soil pH between 5.5-6.5. Fertilizer: Apply BioStart at 20 kg ha. This will promote strong root development. Consider using vermicompost as an organic option to enrich the soil. Physiological Needs: Focus on root development during this stage. Monitor leaf color and growth rate to ensure the plant is thriving. Weather Impact: Since weather data for Pune is unavailable, I will provide general advice. You ll need to adjust based on actual conditions. Watering: Water the plant with 0.2-0.3 L every other day, but check the soil moisture before watering. If it s hot and dry, increase watering frequency. If it s humid, reduce watering. Temperature and Humidity: If temperatures are consistently high, consider misting the plants to increase humidity. If temperatures drop, consider moving the plants indoors or providing some form of shelter. Disease and Pest Management: The leaf analysis indicates a potential issue with panama and 8 . It s unclear what 8 refers to, so monitor closely for any unusual symptoms. Prevention: Apply EcoShield at 250 mL ha as a preventative measure against fungal diseases. Inspect plants regularly for pests. Treatment: If you notice any pests, use Bamida at 200 mL ha. For panama , ensure proper soil drainage and consider soil solarization if the problem persists. Integrated Pest Management (IPM): Introduce beneficial insects to control pests naturally. Remove any infected leaves promptly to prevent the spread of disease. Frost Protection: Without weather data, I can t assess frost risk. If temperatures are expected to drop below 15 C (59 F), take precautions. Immediate Actions: Address the potential disease issue indicated by the leaf analysis. Monitor soil moisture levels and adjust watering as needed. AI-Driven Insights: Without specific AI data, I can t provide precise yield protection estimates or cost-benefit analyses. However, consistent monitoring and timely interventions will significantly improve plant health and potential yield. General Recommendations: Regularly inspect your plants for any signs of stress or disease. Maintain good soil health through proper fertilization and watering. Adapt your care routine based on the specific needs of your plants and the prevailing weather conditions."
+      },
+      "questions": []
+    }
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "timestamp": "2025-07-29T17:03:32.477203",
+    "data": {
+      "analysis_id": "42120458-488f-4f5b-ab5a-d9a886b72f83",
+      "name": "Banana ",
+      "age": "1 month",
+      "location": "Pune",
+      "result": {
+        "weather_data": [
+          {
+            "error": "Error fetching data: You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/maruf111/api/weather-api167"
+          }
+        ],
+        "crop_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/42120458-488f-4f5b-ab5a-d9a886b72f83_crop_IMG_20250717_132715431.jpg",
+        "banana_detected": false,
+        "flower_detected": false,
+        "stage": "Seeding Stage",
+        "crop_filename": "IMG_20250717_132715431.jpg",
+        "leaf_image_path": "/home/x/bandhan_work/streamlit_bioroad/static/uploads/42120458-488f-4f5b-ab5a-d9a886b72f83_leaf_black_sigota_annotated.jpg",
+        "num_leaves": 4,
+        "leaf_colors": [
+          "Brown/Red",
+          "Healthy Green",
+          "Healthy Green",
+          "Healthy Green"
+        ],
+        "leaf_disease": [
+          "panama",
+          "8"
+        ],
+        "leaf_filename": "black_sigota.jpg",
+        "advice": "Okay, here s some care advice for your banana plant, keeping in mind the information you ve provided and the Banana Plant Life Cycle Guide. Plant Health and Growth Stage: Your banana plant is in the Seedling Stage (1 month old). Environmental Conditions: Aim for a temperature of 28-32 C (82-90 F) and high humidity (80-90 ). Since weather data for Pune is unavailable, monitor local conditions closely. Ensure the plant receives 6-8 hours of direct sunlight daily. Fertilizer: Use BioStart at 20 mL plant, applying it as a soil drench every 7-10 days to promote strong root development. You can also use vermicompost as an organic option, applying a handful around the base of the plant every two weeks. Physiological Needs: Focus on root development. Ensure proper drainage to prevent root rot. Monitor leaf color and growth rate as indicators of plant health. Weather Impact: Watering: Without weather data, it s difficult to give a precise watering schedule. Check the soil moisture daily. Water when the top inch of soil feels dry. Ensure good drainage. Temperature and Humidity: If temperatures are high, consider misting the plant regularly to maintain humidity. If temperatures are too high, provide shade during the hottest part of the day. Disease and Pest Management: Disease: You ve identified Panama disease. Unfortunately, Panama disease is a serious fungal disease that can be difficult to control. Remove and destroy the infected plant material immediately to prevent spread. Improve soil drainage and aeration. Pest Management: Since the plant is in the seedling stage, pests can be particularly damaging. Regularly inspect the plant for any signs of pests. If you find any, consider using EcoShield at 100 mL ha as a preventative measure. Immediate Actions: Address the Panama disease immediately by removing infected leaves and improving soil conditions. Monitor soil moisture and adjust watering as needed. AI-Driven Insights: Without specific AI data, it s hard to provide precise yield protection estimates or cost-benefit analyses. However, consistent monitoring and timely interventions, especially regarding disease, are crucial for maximizing yield potential. General Recommendations: Monitor your banana plant regularly for any signs of stress or disease. Adjust your care routine as needed based on the plant s response and local weather conditions.",
+        "translated_advice": "Okay, here s some care advice for your banana plant, keeping in mind the information you ve provided and the Banana Plant Life Cycle Guide. Plant Health and Growth Stage: Your banana plant is in the Seedling Stage (1 month old). Environmental Conditions: Aim for a temperature of 28-32 C (82-90 F) and high humidity (80-90 ). Since weather data for Pune is unavailable, monitor local conditions closely. Ensure the plant receives 6-8 hours of direct sunlight daily. Fertilizer: Use BioStart at 20 mL plant, applying it as a soil drench every 7-10 days to promote strong root development. You can also use vermicompost as an organic option, applying a handful around the base of the plant every two weeks. Physiological Needs: Focus on root development. Ensure proper drainage to prevent root rot. Monitor leaf color and growth rate as indicators of plant health. Weather Impact: Watering: Without weather data, it s difficult to give a precise watering schedule. Check the soil moisture daily. Water when the top inch of soil feels dry. Ensure good drainage. Temperature and Humidity: If temperatures are high, consider misting the plant regularly to maintain humidity. If temperatures are too high, provide shade during the hottest part of the day. Disease and Pest Management: Disease: You ve identified Panama disease. Unfortunately, Panama disease is a serious fungal disease that can be difficult to control. Remove and destroy the infected plant material immediately to prevent spread. Improve soil drainage and aeration. Pest Management: Since the plant is in the seedling stage, pests can be particularly damaging. Regularly inspect the plant for any signs of pests. If you find any, consider using EcoShield at 100 mL ha as a preventative measure. Immediate Actions: Address the Panama disease immediately by removing infected leaves and improving soil conditions. Monitor soil moisture and adjust watering as needed. AI-Driven Insights: Without specific AI data, it s hard to provide precise yield protection estimates or cost-benefit analyses. However, consistent monitoring and timely interventions, especially regarding disease, are crucial for maximizing yield potential. General Recommendations: Monitor your banana plant regularly for any signs of stress or disease. Adjust your care routine as needed based on the plant s response and local weather conditions."
+      },
+      "questions": []
+    }
+  }
+]

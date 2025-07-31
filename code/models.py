@@ -1,5 +1,6 @@
 import streamlit as st
 from ultralytics import YOLO
+import ultralytics
 from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -9,9 +10,8 @@ import os
 from config import logger 
 from config import LEAF_COUNTER_MODEL , BANANA_DISEASE_MODEL , BANANA_MODEL , BANANA_STAGE_MODEL
 
-@st.cache_resource
 def load_models():
-    """Load YOLO model and FAISS database with comprehensive error handling"""
+
     model, embeddings, db_faiss = None, None, None 
     
     try:
@@ -49,7 +49,6 @@ def load_models():
         st.error(f"Critical error loading AI models: {e}")
         return None, None, None
 
-@st.cache_resource
 def load_llm(_db): 
     """Load Google Gemini LLM and RetrievalQA chain with error handling"""
     try:
