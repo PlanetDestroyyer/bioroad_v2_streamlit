@@ -83,7 +83,7 @@ UI_STRINGS = {
     "audio_caption": "🔈 Language: {lang}"
 }
 
-# Function to get translated UI strings
+# Function to get translated UI strings (retained for potential future use)
 def get_translated_ui_strings(lang_code):
     if lang_code == "en":
         return UI_STRINGS
@@ -93,7 +93,7 @@ def get_translated_ui_strings(lang_code):
     return translated
 
 # Set page config
-st.set_page_config(page_title="Home", layout="wide", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title=UI_STRINGS["page_title"], layout="wide", initial_sidebar_state="auto", menu_items=None)
 
 # Hide Streamlit header and footer
 hide_streamlit_style = """
@@ -155,8 +155,8 @@ def get_weather_forecast(location):
                 weather_desc = entry['weather'][0]['description']
 
                 temp = main['temperature']
-                temp_min = main['temperature_min']
-                temp_max = main['temperature_max']
+                temp_min = main['temp_min']
+                temp_max = main['temp_max']
                 feels_like = main['temperature_feels_like']
                 humidity = main['humidity']
                 precipitation = rain.get('amount', 0)
@@ -188,7 +188,7 @@ def get_weather_forecast(location):
     else:
         return [{"error": f"Error fetching data: {data.get('message', 'Unknown error')}"}]
 
-def format_weather_for_ai(weather_data, location):
+def format_weather_for_ai(weather_data, location, lang_code):
     if not weather_data or weather_data[0].get('error'):
         return translate_text(f"Weather data for {location} is currently unavailable.", lang_code)
     
@@ -209,7 +209,7 @@ Description: {day_data['description']}
 """, lang_code)
     return weather_summary
 
-def build_conversation_context(current_analysis):
+def build_conversation_context(current_analysis, lang_code):
     context = ""
     if current_analysis:
         result = current_analysis.get('result', {})
@@ -306,13 +306,12 @@ def load_yolo_model():
 try:
     # Get language code
     lang_code = LANGUAGES.get(st.session_state.get("selected_language", "English"), "en")
-    ui_text = get_translated_ui_strings(lang_code)
 
-    # Set page config with translated title
-    st.set_page_config(page_title=ui_text["page_title"], layout="wide")
+    # Set page config with English title
+    st.set_page_config(page_title=UI_STRINGS["page_title"], layout="wide")
 
     if not create_directories():
-        st.error(ui_text["app_error"])
+        st.error(UI_STRINGS["app_error"])
         st.stop()
 
     model, embeddings, db = load_models()
@@ -321,54 +320,54 @@ try:
     try:
         col1, col2, col3 = st.columns([2, 1, 1])
         with col1:
-            st.title(ui_text["app_title"])
+            st.title(UI_STRINGS["app_title"])
         with col3:
-            st.selectbox(ui_text["language_label"], options=list(LANGUAGES.keys()), key="selected_language")
-        st.markdown(f'<h3 class="custom-subheader">{ui_text["subheader"]}</h3>', unsafe_allow_html=True)
+            st.selectbox(UI_STRINGS["language_label"], options=list(LANGUAGES.keys()), key="selected_language")
+        st.markdown(f'<h3 class="custom-subheader">{UI_STRINGS["subheader"]}</h3>', unsafe_allow_html=True)
 
         session_id = get_session_id()
 
-        with st.expander(ui_text["plant_analysis"], expanded=True):
-            st.header(ui_text["plant_analysis"])
+        with st.expander(UI_STRINGS["plant_analysis"], expanded=True):
+            st.header(UI_STRINGS["plant_analysis"])
             
             try:
-                name = st.text_input(ui_text["plant_name_label"], key="plant_name_input")
+                name = st.text_input(UI_STRINGS["plant_name_label"], key="plant_name_input")
                 age_options = [f"{i} month{'s' if i > 1 else ''}" for i in range(1, 13)] + ["1 year", "2 years", "Custom"]
-                selected_age = st.selectbox(ui_text["plant_age_label"], options=age_options, key="plant_age_select")
+                selected_age = st.selectbox(UI_STRINGS["plant_age_label"], options=age_options, key="plant_age_select")
 
                 if selected_age == "Custom":
-                    custom_age = st.text_input(translate_text("Enter Custom Plant Age (e.g., '3 months', '5 years')", lang_code), key="plant_age_input")
+                    custom_age = st.text_input("Enter Custom Plant Age (e.g., '3 months', '5 years')", key="plant_age_input")
                     age = custom_age
                 else:
                     age = selected_age
-                location = st.text_input(ui_text["location_label"], placeholder=ui_text["location_placeholder"], key="location_input")
+                location = st.text_input(UI_STRINGS["location_label"], placeholder=UI_STRINGS["location_placeholder"], key="location_input")
                 
                 crop_file = st.file_uploader(
-                    ui_text["crop_image_label"], 
+                    UI_STRINGS["crop_image_label"], 
                     type=["png", "jpg", "jpeg", "webp"], 
                     accept_multiple_files=False,
                     key="crop_image"
                 )
                 leaf_file = st.file_uploader(
-                    ui_text["leaf_image_label"], 
+                    UI_STRINGS["leaf_image_label"], 
                     type=["png", "jpg", "jpeg", "webp"], 
                     accept_multiple_files=False,
                     key="leaf_image"
                 )
             except Exception as e:
                 logger.error(f"Error creating input widgets: {e}")
-                st.error(ui_text["app_error"])
+                st.error(UI_STRINGS["app_error"])
 
-            if st.button(ui_text["analyze_button"]):
+            if st.button(UI_STRINGS["analyze_button"]):
                 st.cache_data.clear()
                 st.cache_resource.clear()
                 try:
                     if not crop_file or not leaf_file:
-                        st.warning(ui_text["no_images_warning"])
+                        st.warning(UI_STRINGS["no_images_warning"])
                     elif qa_chain is None:
-                        st.error(ui_text["ai_unavailable"])
+                        st.error(UI_STRINGS["ai_unavailable"])
                     else:
-                        with st.spinner(translate_text("Analyzing your plant and fetching weather data...", lang_code)):
+                        with st.spinner("Analyzing your plant and fetching weather data..."):
                             if 'current_analysis' in st.session_state:
                                 del st.session_state.current_analysis
                             analysis_id = str(uuid.uuid4())
@@ -378,7 +377,7 @@ try:
                             if location:
                                 try:
                                     weather_data = get_weather_forecast(location)
-                                    weather_context = format_weather_for_ai(weather_data, location.strip())
+                                    weather_context = format_weather_for_ai(weather_data, location.strip(), lang_code)
                                     result['weather_data'] = weather_data
                                     logger.info(f"Weather data fetched for {location}: {weather_data[:1]}")
                                 except Exception as e:
@@ -398,7 +397,7 @@ try:
                                 img_check = cv2.imread(crop_filepath)
                                 if img_check is None or img_check.shape[0] < 100 or img_check.shape[1] < 100:
                                     logger.error(f"Invalid or low-resolution crop image: {crop_filepath}")
-                                    st.error(ui_text["invalid_crop_image"])
+                                    st.error(UI_STRINGS["invalid_crop_image"])
                                     raise ValueError("Invalid crop image")
 
                                 banana_present = detect_banana(crop_bytes, model)
@@ -416,7 +415,7 @@ try:
 
                             except Exception as e:
                                 logger.error(f"Error processing crop file: {e}")
-                                st.error(ui_text["analysis_failed"].format(error=str(e)))
+                                st.error(UI_STRINGS["analysis_failed"].format(error=str(e)))
                                 raise e
 
                             try:
@@ -432,7 +431,7 @@ try:
                                 img_check = cv2.imread(leaf_filepath)
                                 if img_check is None or img_check.shape[0] < 100 or img_check.shape[1] < 100:
                                     logger.error(f"Invalid or low-resolution leaf image: {leaf_filepath}")
-                                    st.error(ui_text["invalid_leaf_image"])
+                                    st.error(UI_STRINGS["invalid_leaf_image"])
                                     raise ValueError("Invalid leaf image")
 
                                 try:
@@ -460,7 +459,7 @@ try:
                                 })
                             except Exception as e:
                                 logger.error(f"Error processing leaf file: {e}")
-                                st.error(ui_text["analysis_failed"].format(error=str(e)))
+                                st.error(UI_STRINGS["analysis_failed"].format(error=str(e)))
                                 raise e
 
                             query = f"""
@@ -536,106 +535,106 @@ Base advice on the 'Banana Plant Life Cycle Guide,' Bandhan Agritech’s product
                                 st.session_state.current_analysis = analysis_data
                                 st.rerun()
                             else:
-                                st.warning(ui_text["history_save_warning"])
+                                st.warning(UI_STRINGS["history_save_warning"])
 
                 except Exception as e:
                     logger.error(f"Critical error in plant analysis: {e}")
                     logger.error(traceback.format_exc())
-                    st.error(ui_text["analysis_failed"].format(error=str(e)))
+                    st.error(UI_STRINGS["analysis_failed"].format(error=str(e)))
 
         if 'current_analysis' in st.session_state:
             try:
                 current_analysis = st.session_state.current_analysis
-                st.subheader(ui_text["latest_results"])
-                st.write(f"**{ui_text['plant_name']}:** {current_analysis.get('name', translate_text('Unknown', lang_code))}")
-                st.write(f"**{ui_text['plant_age']}:** {current_analysis.get('age', translate_text('Unknown', lang_code))}")
-                st.write(f"**{ui_text['location']}:** {current_analysis.get('location', translate_text('Not provided', lang_code))}")
+                st.subheader(UI_STRINGS["latest_results"])
+                st.write(f"**{UI_STRINGS['plant_name']}:** {current_analysis.get('name', 'Unknown')}")
+                st.write(f"**{UI_STRINGS['plant_age']}:** {current_analysis.get('age', 'Unknown')}")
+                st.write(f"**{UI_STRINGS['location']}:** {current_analysis.get('location', 'Not provided')}")
 
                 result = current_analysis.get('result', {})
                 
                 if 'weather_data' in result and result['weather_data']:
                     weather_data = result['weather_data']
                     if not weather_data[0].get('error'):
-                        st.subheader(ui_text["weather_forecast"])
+                        st.subheader(UI_STRINGS["weather_forecast"])
                         for day_data in weather_data[:3]:
                             col1, col2, col3, col4 = st.columns(4)
                             with col1:
-                                st.metric(ui_text["temperature"], f"{day_data['temperature']}°C")
+                                st.metric(UI_STRINGS["temperature"], f"{day_data['temperature']}°C")
                             with col2:
-                                st.metric(ui_text["humidity"], f"{day_data['humidity']}%")
+                                st.metric(UI_STRINGS["humidity"], f"{day_data['humidity']}%")
                             with col3:
-                                st.metric(ui_text["gdd"], f"{day_data['gdd']}")
+                                st.metric(UI_STRINGS["gdd"], f"{day_data['gdd']}")
                             with col4:
-                                st.metric(ui_text["precipitation"], f"{day_data['precipitation']}mm")
+                                st.metric(UI_STRINGS["precipitation"], f"{day_data['precipitation']}mm")
                             
                             if day_data['frost_warning'] == 'Yes':
-                                st.warning(ui_text["frost_warning"])
+                                st.warning(UI_STRINGS["frost_warning"])
                             if day_data['severe_weather'] == 'Yes':
-                                st.warning(ui_text["severe_weather"])
-                            st.write(f"**{ui_text['conditions']}:** {translate_text(day_data['description'], lang_code)}")
+                                st.warning(UI_STRINGS["severe_weather"])
+                            st.write(f"**{UI_STRINGS['conditions']}:** {translate_text(day_data['description'], lang_code)}")
                             st.write("---")
 
                 try:
                     col1, col2 = st.columns(2)
                     with col1:
                         if os.path.exists(result.get('crop_image_path', '')):
-                            st.image(result['crop_image_path'], caption=translate_text("Crop Image", lang_code), width=300)
+                            st.image(result['crop_image_path'], caption="Crop Image", width=300)
                     
                     with col2:
                         if os.path.exists(result.get('leaf_image_path', '')):
-                            st.image(result['leaf_image_path'], caption=translate_text("Leaf Image", lang_code))
+                            st.image(result['leaf_image_path'], caption="Leaf Image")
 
-                    st.write(f"**{ui_text['banana_detected']}:** {translate_text('Yes' if result.get('banana_detected', False) else 'No', lang_code)}")
-                    st.write(f"**{ui_text['flower_detected']}:** {translate_text('Yes' if result.get('flower_detected', False) else 'No', lang_code)}")
-                    st.write(f"**{ui_text['estimated_stage']}:** {translate_text(result.get('stage', 'Unknown'), lang_code)}")
+                    st.write(f"**{UI_STRINGS['banana_detected']}:** {translate_text('Yes' if result.get('banana_detected', False) else 'No', lang_code)}")
+                    st.write(f"**{UI_STRINGS['flower_detected']}:** {translate_text('Yes' if result.get('flower_detected', False) else 'No', lang_code)}")
+                    st.write(f"**{UI_STRINGS['estimated_stage']}:** {translate_text(result.get('stage', 'Unknown'), lang_code)}")
                     leaf_analysis_text = f"Detected {result.get('num_leaves', 0)} leaves with colors: {', '.join(result.get('leaf_colors', []))}"
-                    st.write(f"**{ui_text['leaf_analysis']}:** {translate_text(leaf_analysis_text, lang_code)}")
-                    st.write(f"**{ui_text['leaf_disease']}:** {translate_text(result.get('leaf_disease', 'Unknown'), lang_code)}")
+                    st.write(f"**{UI_STRINGS['leaf_analysis']}:** {translate_text(leaf_analysis_text, lang_code)}")
+                    st.write(f"**{UI_STRINGS['leaf_disease']}:** {translate_text(result.get('leaf_disease', 'Unknown'), lang_code)}")
                     
-                    st.subheader(ui_text["care_advice"])
+                    st.subheader(UI_STRINGS["care_advice"])
                     advice_text = result.get('translated_advice', translate_text('No advice available', lang_code))
                     st.markdown(advice_text)
 
                     advice_audio_filepath = os.path.join(AUDIO_FOLDER, f"advice_{current_analysis['analysis_id']}.mp3")
-                    if st.button(ui_text["play_advice_button"], key="play_advice"):
-                        with st.spinner(translate_text("Generating audio...", lang_code)):
+                    if st.button(UI_STRINGS["play_advice_button"], key="play_advice"):
+                        with st.spinner("Generating audio..."):
                             try:
                                 if text_to_audio(advice_text, advice_audio_filepath, lang_code=lang_code):
                                     st.audio(advice_audio_filepath, format='audio/mp3')
-                                    st.caption(ui_text["audio_caption"].format(lang=st.session_state.get('selected_language', 'English')))
+                                    st.caption(UI_STRINGS["audio_caption"].format(lang=st.session_state.get('selected_language', 'English')))
                                 else:
-                                    st.error(ui_text["audio_failed"])
+                                    st.error(UI_STRINGS["audio_failed"])
                             except Exception as e:
                                 logger.error(f"Error in audio generation: {e}")
-                                st.error(ui_text["audio_failed"])
+                                st.error(UI_STRINGS["audio_failed"])
 
                 except Exception as e:
                     logger.error(f"Error displaying result: {e}")
-                    st.error(ui_text["app_error"])
+                    st.error(UI_STRINGS["app_error"])
 
             except Exception as e:
                 logger.error(f"Error displaying current analysis: {e}")
-                st.error(ui_text["app_error"])
+                st.error(UI_STRINGS["app_error"])
 
-        st.header(ui_text["follow_up_header"])
+        st.header(UI_STRINGS["follow_up_header"])
         try:
             if 'current_analysis' in st.session_state:
-                question = st.text_area(ui_text["follow_up_placeholder"], key="follow_up_question")
-                if st.button(ui_text["submit_question_button"]):
+                question = st.text_area(UI_STRINGS["follow_up_placeholder"], key="follow_up_question")
+                if st.button(UI_STRINGS["submit_question_button"]):
                     try:
                         if not question.strip():
-                            st.warning(ui_text["no_question_warning"])
+                            st.warning(UI_STRINGS["no_question_warning"])
                         elif qa_chain is None:
-                            st.error(ui_text["ai_unavailable"])
+                            st.error(UI_STRINGS["ai_unavailable"])
                         else:
-                            with st.spinner(translate_text("Processing your question...", lang_code)):
+                            with st.spinner("Processing your question..."):
                                 try:
-                                    conversation_context = build_conversation_context(st.session_state.current_analysis)
+                                    conversation_context = build_conversation_context(st.session_state.current_analysis, lang_code)
                                     current_analysis = st.session_state.current_analysis
                                     weather_context = ""
                                     if 'result' in current_analysis and 'weather_data' in current_analysis['result']:
                                         location = current_analysis.get('location', '')
-                                        weather_context = format_weather_for_ai(current_analysis['result']['weather_data'], location)
+                                        weather_context = format_weather_for_ai(current_analysis['result']['weather_data'], location, lang_code)
                                     
                                     question_en = question if lang_code == 'en' else translate_text(question, 'en')
                                     enhanced_query = f"""
@@ -673,63 +672,63 @@ Base advice on the 'Banana Plant Life Cycle Guide,' Bandhan Agritech’s product
                                         st.session_state.current_analysis = current_analysis
                                         st.rerun()
                                     else:
-                                        st.warning(ui_text["history_save_warning"])
+                                        st.warning(UI_STRINGS["history_save_warning"])
                                     
                                 except Exception as e:
                                     logger.error(f"Error processing question: {e}")
-                                    st.error(ui_text["question_error"])
+                                    st.error(UI_STRINGS["question_error"])
 
                     except Exception as e:
                         logger.error(f"Error in question submission: {e}")
-                        st.error(ui_text["question_error"])
+                        st.error(UI_STRINGS["question_error"])
 
                 try:
                     if st.session_state.current_analysis.get('questions'):
-                        st.subheader(ui_text["question_history"])
+                        st.subheader(UI_STRINGS["question_history"])
                         for i, q in enumerate(st.session_state.current_analysis['questions']):
                             try:
-                                st.write(f"**Q{i+1}:** {q.get('question', translate_text('Question not available', lang_code))}")
+                                st.write(f"**Q{i+1}:** {q.get('question', 'Question not available')}")
                                 answer_text = q.get('translated_answer', translate_text('Answer not available', lang_code))
                                 st.write(f"**A{i+1}:** {answer_text}")
                                 
                                 question_audio_filepath = os.path.join(AUDIO_FOLDER, f"question_{current_analysis['analysis_id']}_{i}.mp3")
-                                if st.button(translate_text(f"Play Answer {i+1}", lang_code), key=f"play_question_{i}"):
-                                    with st.spinner(translate_text("Generating audio...", lang_code)):
+                                if st.button(f"Play Answer {i+1}", key=f"play_question_{i}"):
+                                    with st.spinner("Generating audio..."):
                                         try:
                                             if text_to_audio(answer_text, question_audio_filepath, lang_code=lang_code):
                                                 st.audio(question_audio_filepath, format='audio/mp3')
-                                                st.caption(ui_text["audio_caption"].format(lang=st.session_state.get('selected_language', 'English')))
+                                                st.caption(UI_STRINGS["audio_caption"].format(lang=st.session_state.get('selected_language', 'English')))
                                             else:
-                                                st.error(ui_text["audio_failed"])
+                                                st.error(UI_STRINGS["audio_failed"])
                                         except Exception as e:
                                             logger.error(f"Error generating question audio: {e}")
-                                            st.error(ui_text["audio_failed"])
+                                            st.error(UI_STRINGS["audio_failed"])
                                 st.write("---")
                             except Exception as e:
                                 logger.error(f"Error displaying question {i}: {e}")
-                                st.error(translate_text(f"Error displaying question {i+1}", lang_code))
+                                st.error(f"Error displaying question {i+1}")
                 except Exception as e:
                     logger.error(f"Error displaying question history: {e}")
-                    st.error(ui_text["app_error"])
+                    st.error(UI_STRINGS["app_error"])
             else:
-                st.info(ui_text["no_analysis_info"])
+                st.info(UI_STRINGS["no_analysis_info"])
         except Exception as e:
             logger.error(f"Error in follow-up questions section: {e}")
-            st.error(ui_text["app_error"])
+            st.error(UI_STRINGS["app_error"])
 
     except Exception as e:
         logger.error(f"Critical application error: {e}")
         logger.error(traceback.format_exc())
-        st.error(ui_text["app_error"])
+        st.error(UI_STRINGS["app_error"])
 
     try:
         st.markdown("---")
-        st.markdown(f"### {ui_text['tips_header']}")
-        st.markdown(ui_text["tips_content"])
+        st.markdown(f"### {UI_STRINGS['tips_header']}")
+        st.markdown(UI_STRINGS["tips_content"])
     except Exception as e:
         logger.error(f"Error displaying footer: {e}")
 
 except Exception as e:
     logger.error(f"Critical application error: {e}")
     logger.error(traceback.format_exc())
-    st.error(ui_text.get("app_error", "Application encountered a critical error. Please refresh the page."))
+    st.error(UI_STRINGS.get("app_error", "Application encountered a critical error. Please refresh the page."))
